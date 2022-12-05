@@ -1,1 +1,0 @@
-set_rooms(-1, rm_grass)

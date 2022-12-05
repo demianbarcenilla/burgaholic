@@ -1,1 +1,0 @@
-set_rooms(rm_test3, -1);
