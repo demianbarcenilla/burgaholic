@@ -1,0 +1,1 @@
+var_canGetHit = true;
