@@ -41,4 +41,39 @@ if(keyboard_check_pressed(vk_f11))
 	};
 };
 
-show_debug_message(var_state)
+var _halfSprite = 12;
+//Switch Room
+
+if(x > room_width -_halfSprite)
+{
+	if(global.nextRoom != -1) and (!roomCooldown)
+	{
+		room_goto(global.nextRoom)
+		x -= room_width +_halfSprite
+		y -=2;
+		roomCooldown = true;
+	}
+	else
+	{
+		x = room_width -_halfSprite;
+		y -=2;
+	};
+};
+else if((x < _halfSprite))
+{
+	if(global.prevRoom != -1) and (!roomCooldown)
+	{
+		room_goto(global.prevRoom)
+		x += room_width +_halfSprite
+		roomCooldown = true;
+	}
+	else
+	{
+		x = _halfSprite;
+	};
+}
+
+if(roomCooldown and (alarm[10] = -1))
+{
+	alarm[10] = 15;
+}

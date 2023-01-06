@@ -1,4 +1,5 @@
-image_speed = .4;
+
+image_speed = IMAGE_SPEED;
 
 
 //STATES
@@ -24,6 +25,9 @@ var_fric = .1;
 var_vspd = 0;
 var_jspd = 6;
 var_grav = .4;
+
+//Rooms
+roomCooldown = false;
 
 //Keys
 global.k_left = vk_left;

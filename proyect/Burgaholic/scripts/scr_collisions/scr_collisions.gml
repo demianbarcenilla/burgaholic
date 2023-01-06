@@ -15,7 +15,6 @@ function scr_collisions(hspd, vspd){
 		};
 	}
 	x += hspd;
-
 	//Vertical Collissions
 	if(place_meeting(x, y+vspd, obj_wall))
 	{

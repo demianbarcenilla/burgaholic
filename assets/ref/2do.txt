@@ -1,0 +1,5 @@
+finish 1st world:
+-polish enemies
+-explain mechanics
+-add pickle/onion shells
+-add a hub
