@@ -36,3 +36,10 @@ layer_x(layer_get_id("P_DEEPEST"), _x);
 layer_x(layer_get_id("P_BACKGROUND"), _x /1.1);
 layer_x(layer_get_id("P_MIDDLE"), _x/1.2);
 layer_x(layer_get_id("P_FOREGROUND"), _x /1.5);
+
+global.music = arr_music[global.stage]
+if(!audio_is_playing(global.music))
+{
+	audio_stop_all();
+	audio_play_sound(global.music, 0, true)
+};

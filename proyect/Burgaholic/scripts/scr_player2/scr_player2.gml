@@ -3,14 +3,20 @@ function hit_sequence()
 {
 	//HIT SEQUENCE
 	var _enemy = instance_nearest(x, y, obj_enemy);
-	if(place_meeting(x, y, _enemy)) and (!_enemy.var_hitSeq)
+	if(place_meeting(x, y, _enemy)) and (!_enemy.var_hitSeq) and (!_enemy.despawned)
 	{
+		var _respawnTime = 120;
+		
 		if(abs(var_spd) >= var_mspd/2)
 		{
 			_enemy.action();
 			with(_enemy)
 			{
-				sprite_index = var_hitSprite;
+				sprite_index = spr_blank;
+				repeat(4)
+				{
+					instance_create_depth(x, y, depth+1, obj_cloudSFX);
+				};
 			};
 		};
 		else
@@ -21,6 +27,7 @@ function hit_sequence()
 			var_state = STATE_MACHINE.hit
 		};
 		_enemy.var_hitSeq = true;
+		if(_enemy.alarm[11] = -1){_enemy.alarm[11] = _respawnTime};
 		
 		freezeframes(.8)
 		screenshake(5, 3, .3);

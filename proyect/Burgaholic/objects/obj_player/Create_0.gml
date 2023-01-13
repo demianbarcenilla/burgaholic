@@ -1,6 +1,4 @@
-
 image_speed = IMAGE_SPEED;
-
 
 //STATES
 enum STATE_MACHINE
@@ -10,7 +8,9 @@ enum STATE_MACHINE
 	hit,
 	pound,
 	roll,
-	dash
+	bump,
+	dash,
+	dead,
 };
 
 var_state = STATE_MACHINE.normal
@@ -26,9 +26,9 @@ var_vspd = 0;
 var_jspd = 6;
 var_grav = .4;
 
-//Rooms
-roomCooldown = false;
-
+//MISC
+roomCooldown = false; //Cooldown for the transitions between rooms
+invincibleFrames = false;
 //Keys
 global.k_left = vk_left;
 global.k_right = vk_right;

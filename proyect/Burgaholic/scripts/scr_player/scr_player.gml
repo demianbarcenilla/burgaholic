@@ -102,8 +102,9 @@ function state_normal()
  function state_walkingWall()
 {	
 	sprite_index = spr_playerWall;
-	var_vspd = var_mspd;
-	y -= var_vspd;
+	
+	var_vspd = -var_mspd;
+	
 	//Vertical Collissions
 	if(place_meeting(x, y+var_vspd, obj_wall))
 	{
@@ -114,11 +115,13 @@ function state_normal()
 	
 		if(place_meeting(x, y+sign(var_vspd), obj_wall))
 		{
-			var_vspd = 0
+			var_spd = 0;
+			var_vspd = 0;
+			var_state = STATE_MACHINE.normal;
 		};
 	}
 	
-	
+	y += var_vspd;
 	
 	//HIT SEQUENCE
 	hit_sequence();
@@ -131,7 +134,6 @@ function state_normal()
 		var_vspd = -var_jspd/2;
 		var_state = STATE_MACHINE.normal;
 	};
-	
 	//When you walljump out of it
 	if(keyboard_check_pressed(global.k_jump))
 	{
@@ -145,12 +147,15 @@ function state_normal()
 	};
 	
 	//When you stop pressing the run button
+	/*if((keyboard_check(global.k_right) - keyboard_check(global.k_left)) = 0) and (alarm[2] = -1)
+	{
+		alarm[2] = 15;
+	};*/
+	
 	if((keyboard_check(global.k_right) - keyboard_check(global.k_left)) = 0)
 	{
-		var_spd = 0;
-		var_vspd = -var_jspd/4;
-		var_state = STATE_MACHINE.normal;
-	};
+	
+	}
 };
 
 function state_hit()
@@ -165,7 +170,34 @@ function state_hit()
 	//Back to Normal
 	if(place_meeting(x, y+1, obj_wall))
 	{
+		invincibleFrames = true;
 		var_state = STATE_MACHINE.normal;
+	};
+};
+
+function state_bump()
+{
+	sprite_index = spr_playerHit;
+	
+	collisions();
+	
+	//Gravity
+	var_vspd += var_grav;
+	
+	//Back to Normal
+	if(place_meeting(x, y+1, obj_wall))
+	{
+		var_state = STATE_MACHINE.normal;
+	};
+};
+
+function state_dead()
+{
+	sprite_index = spr_blank;
+	
+	if(alarm[6] = -1)
+	{
+		alarm[6] = 60;
 	};
 };
 
@@ -195,23 +227,32 @@ function state_pound()
 function state_roll()
 {
 	var _alarm = 20, _inverse = global.k_left;
+	
+	
+	
 	sprite_index = spr_playerRoll;
 	var_spd = var_mspd*1.5*image_xscale
 	
 	if(!place_meeting(x, y+1, obj_wall))
 	{
 		var_vspd += var_grav;
-	}
+	};
+	
+	if(place_meeting(x+sign(var_spd), y, obj_wall))
+	{
+		var_state = STATE_MACHINE.normal;
+	};
+	
+	else if(!place_meeting(x, y+sign(var_vspd), obj_wall))
+	{
+		
+	};
 	
 	collisions();
 	
 	if(alarm[1] = -1){alarm[1] = _alarm}
 	
-	if(place_meeting(x+sign(var_spd), y, obj_wall))
-	{
-		var_state = STATE_MACHINE.normal;
-	}
-	else if(keyboard_check_pressed(global.k_jump))
+	if(keyboard_check_pressed(global.k_jump))
 	{
 		var_state = STATE_MACHINE.dash
 		var_spd = var_mspd *2 *image_xscale;
@@ -253,18 +294,35 @@ function state_roll()
 function state_dash()
 {
 	sprite_index = spr_playerRoll;
+	var_spd = var_mspd*2*image_xscale
+	var_vspd += var_grav;
+	
 	if(place_meeting(x, y+1, obj_wall))
 	{
 		var_state = STATE_MACHINE.roll;
 		var_spd = var_mspd *image_xscale;
 	}
-
+	else //BUMP
+	{
+		if(place_meeting(x+sign(var_spd), y, obj_wall)) and (!place_meeting(x+sign(var_spd), y, obj_walkingWall))
+		{
+			var_spd = var_mspd * -image_xscale;
+			var_vspd = -var_jspd/2;
+			var_state = STATE_MACHINE.bump
+			
+			repeat(4) //DIRT FX
+			{
+				var _dirt = instance_create_depth(x, y, depth, obj_dirtFX)
+				_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
+			}
+		};
+	}
 	if(keyboard_check_pressed(global.k_jump))
 	{
 		var_state = STATE_MACHINE.pound;
 	}
 	
-	var_vspd += var_grav;
+	
 	hit_sequence();
 	
 	//If touching a walking wall from the side, climb it
