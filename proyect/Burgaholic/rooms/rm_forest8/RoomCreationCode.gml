@@ -1,2 +1,2 @@
-global.prevRoom = rm_forest6;
-global.nextRoom = rm_forest6;
+global.prevRoom = rm_forest7;
+global.nextRoom = rm_forest9;

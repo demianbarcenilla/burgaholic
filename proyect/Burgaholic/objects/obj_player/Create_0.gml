@@ -39,6 +39,7 @@ global.k_jump = ord("Z");
 global.k_special = ord("X")
 
 k_dirCap = 0;
+k_jumpCap = 0;
 mask_index = spr_playerIdle;
 
 maxHp = 3;

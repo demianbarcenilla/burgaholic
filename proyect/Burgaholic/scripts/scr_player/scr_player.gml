@@ -1,11 +1,13 @@
 ///Player Functions!
 function state_normal()
 {	
-	var _dir;
+	var _dir, _jmp;
 	
 	//Locks the direction in one place, for certain interactions with walljumps and such
 	if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
 	else{_dir = k_dirCap; if(alarm[0] = -1){alarm[0] = 10}};
+	//Locks the jump button, for interactions with the Pound and Roll states
+	if(k_jumpCap){if(alarm[0] = -1){alarm[0] = 10}};
 	
 	//Horizontal Movement
 	if(_dir != 0)
@@ -45,7 +47,7 @@ function state_normal()
 	};
 	
 	//Variable Jump
-	if(keyboard_check_released(global.k_jump) and (var_vspd < 0)){var_vspd /=4}
+	if(keyboard_check_released(global.k_jump) and (var_vspd < 0)) and (!k_jumpCap){var_vspd /=4}
 	
 	//If touching a walking wall from the side, climb it
 	if(place_meeting(x+var_spd, y, obj_walkingWall)) and (abs(var_spd) >= var_mspd/2) and (!place_meeting(x, y+1, obj_wall))
@@ -214,6 +216,8 @@ function state_pound()
 	{
 		var_state = STATE_MACHINE.normal;
 		var_spd = var_mspd *image_xscale;
+		k_jumpCap = 1;
+		k_dirCap = sign(var_vspd);
 	};
 	else if(place_meeting(x, y+1, obj_wall))
 	{
