@@ -1,0 +1,22 @@
+finish 1st world:
+-polish enemies
+-explain mechanics
+-add pickle/onion shells
+-add a hub
+-add moving platforms
+-add checkpoints
+
+FIX ENEMIES - when you hit em, the despawn var triggers. maybe make a new variable that identifies the kind of hit?
+
+
+add Burger menu
+add crouching/looking up animations
+
+MUSIC
+each stage has:
+main
+boss
+pause menu music
+bonus
+shop
+lobby

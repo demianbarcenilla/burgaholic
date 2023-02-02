@@ -45,4 +45,7 @@ mask_index = spr_playerIdle;
 maxHp = 3;
 hp = maxHp;
 
+var_checkpoint = rm_forest;
+var_checkpointX = 136;
+var_checkpointY = 208 -64;
 t = 0; //for oscilation in the hearts

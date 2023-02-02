@@ -16,7 +16,9 @@
     {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":1366,"hview":768,"xport":0,"yport":0,"wport":1366,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
   ],
   "layers": [
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_DC5DDA3","properties":[],"isDnd":false,"objectId":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":528.0,"y":144.0,},
+      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","tilesetId":{"name":"tl_honey","path":"tilesets/tl_honey/tl_honey.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":40,"SerialiseHeight":14,"TileCompressedData":[
 -20,0,-20,-2147483648,-20,0,-20,-2147483648,-20,0,-20,-2147483648,-20,0,-20,-2147483648,-20,0,-20,-2147483648,-20,0,-20,-2147483648,-20,0,-20,-2147483648,-20,0,-20,-2147483648,-14,0,2,4,5,-4,0,-20,
 -2147483648,-14,0,2,12,13,-4,0,-20,-2147483648,-14,0,2,20,29,-4,0,-12,-2147483648,-5,0,-3,-2147483648,-14,0,2,20,13,-4,0,-10,-2147483648,-4,0,-6,-2147483648,-14,0,2,30,
@@ -57,6 +59,7 @@
     {"name":"inst_255D8D56","path":"rooms/rm_forest5/rm_forest5.yy",},
     {"name":"inst_3B95D428","path":"rooms/rm_forest5/rm_forest5.yy",},
     {"name":"inst_4F5EFB84","path":"rooms/rm_forest5/rm_forest5.yy",},
+    {"name":"inst_DC5DDA3","path":"rooms/rm_forest5/rm_forest5.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
