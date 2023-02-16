@@ -52,7 +52,6 @@ if(keyboard_check_pressed(ord("R")))
 {
 	game_restart();
 };
-show_debug_message(hp)
 if(keyboard_check_pressed(vk_f11))
 {
 	if(window_get_fullscreen() = true)
@@ -88,6 +87,17 @@ if(x > room_width -_halfSprite+1)
 		x = _halfSprite+1;
 		y -=2;
 		roomCooldown = true;
+		
+		if(instance_exists(obj_pickle))
+		{
+			with(obj_pickle)
+			{
+				if(var_touched)
+				{
+					x = (_halfSprite -15) *pickleNumber;
+				};
+			};
+		}
 	}
 	else //IF THERE'S NO ROOM
 	{
@@ -100,7 +110,6 @@ else if((x < _halfSprite))
 	{
 		room_goto(global.prevRoom)
 		alarm[11] = 1;
-		y -=2;
 		roomCooldown = true;
 	}
 	else
@@ -130,3 +139,4 @@ else
 
 //DIE INSTANTLY WHEN FALLING TO A PIT
 if(y > room_height + sprite_height){hp = 0};
+

@@ -1,10 +1,28 @@
 if(image_index = 3)
 {
-	room_goto(specialRoom);
-	global.stage = stage.bonus;
+	if(!returning)
+	{
+		room_goto(specialRoom);
+		global.stage = stage.bonus;
+	};
+	else
+	{
+		room_goto(global.onionRoom)
+		global.stage = global.prevStage;
+	}
 };
 if(image_index = 4)
 {
+	if(returning)
+	{
+		if(instance_exists(obj_onion)) and (instance_exists(obj_player))
+		{
+			obj_player.x = obj_onion.x;
+			obj_player.y = obj_onion.y;
+			instance_destroy(obj_onion);
+		};
+	};
+		
 	screenshake(30, 1, .2);
 };
 

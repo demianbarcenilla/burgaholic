@@ -32,17 +32,35 @@ function state_normal()
 	};
 	
 	//Vertical Movement
+	
+	
 	if(place_meeting(x, y+1, obj_wall))
 	{
-		var_vspd = -var_jspd *keyboard_check_pressed(global.k_jump);
+		var_groundCheck = var_coyoteTime;
+		var_vspd = 0;
+		
+		if(keyboard_check_pressed(global.k_jump))
+		{
+			var_vspd = -var_jspd;
+			var_groundCheck = -1;
+		};
 	};
 	else
 	{
 		var_vspd += var_grav;
+		var_groundCheck --;
+		var_groundCheck = clamp(var_groundCheck, -1, var_coyoteTime)
 		
 		if(keyboard_check_pressed(global.k_jump))
 		{
-			var_state = STATE_MACHINE.pound;
+			if(var_groundCheck > -1)
+			{
+				var_vspd = -var_jspd;
+			};
+			else
+			{
+				var_state = STATE_MACHINE.pound;
+			};
 		}
 	};
 	
@@ -241,15 +259,14 @@ function state_roll()
 	{
 		var_vspd += var_grav;
 	};
+	else
+	{
+		var_vspd = 0;
+	}
 	
 	if(place_meeting(x+sign(var_spd), y, obj_wall))
 	{
 		var_state = STATE_MACHINE.normal;
-	};
-	
-	else if(!place_meeting(x, y+sign(var_vspd), obj_wall))
-	{
-		
 	};
 	
 	collisions();

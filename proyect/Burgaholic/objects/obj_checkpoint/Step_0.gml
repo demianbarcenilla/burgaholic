@@ -3,16 +3,27 @@ if(place_meeting(x, y, obj_player))
 	obj_player.var_checkpoint = room;
 	obj_player.var_checkpointX = x;
 	obj_player.var_checkpointY = y;
+	
+	if(sprite_index != spr_checkpointUp)
+	{
+		with(obj_pickle)
+		{
+			if(var_touched)
+			{
+				var_destroy = true;
+			};
+		}
+	}
 };
 
 if(instance_exists(obj_player))
 {
 	if(obj_player.var_checkpoint = room)
 	{
-		image_index = 1
+		sprite_index = spr_checkpointUp
 	};
 	else
 	{
-		image_index = 0;
+		sprite_index = spr_checkpoint;
 	}
 };

@@ -27,3 +27,18 @@ function osc_step(increment, amplitude)
 	_shift = -dsin(t) * amplitude;
 	return _shift;
 };
+
+function pickleFollow()
+{
+	if(obj_player.var_picklesFollowing <= 2)
+	{
+		x = lerp(x, obj_player.x -(17 * obj_player.image_xscale)*pickleNumber, .1);
+		y = lerp(y, obj_player.y -(obj_player.sprite_height/2), .1);
+	}
+	else if(obj_player.var_picklesFollowing > 2)
+	{
+		angle += angle_rate;
+		x = obj_player.x + lengthdir_x(distance, angle)
+		y = obj_player.y -(obj_player.sprite_height/2) + lengthdir_y(distance, angle)
+	}	
+}

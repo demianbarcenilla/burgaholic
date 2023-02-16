@@ -1,5 +1,8 @@
 /// @description INITIALIZE
-#macro IMAGE_SPEED .4;
+#macro IMAGE_SPEED .4
+#macro SCREEN_WIDTH 320
+#macro SCREEN_HEIGHT 224
+
 shaking = false;
 enum stage
 {
@@ -37,6 +40,14 @@ arr_music[0] = mus_bonus;
 arr_music[1] = mus_forest;
 arr_music[2] = mus_volcano;
 
+
+//GUI
+drawPickle = false;
+pickleDisplace = 64;
+pickleDisplaceValue = 64;
+global.pickles = 0;
+
+global.onionRoom = 0;
 //Load Data
 
 ini_open("data.ini")

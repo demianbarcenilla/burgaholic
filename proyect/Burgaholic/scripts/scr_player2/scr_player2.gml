@@ -37,33 +37,49 @@ function hit_sequence()
 
 function collisions()
 {
-	//Horizontal Collissions
-	if(place_meeting(x+var_spd, y, obj_wall))
+	var _spd = var_spd + var_spdCarry;
+	
+	if(var_spdCarry != 0)
 	{
-		while(!place_meeting(x+sign(var_spd), y, obj_wall))
+		var_spdCarry = 0
+	};
+		
+	var _vspd = var_vspd + var_vspdCarry;
+	if(var_vspdCarry != 0)
+	{
+		var_vspdCarry = 0
+	};
+	
+	//Horizontal Collissions
+	if(place_meeting(x+_spd, y, obj_wall))
+	{
+		while(!place_meeting(x+sign(_spd), y, obj_wall))
 		{
-			x += sign(var_spd);
+			x += sign(_spd);
 		};
 	
-		if(place_meeting(x+sign(var_spd), y, obj_wall))
+		if(place_meeting(x+sign(_spd), y, obj_wall))
 		{
-			var_spd = 0;
+			_spd = 0;
 		};
 	}
-	x += var_spd;
+	
+	x += _spd;
 	
 	//Vertical Collissions
-	if(place_meeting(x, y+var_vspd, obj_wall))
+
+	if(place_meeting(x, y+_vspd, obj_wall))
 	{
-		while(!place_meeting(x, y+sign(var_vspd), obj_wall))
+		while(!place_meeting(x, y+sign(_vspd), obj_wall))
 		{
-			y += sign(var_vspd);
+			y += sign(_vspd);
 		};
 	
-		if(place_meeting(x, y+sign(var_vspd), obj_wall))
+		if(place_meeting(x, y+sign(_vspd), obj_wall))
 		{
-			var_vspd = 0
+			_vspd = 0
 		};
 	}
-	y += var_vspd;
+	
+	y += _vspd;
 }

@@ -3,5 +3,5 @@ image_speed = IMAGE_SPEED;
 t = 0;
 
 global.prevStage = stage.forest;
-global.stage = global.prevStage;
+global.onionRoom = rm_forest;
 specialRoom = rm_forestSpecial;
