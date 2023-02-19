@@ -13,8 +13,8 @@
     "path": "folders/Objects/ENVIRONMENT.yy",
   },
   "parentObjectId": {
-    "name": "obj_wallMoving",
-    "path": "objects/obj_wallMoving/obj_wallMoving.yy",
+    "name": "obj_oneWay",
+    "path": "objects/obj_oneWay/obj_oneWay.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

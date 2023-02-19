@@ -29,21 +29,12 @@ var_vspd = 0;
 var_jspd = 6.25;
 var_grav = .45;
 
-var_checkGround = 0;
+var_oneWayGrounded = false; //Grounded in a One Way Wall
+var_grounded = false;
+var_groundCheck = 0;
 var_coyoteTime = 6; //Time before you can't jump on air anymore
 
 var_picklesFollowing = 0;
-/*//SPEED
-//Horizontal
-var_spd = 0;
-var_mspd = 2;
-
-var_fric = .1;
-
-//Vertical
-var_vspd = 0;
-var_jspd = 6;
-var_grav = .4;*/
 
 //MISC
 roomCooldown = false; //Cooldown for the transitions between rooms

@@ -1,3 +1,23 @@
+//grounded in a one way wall
+if(place_meeting(x, y+1, obj_oneWay)) and (!place_meeting(x, y, obj_oneWay)) //one way platform ground
+{
+	var_oneWayGrounded = true;
+}
+else
+{
+	var_oneWayGrounded = false;
+};
+
+//Ground Check (Either One Way or Normal)
+if(place_meeting(x, y+1, obj_wall)) or (var_oneWayGrounded)
+{
+	var_grounded = true;
+};
+else
+{
+	var_grounded = false;
+};
+	
 if(hp > 0)
 {
 	switch(var_state)
@@ -140,3 +160,4 @@ else
 //DIE INSTANTLY WHEN FALLING TO A PIT
 if(y > room_height + sprite_height){hp = 0};
 
+show_debug_message(var_state)

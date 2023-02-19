@@ -34,7 +34,7 @@ function state_normal()
 	//Vertical Movement
 	
 	
-	if(place_meeting(x, y+1, obj_wall))
+	if(var_grounded)
 	{
 		var_groundCheck = var_coyoteTime;
 		var_vspd = 0;
@@ -68,7 +68,7 @@ function state_normal()
 	if(keyboard_check_released(global.k_jump) and (var_vspd < 0)) and (!k_jumpCap){var_vspd /=4}
 	
 	//If touching a walking wall from the side, climb it
-	if(place_meeting(x+var_spd, y, obj_walkingWall)) and (abs(var_spd) >= var_mspd/2) and (!place_meeting(x, y+1, obj_wall))
+	if(place_meeting(x+var_spd, y, obj_walkingWall)) and (abs(var_spd) >= var_mspd/2) and (!var_grounded)
 	{
 		while(!place_meeting(x+sign(var_spd), y, obj_walkingWall))
 		{
@@ -91,7 +91,7 @@ function state_normal()
 	
 	//Animations
 	//Grounded
-	if(place_meeting(x, y+1, obj_wall))
+	if(var_grounded)
 	{
 		if(abs(var_spd) <= .5){sprite_index = spr_playerIdle}
 		else if(abs(var_spd) >= var_mspd/2){sprite_index = spr_playerRun}
@@ -188,7 +188,7 @@ function state_hit()
 	var_vspd += var_grav;
 	
 	//Back to Normal
-	if(place_meeting(x, y+1, obj_wall))
+	if(var_grounded)
 	{
 		invincibleFrames = true;
 		var_state = STATE_MACHINE.normal;
@@ -205,7 +205,7 @@ function state_bump()
 	var_vspd += var_grav;
 	
 	//Back to Normal
-	if(place_meeting(x, y+1, obj_wall))
+	if(var_grounded)
 	{
 		var_state = STATE_MACHINE.normal;
 	};
@@ -237,7 +237,7 @@ function state_pound()
 		k_jumpCap = 1;
 		k_dirCap = sign(var_vspd);
 	};
-	else if(place_meeting(x, y+1, obj_wall))
+	else if(var_grounded)
 	{
 		var_state = STATE_MACHINE.roll;
 		screenshake(3, .5, .1);
@@ -250,12 +250,10 @@ function state_roll()
 {
 	var _alarm = 20, _inverse = global.k_left;
 	
-	
-	
 	sprite_index = spr_playerRoll;
 	var_spd = var_mspd*1.5*image_xscale
 	
-	if(!place_meeting(x, y+1, obj_wall))
+	if(!var_grounded)
 	{
 		var_vspd += var_grav;
 	};
@@ -318,7 +316,7 @@ function state_dash()
 	var_spd = var_mspd*2*image_xscale
 	var_vspd += var_grav;
 	
-	if(place_meeting(x, y+1, obj_wall))
+	if(var_grounded)
 	{
 		var_state = STATE_MACHINE.roll;
 		var_spd = var_mspd *image_xscale;

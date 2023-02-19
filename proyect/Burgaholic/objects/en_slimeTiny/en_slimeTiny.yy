@@ -1,17 +1,21 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_oneWay",
+  "name": "en_slimeTiny",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENVIRONMENT",
-    "path": "folders/Objects/ENVIRONMENT.yy",
+    "name": "ENEMIES",
+    "path": "folders/Objects/ENEMIES.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_enemy",
+    "path": "objects/obj_enemy/obj_enemy.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,9 +32,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_oneWay",
-    "path": "sprites/spr_oneWay/spr_oneWay.yy",
+    "name": "spr_enSlimeTinyIdle",
+    "path": "sprites/spr_enSlimeTinyIdle/spr_enSlimeTinyIdle.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_enSlimeIdle",
+    "path": "sprites/spr_enSlimeIdle/spr_enSlimeIdle.yy",
+  },
   "visible": true,
 }

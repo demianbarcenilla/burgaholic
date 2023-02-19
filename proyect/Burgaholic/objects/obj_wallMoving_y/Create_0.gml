@@ -1,4 +1,4 @@
-var_spd = 0;
+event_inherited()
 
 t = 0;
 inc = 1;
