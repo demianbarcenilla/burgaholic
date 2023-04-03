@@ -13,7 +13,10 @@
     "name": "ENVIRONMENT",
     "path": "folders/Objects/ENVIRONMENT.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_follower",
+    "path": "objects/obj_follower/obj_follower.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

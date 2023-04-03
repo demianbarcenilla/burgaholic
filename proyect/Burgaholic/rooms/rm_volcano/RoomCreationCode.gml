@@ -1,4 +1,4 @@
-global.prevRoom = rm_forest8;
-global.nextRoom = rm_forest10;
+global.prevRoom = -1;
+global.nextRoom = rm_volcano2;
 
-global.stage = stage.volcano;
+global.stage = stage.volcano

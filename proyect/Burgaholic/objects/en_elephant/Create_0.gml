@@ -8,3 +8,5 @@ action = function(){with(obj_player){var_vspd = -var_jspd; k_dirCap = sign(var_s
 var_spd = .5;
 var_grav = .4;
 var_vspd = 0;
+
+mask_index = var_idleSprite;

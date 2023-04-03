@@ -59,4 +59,11 @@ hp = maxHp;
 var_checkpoint = rm_forest;
 var_checkpointX = 136;
 var_checkpointY = 208 -64;
+
+var_effect = 0; //Carrying a crab/exploding baby, etc
+var_spriteMod = "";
+
+var_combo = 0; //ammount of enemies you've hit
 t = 0; //for oscilation in the hearts
+
+var_redAlpha = 0; //The opacity for the red when you step on magma

@@ -42,3 +42,9 @@ function pickleFollow()
 		y = obj_player.y -(obj_player.sprite_height/2) + lengthdir_y(distance, angle)
 	}	
 }
+
+function bossBarriers()
+{
+	instance_create_depth(0, room_height-16, depth, obj_barrierBoss);
+	instance_create_depth(room_width-16, room_height-16, depth, obj_barrierBoss);
+};

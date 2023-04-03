@@ -9,7 +9,7 @@ if(place_meeting(x, y, obj_player)) and (!var_touched)
 	
 	delay = 10* (pickleNumber -1);
 	
-	with(obj_pickle)
+	with(obj_follower)
 	{
 		angle = pickleNumber/obj_player.var_picklesFollowing *360;
 	};

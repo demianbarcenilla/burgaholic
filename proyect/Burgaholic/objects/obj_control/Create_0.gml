@@ -39,7 +39,7 @@ global.lang = lang.english;
 arr_music[0] = mus_bonus;
 arr_music[1] = mus_forest;
 arr_music[2] = mus_volcano;
-
+arr_music[3] = mus_beach;
 
 //GUI
 drawPickle = false;
@@ -73,5 +73,25 @@ ini_open("data.ini")
 		case 3:
 			window_set_fullscreen(true);
 		break;
+	};
+ini_close();
+
+if(room = rm_init)
+{
+	room_goto(rm_mainMenu)
+};
+
+//instance_create_depth(x, y, depth, obj_shader);
+
+audio_group_load(ag_music);
+audio_group_set_gain(ag_music, .5, 0);
+
+audio_group_load(ag_sfx);
+
+/*Unlock/Lock ALL Burgers
+ini_open("data.ini");
+	for(i = 0; i < 300; i++)
+	{
+		ini_write_real("burgersUnlocked", i, 1);
 	};
 ini_close();

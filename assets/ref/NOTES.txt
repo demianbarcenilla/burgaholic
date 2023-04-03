@@ -1,6 +1,20 @@
+FOREST, VOLCANO, BEACH, RUST, REEF, ASHTRAY, CORE, POND
+
 CALC
 20burgs x World (3 in Minigames, 2 in onion shells, 15 from pickle shells)
-8burgs x Recipe
++ 8 MORE in PostMortem
 
-gameplay ideas:
+Angry Triangle:
+You shoot randomly generated objects that appear onScreen. some of those are the burgers u gotta unlock. shoot em all
 
+Anchor Drop: 
+there's a buncha things running and you gotta drop an anchor. if you crush a burger, you get it
+
+POLLINATE:
+Pollinate flowers lol
+
+HB CLASSIC:
+same as hatburgers classic (with different sprites and reworked rooms) but the 3 burgers you'd get from this are collectibles. You found 2 of these in the levels and 1 after finishing the game
+
+Booze Driver:
+you gotta get a bus from point A to point B. problem is the bus will NOT stop. 3 small levels. Finish them all and you get 3 burgers

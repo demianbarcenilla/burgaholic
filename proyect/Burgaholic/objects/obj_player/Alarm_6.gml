@@ -13,3 +13,8 @@ if(instance_exists(obj_pickle))
 {
 	instance_destroy(obj_pickle)
 };
+
+if(instance_exists(obj_key))
+{
+	instance_destroy(obj_key)
+};

@@ -1,0 +1,1 @@
+var_delay = var_delayTime * var_number;

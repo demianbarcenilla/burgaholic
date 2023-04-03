@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilesVolcano",
-  "bbox_bottom": 67,
-  "bbox_left": 1,
-  "bbox_right": 220,
-  "bbox_top": 1,
+  "bbox_bottom": 79,
+  "bbox_left": 0,
+  "bbox_right": 159,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2d35ddf2-03d1-4790-b75d-1d1afd69b668",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9d9a54d2-e895-4e89-af49-636b4e2caadd",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 69,
+  "height": 80,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f5ce36b0-a827-4ff0-9194-1fdeb0099aa5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e47fa994-f999-42fb-bca6-12c484959e5e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2d35ddf2-03d1-4790-b75d-1d1afd69b668","path":"sprites/spr_tilesVolcano/spr_tilesVolcano.yy",},},},"Disabled":false,"id":"3b3efbe1-ff28-4e5b-9833-b0ea40e7d2cf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9d9a54d2-e895-4e89-af49-636b4e2caadd","path":"sprites/spr_tilesVolcano/spr_tilesVolcano.yy",},},},"Disabled":false,"id":"3b66d5c1-6fed-4416-beab-155d2f1d904b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 222,
+  "width": 160,
 }

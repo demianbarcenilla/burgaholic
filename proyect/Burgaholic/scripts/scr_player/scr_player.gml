@@ -3,9 +3,12 @@ function state_normal()
 {	
 	var _dir, _jmp;
 	
+	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
+	
 	//Locks the direction in one place, for certain interactions with walljumps and such
 	if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
 	else{_dir = k_dirCap; if(alarm[0] = -1){alarm[0] = 10}};
+	
 	//Locks the jump button, for interactions with the Pound and Roll states
 	if(k_jumpCap){if(alarm[0] = -1){alarm[0] = 10}};
 	
@@ -32,16 +35,28 @@ function state_normal()
 	};
 	
 	//Vertical Movement
-	
-	
 	if(var_grounded)
 	{
 		var_groundCheck = var_coyoteTime;
-		var_vspd = 0;
+		
+		if(!_waterEffect)
+		{
+			var_vspd = 0;
+		};
 		
 		if(keyboard_check_pressed(global.k_jump))
 		{
-			var_vspd = -var_jspd;
+			if(place_meeting(x, y+1, obj_magma))
+			{
+				var_vspd = -var_jspd*1.5;
+				instance_create_depth(x, y, depth-1, obj_groundExplosion)
+				screenshake(5, 2, .1)
+			}
+			else
+			{
+				var_vspd = -var_jspd;
+				audio_play_sound(sfx_jump, 0, 0)
+			};
 			var_groundCheck = -1;
 		};
 	};
@@ -56,6 +71,7 @@ function state_normal()
 			if(var_groundCheck > -1)
 			{
 				var_vspd = -var_jspd;
+				audio_play_sound(sfx_jump, 0, 0)
 			};
 			else
 			{
@@ -93,27 +109,27 @@ function state_normal()
 	//Grounded
 	if(var_grounded)
 	{
-		if(abs(var_spd) <= .5){sprite_index = spr_playerIdle}
-		else if(abs(var_spd) >= var_mspd/2){sprite_index = spr_playerRun}
-		else{sprite_index = spr_playerWalk}
+		if(abs(var_spd) <= .5){sprite_index = sprite("spr_playerIdle")}
+		else if(abs(var_spd) >= var_mspd/2){sprite_index = sprite("spr_playerRun")}
+		else{sprite_index = sprite("spr_playerWalk")}
 	}
 	//Aereal
 	else
 	{
 		if(abs(var_spd) >= var_mspd/2)
 		{
-			sprite_index = spr_playerJumpRoll;
+			sprite_index = sprite("spr_playerJumpRoll");
 		};
 	
 		else
 		{
 			if(var_vspd <= 0)
 			{
-				sprite_index = spr_playerJump;
+				sprite_index = sprite("spr_playerJump");
 			}
 			else
 			{
-				sprite_index = spr_playerFall;
+				sprite_index = sprite("spr_playerFall");
 			}
 		}
 	}
@@ -121,7 +137,7 @@ function state_normal()
 
  function state_walkingWall()
 {	
-	sprite_index = spr_playerWall;
+	sprite_index = sprite("spr_playerWall");
 	
 	var_vspd = -var_mspd;
 	
@@ -162,8 +178,10 @@ function state_normal()
 		var_vspd = -var_jspd/2;
 		var_state = STATE_MACHINE.normal;
 		
-		freezeframes(.5)
-		screenshake(5, 2, .3)
+		freezeframes(.5);
+		screenshake(5, 2, .3);
+		
+		audio_play_sound(sfx_jump, 0, 0);
 	};
 	
 	//When you stop pressing the run button
@@ -171,24 +189,20 @@ function state_normal()
 	{
 		alarm[2] = 15;
 	};*/
-	
-	if((keyboard_check(global.k_right) - keyboard_check(global.k_left)) = 0)
-	{
-	
-	}
 };
 
 function state_hit()
 {
-	sprite_index = spr_playerHit;
+	sprite_index = sprite("spr_playerHit");
 	
 	collisions();
 	
 	//Gravity
-	var_vspd += var_grav;
+	var_vspd += abs(var_grav);
+	
 	
 	//Back to Normal
-	if(var_grounded)
+	if(var_grounded) or (place_meeting(x, y+1, obj_wall) and (place_meeting(x, y, obj_water)))
 	{
 		invincibleFrames = true;
 		var_state = STATE_MACHINE.normal;
@@ -197,7 +211,7 @@ function state_hit()
 
 function state_bump()
 {
-	sprite_index = spr_playerHit;
+	sprite_index = sprite("spr_playerHit");
 	
 	collisions();
 	
@@ -223,10 +237,24 @@ function state_dead()
 
 function state_pound()
 {
-	sprite_index = spr_playerJumpRoll;
+	sprite_index = sprite("spr_playerJumpRoll");
+	if(var_effect = 1)
+	{
+		var_effect = 0;
+		instance_create_depth(x, y, depth, obj_discardedCrab);
+	};
 	
-	var_spd = 0;
-	var_vspd = var_mspd*4;
+	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
+	
+	if(!_waterEffect)
+	{
+		var_vspd = var_mspd*4;
+		var_spd = 0;
+	}
+	else
+	{
+		var_state = STATE_MACHINE.roll;
+	};
 	
 	collisions();
 	
@@ -241,6 +269,8 @@ function state_pound()
 	{
 		var_state = STATE_MACHINE.roll;
 		screenshake(3, .5, .1);
+		
+		audio_play_sound(sfx_pound, 0, 0);
 	}
 
 	hit_sequence();
@@ -250,8 +280,8 @@ function state_roll()
 {
 	var _alarm = 20, _inverse = global.k_left;
 	
-	sprite_index = spr_playerRoll;
-	var_spd = var_mspd*1.5*image_xscale
+	sprite_index = sprite("spr_playerRoll");
+	var_spd = var_mspd*2*image_xscale
 	
 	if(!var_grounded)
 	{
@@ -275,9 +305,22 @@ function state_roll()
 	{
 		var_state = STATE_MACHINE.dash
 		var_spd = var_mspd *2 *image_xscale;
-		var_vspd = -var_jspd;
+		if(place_meeting(x, y+1, obj_magma))
+		{
+			var_vspd = -var_jspd*1.5;
+			instance_create_depth(x, y, depth-1, obj_groundExplosion)
+			screenshake(5, 2, .1)
+		}
+		else
+		{
+			var_vspd = -var_jspd;
+		};
+		
 		y -= 1;
 		screenshake(3, .5, .1);
+		
+		audio_play_sound(sfx_jump, 0, 0);
+		
 		/*if(keyboard_check(k_down))
 		{
 			alarm[1] = _alarm;
@@ -312,7 +355,7 @@ function state_roll()
 
 function state_dash()
 {
-	sprite_index = spr_playerRoll;
+	sprite_index = sprite("spr_playerRoll");
 	var_spd = var_mspd*2*image_xscale
 	var_vspd += var_grav;
 	

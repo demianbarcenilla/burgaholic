@@ -37,8 +37,8 @@
     "path": "sprites/spr_enJumpIdle/spr_enJumpIdle.yy",
   },
   "spriteMaskId": {
-    "name": "spr_enSlimeIdle",
-    "path": "sprites/spr_enSlimeIdle/spr_enSlimeIdle.yy",
+    "name": "spr_enJumpIdle",
+    "path": "sprites/spr_enJumpIdle/spr_enJumpIdle.yy",
   },
   "visible": true,
 }
