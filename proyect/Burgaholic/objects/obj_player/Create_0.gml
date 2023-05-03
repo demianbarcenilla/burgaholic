@@ -1,5 +1,5 @@
 image_speed = IMAGE_SPEED;
-
+//depth = -1;
 //STATES
 enum STATE_MACHINE
 {
@@ -10,7 +10,11 @@ enum STATE_MACHINE
 	roll,
 	bump,
 	dash,
+	punch,
 	dead,
+	
+	tubeIn,
+	tubeOut
 };
 
 var_state = STATE_MACHINE.normal
@@ -34,20 +38,12 @@ var_grounded = false;
 var_groundCheck = 0;
 var_coyoteTime = 6; //Time before you can't jump on air anymore
 
-var_picklesFollowing = 0;
-
 //MISC
 roomCooldown = false; //Cooldown for the transitions between rooms
 invincibleFrames = false;
-
-//Keys
-global.k_left = vk_left;
-global.k_right = vk_right;
-global.k_up = vk_up;
-global.k_down = vk_down;
-
-global.k_jump = ord("Z");
-global.k_special = ord("X")
+var_picklesFollowing = 0;
+var_canDMG = false;
+var_canPunch = true;
 
 k_dirCap = 0;
 k_jumpCap = 0;

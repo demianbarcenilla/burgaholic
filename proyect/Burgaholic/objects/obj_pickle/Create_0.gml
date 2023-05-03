@@ -17,3 +17,12 @@ if(instance_exists(obj_player))
 angle = 90;
 angle_rate = 2;
 distance = 32;
+
+ini_open("data.ini");
+	var_pickleUnlocked = ini_read_real("PicklesUnlocked", id, false)
+ini_close();
+
+if(var_pickleUnlocked)
+{
+	sprite_index = spr_pickleGhost
+};

@@ -13,6 +13,7 @@ else
 if((place_meeting(x, y+1, obj_wall)) or (var_oneWayGrounded))
 {
 	var_grounded = true;
+	var_canPunch = true;
 };
 else
 {
@@ -50,6 +51,18 @@ if(hp > 0)
 	
 		case STATE_MACHINE.dash:
 			state_dash();
+		break;
+		
+		case STATE_MACHINE.punch:
+			state_punch();
+		break;
+		
+		case STATE_MACHINE.tubeIn:
+			state_tube();
+		break;
+		
+		case STATE_MACHINE.tubeOut:
+			state_tubeOut();
 		break;
 	}
 }

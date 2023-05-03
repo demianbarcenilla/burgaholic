@@ -6,7 +6,6 @@
 shaking = false;
 enum stage
 {
-	bonus,
 	forest,
 	volcano,
 	beach,
@@ -23,6 +22,15 @@ enum lang
 	spanish
 };
 
+enum substage
+{
+	normal,
+	bonus,
+	shop,
+	boss,
+	lobby
+};
+
 global.stage = stage.forest;
 global.prevStage = stage.forest;
 
@@ -32,21 +40,20 @@ shakeFade = 0;
 
 global.prevRoom = -1;
 global.nextRoom = -1;
-global.music = mus_forest;
+
+global.subStage = substage.normal;
+global.music = mus_0;
 
 global.lang = lang.english;
-
-arr_music[0] = mus_bonus;
-arr_music[1] = mus_forest;
-arr_music[2] = mus_volcano;
-arr_music[3] = mus_beach;
 
 //GUI
 drawPickle = false;
 pickleDisplace = 64;
 pickleDisplaceValue = 64;
 global.pickles = 0;
-
+ini_open("data.ini");
+	global.pickles = ini_read_real("PicklesUnlocked", "Held", global.pickles);
+ini_close();
 global.onionRoom = 0;
 //Load Data
 
@@ -81,12 +88,19 @@ if(room = rm_init)
 	room_goto(rm_mainMenu)
 };
 
-//instance_create_depth(x, y, depth, obj_shader);
-
 audio_group_load(ag_music);
-audio_group_set_gain(ag_music, .5, 0);
+audio_group_set_gain(ag_music, 1, 0);
 
 audio_group_load(ag_sfx);
+
+//Keys
+global.k_left = vk_left;
+global.k_right = vk_right;
+global.k_up = vk_up;
+global.k_down = vk_down;
+
+global.k_jump = ord("Z");
+global.k_special = ord("X")
 
 /*Unlock/Lock ALL Burgers
 ini_open("data.ini");
@@ -95,3 +109,4 @@ ini_open("data.ini");
 		ini_write_real("burgersUnlocked", i, 1);
 	};
 ini_close();
+instance_create_depth(x, y, depth, obj_shader);

@@ -3,7 +3,6 @@ var sep = sprite_get_width(spr_heart) + 4;
 
 if(instance_exists(obj_player))
 {
-	
 	//Draw Pickle Count
 	if(drawPickle)
 	{

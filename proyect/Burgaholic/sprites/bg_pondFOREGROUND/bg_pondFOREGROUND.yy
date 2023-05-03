@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "bg_pondFOREGROUND",
   "bbox_bottom": 223,
-  "bbox_left": 163,
-  "bbox_right": 315,
-  "bbox_top": 23,
+  "bbox_left": 0,
+  "bbox_right": 319,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2b8dc2af-8d9a-4fbc-9ed3-6043d5256e41",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a97d9a02-c8f3-46cd-9784-da1b1e217555",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 224,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"af07d946-0259-4546-bba7-0338724a6f2b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f8128162-ba1d-4ace-8bc0-082726cbf24c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2b8dc2af-8d9a-4fbc-9ed3-6043d5256e41","path":"sprites/bg_pondFOREGROUND/bg_pondFOREGROUND.yy",},},},"Disabled":false,"id":"208dbcff-d700-4eeb-b9cf-6df50bbe2cf6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a97d9a02-c8f3-46cd-9784-da1b1e217555","path":"sprites/bg_pondFOREGROUND/bg_pondFOREGROUND.yy",},},},"Disabled":false,"id":"6c0a8871-7d97-4da5-b062-6a8f2110da0c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

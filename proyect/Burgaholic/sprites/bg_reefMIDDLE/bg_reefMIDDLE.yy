@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "bg_reefMIDDLE",
   "bbox_bottom": 223,
-  "bbox_left": 50,
-  "bbox_right": 263,
-  "bbox_top": 23,
+  "bbox_left": 51,
+  "bbox_right": 265,
+  "bbox_top": 24,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a823e587-efa4-443c-a396-c965533eb553",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2ff2a585-82e5-41c6-815d-e7a8f14d993c",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 224,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c13aa13d-d523-452e-836b-57777dab24dd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"93d9e64f-1ad1-41c4-a9b3-32d7e0d2a625","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a823e587-efa4-443c-a396-c965533eb553","path":"sprites/bg_reefMIDDLE/bg_reefMIDDLE.yy",},},},"Disabled":false,"id":"b3e65f48-496d-4cdc-91f5-004647d52ea7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ff2a585-82e5-41c6-815d-e7a8f14d993c","path":"sprites/bg_reefMIDDLE/bg_reefMIDDLE.yy",},},},"Disabled":false,"id":"589c4650-d862-4849-9a4f-4c22b24d25b9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

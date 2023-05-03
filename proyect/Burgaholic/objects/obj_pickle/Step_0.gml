@@ -36,10 +36,7 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 			
 					if(round(x) = obj_checkpoint.x) and (round(y) = obj_checkpoint.y-16)
 					{
-						instance_destroy();
-						obj_control.drawPickle = true;
-						global.pickles ++;
-						obj_player.var_picklesFollowing --;
+						pickleSave();
 					}
 				};
 				else
@@ -61,10 +58,7 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 			}
 			else
 			{
-				instance_destroy();
-				obj_control.drawPickle = true;
-				global.pickles ++;
-				obj_player.var_picklesFollowing --;
+				pickleSave();
 			}
 		}
 		else

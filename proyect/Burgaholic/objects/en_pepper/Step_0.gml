@@ -6,5 +6,8 @@ event_inherited();
 
 if(place_meeting(x, y, obj_player))
 {
-	instance_create_depth(x, y, depth, obj_explosion)
+	if(obj_player.var_canDMG)
+	{
+		instance_create_depth(x, y, depth, obj_explosion)
+	};
 };

@@ -8,7 +8,8 @@ function hit_sequence()
 	//You find the enemy, and they're completely visible and available to hit
 	if(place_meeting(x, y, _enemy)) and (!_enemy.untouchable)
 	{
-		if(abs(var_spd) >= var_mspd/2) //CASE 1: You're Going at Damaging Speed
+		//abs(var_spd) >= var_mspd/2
+		if(var_canDMG) //CASE 1: You're Going at Damaging Speed
 		{
 			if(_enemy.var_canDespawn) //If the enemy CAN be killed
 			{
@@ -37,6 +38,12 @@ function hit_sequence()
 			if(_enemy.alarm[11] = -1) and (_enemy.var_canRespawn){_enemy.alarm[11] = _respawnTime}; //Reenables the enemy's hitbox
 			
 			playHit();
+			
+			if(var_state = STATE_MACHINE.punch)
+			{
+				var_state = STATE_MACHINE.normal
+			};
+			var_canPunch = true;
 		};
 		else //CASE 2: You don't have enough speed. You're getting hurt.
 		{
@@ -162,4 +169,29 @@ function playHit() //Plays the corresponding hit sound
 	
 	var_combo ++;
 	audio_play_sound(sfx_pound, 0, 0);
+}
+
+function canPunch()
+{
+	if(keyboard_check_pressed(global.k_special)) and (!var_grounded) and (var_canPunch)
+	{
+		var _dir = keyboard_check_pressed(global.k_right) - keyboard_check_pressed(global.k_left)
+		
+		if(_dir != 0)
+		{
+			var_spd = var_mspd*sign(_dir);
+		}
+		else
+		{
+			var_spd = var_mspd*2*image_xscale;
+		}
+		var_state = STATE_MACHINE.punch;
+		var_canPunch = false;
+		var_vspd = -var_jspd/2;
+		
+		repeat(8) //Cloud Puffs
+		{
+			instance_create_depth(x, y, depth+1, obj_cloud2SFX)
+		};
+	};
 }

@@ -1,22 +1,22 @@
 finish 1st world:
--polish enemies
 -explain mechanics
 -add pickle/onion shells
 -add a hub
--add moving platforms
--add checkpoints
+-when hitting a ceiling underwater, it acts as ground and you can jump off of it
+-make world map
+-working tubes
+FIX ENEMIES - when you hit em, the despawn var triggers. maybe make a new variable that identifies the kind of hit? X
 
-FIX ENEMIES - when you hit em, the despawn var triggers. maybe make a new variable that identifies the kind of hit?
 
-
-add Burger menu
+add Burger menu X
 add crouching/looking up animations
 
 MUSIC
 each stage has:
 main
 boss
-pause menu music
 bonus
 shop
 lobby
+
+pause menu is silent

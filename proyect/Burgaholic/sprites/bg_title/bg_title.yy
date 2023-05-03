@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "bg_title",
-  "bbox_bottom": 223,
+  "bbox_bottom": 31,
   "bbox_left": 0,
-  "bbox_right": 319,
+  "bbox_right": 31,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"451bb431-6f62-4ca4-960f-e3dfd08fe0a6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"830aeca0-ac29-4425-b4f3-582364b14a0a",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 224,
+  "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3c9ef9e4-93d7-4596-8c9c-2838031e4444","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4e03de78-8de6-418b-a0a0-589f6fc904a5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"451bb431-6f62-4ca4-960f-e3dfd08fe0a6","path":"sprites/bg_title/bg_title.yy",},},},"Disabled":false,"id":"324213b3-6ad3-41b3-bcf2-f05325a6998e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"830aeca0-ac29-4425-b4f3-582364b14a0a","path":"sprites/bg_title/bg_title.yy",},},},"Disabled":false,"id":"b175fdec-9300-42d2-be7c-30477636ee7a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 320,
+  "width": 32,
 }

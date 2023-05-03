@@ -24,7 +24,7 @@
     "name": "Default",
     "path": "texturegroups/Default",
   },
-  "tile_count": 40,
+  "tile_count": 33,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -60,13 +60,6 @@
       30,
       31,
       32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39,
     ],
     "SerialiseFrameCount": 1,
   },

@@ -32,4 +32,6 @@ if(place_meeting(x+1, y, obj_walkingWall)) or
 	var_subimage = 0;
 }
 
+
+if(global.subStage = substage.bonus)
 image_index = var_subimage;

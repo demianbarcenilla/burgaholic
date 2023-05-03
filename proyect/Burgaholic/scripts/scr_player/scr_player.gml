@@ -1,7 +1,8 @@
 ///Player Functions!
 function state_normal()
 {	
-	var _dir, _jmp;
+	var_canDMG = false;
+	var _dir;
 	
 	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
 	
@@ -104,18 +105,32 @@ function state_normal()
 	
 	//HIT SEQUENCE
 	hit_sequence();
+	canPunch();
 	
 	//Animations
 	//Grounded
 	if(var_grounded)
 	{
 		if(abs(var_spd) <= .5){sprite_index = sprite("spr_playerIdle")}
-		else if(abs(var_spd) >= var_mspd/2){sprite_index = sprite("spr_playerRun")}
+		//else if(abs(var_spd) >= var_mspd/2){sprite_index = sprite("spr_playerRun")}
+		else if(sign(var_spd) = -sign(_dir))
+		{
+			sprite_index = sprite("spr_playerTurnaround")
+		}
 		else{sprite_index = sprite("spr_playerWalk")}
 	}
 	//Aereal
 	else
 	{
+		if(var_vspd <= 0)
+		{
+			sprite_index = sprite("spr_playerJump");
+		}
+		else
+		{
+			sprite_index = sprite("spr_playerFall");
+		}
+		/*
 		if(abs(var_spd) >= var_mspd/2)
 		{
 			sprite_index = sprite("spr_playerJumpRoll");
@@ -131,17 +146,18 @@ function state_normal()
 			{
 				sprite_index = sprite("spr_playerFall");
 			}
-		}
+		}*/
 	}
 };
 
  function state_walkingWall()
 {	
+	var_canDMG = false;
+	
 	sprite_index = sprite("spr_playerWall");
 	
 	var_vspd = -var_mspd;
-	
-	//Vertical Collissions
+	/*//Vertical Collissions
 	if(place_meeting(x, y+var_vspd, obj_wall))
 	{
 		while(!place_meeting(x, y+sign(var_vspd), obj_wall))
@@ -156,7 +172,7 @@ function state_normal()
 			var_state = STATE_MACHINE.normal;
 		};
 	}
-	
+	*/
 	y += var_vspd;
 	
 	//HIT SEQUENCE
@@ -164,7 +180,7 @@ function state_normal()
 	
 	//RETURNING TO NORMAL
 	//when there's no more wall
-	if(!place_meeting(x+sign(var_spd), y, obj_walkingWall))
+	if(!place_meeting(x+sign(var_spd), y, obj_wall))
 	{
 		var_spd = sign(var_spd) *var_mspd;
 		var_vspd = -var_jspd/2;
@@ -193,6 +209,7 @@ function state_normal()
 
 function state_hit()
 {
+	var_canDMG = false;
 	sprite_index = sprite("spr_playerHit");
 	
 	collisions();
@@ -227,6 +244,7 @@ function state_bump()
 
 function state_dead()
 {
+	var_canDMG = false;
 	sprite_index = spr_blank;
 	
 	if(alarm[6] = -1)
@@ -237,6 +255,8 @@ function state_dead()
 
 function state_pound()
 {
+	var_canDMG = true;
+	
 	sprite_index = sprite("spr_playerJumpRoll");
 	if(var_effect = 1)
 	{
@@ -278,6 +298,8 @@ function state_pound()
 
 function state_roll()
 {
+	var_canDMG = true;
+	
 	var _alarm = 20, _inverse = global.k_left;
 	
 	sprite_index = sprite("spr_playerRoll");
@@ -296,6 +318,8 @@ function state_roll()
 	{
 		var_state = STATE_MACHINE.normal;
 	};
+	
+	canPunch()
 	
 	collisions();
 	
@@ -355,6 +379,8 @@ function state_roll()
 
 function state_dash()
 {
+	var_canDMG = true;
+	
 	sprite_index = sprite("spr_playerRoll");
 	var_spd = var_mspd*2*image_xscale
 	var_vspd += var_grav;
@@ -384,6 +410,7 @@ function state_dash()
 		var_state = STATE_MACHINE.pound;
 	}
 	
+	canPunch();
 	
 	hit_sequence();
 	
@@ -404,5 +431,91 @@ function state_dash()
 	else //Collide as normal
 	{
 		collisions();
+	};
+};
+
+function state_punch()
+{
+	var_canDMG = true;
+	var_vspd += var_grav;
+	if(alarm[8] = -1)
+	{
+		alarm[8] = 15;
+	};
+	
+	sprite_index = sprite("spr_playerPunch");
+	image_speed = IMAGE_SPEED *2;
+	collisions();
+	
+	hit_sequence();
+	/*if(place_meeting(x+sign(var_spd), y, obj_wall)) and (!place_meeting(x+sign(var_spd), y, obj_walkingWall))
+	{
+		var_spd = var_mspd * -image_xscale;
+		var_vspd = -var_jspd/2;
+		var_state = STATE_MACHINE.bump
+		
+		repeat(4) //DIRT FX
+		{
+			var _dirt = instance_create_depth(x, y, depth, obj_dirtFX)
+			_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
+		}
+		
+		image_speed = IMAGE_SPEED;
+	};*/
+	//If touching a walking wall from the side, climb it
+	if(place_meeting(x+var_spd, y, obj_wall)) and (abs(var_spd) >= var_mspd/2) and (!var_grounded)
+	{
+		while(!place_meeting(x+sign(var_spd), y, obj_wall))
+		{
+			x += sign(var_spd)
+		};
+		
+		if(place_meeting(x+1, y, obj_wall)){image_xscale = 1}
+		else if(place_meeting(x-1, y, obj_wall)){image_xscale = -1}
+		
+		var_state = STATE_MACHINE.wallrun
+		
+	};
+};
+
+function state_tube()
+{
+	var_effect = 0; //Carrying a crab/exploding baby, etc
+	var_spriteMod = "";
+	
+	sprite_index = spr_playerTube;
+	var_vspd -= var_grav;
+	
+	y += var_vspd;
+	
+	if(y < 0)
+	{
+		room_goto(rm_levelSelect);
+	};
+};
+
+function state_tubeOut()
+{
+	var_effect = 0; //Carrying a crab/exploding baby, etc
+	var_spriteMod = "";
+	
+	sprite_index = spr_playerTube;
+	image_angle = 180;
+	var_spd = 0;
+	var_vspd += var_grav;
+	
+	collisions();
+	
+	if(place_meeting(x, y+1, obj_wall))
+	{
+		image_angle = 0;
+		var_state = STATE_MACHINE.normal;
+		
+		repeat(10)
+		{
+			instance_create_depth(x, y, depth+1, obj_cloud2SFX);
+		};
+		
+		screenshake(2, 1, .2)
 	};
 };
