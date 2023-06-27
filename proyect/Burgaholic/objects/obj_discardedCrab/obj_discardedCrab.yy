@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_crabDiscarded",
-    "path": "sprites/spr_crabDiscarded/spr_crabDiscarded.yy",
+    "name": "spr_jellyDiscarded",
+    "path": "sprites/spr_jellyDiscarded/spr_jellyDiscarded.yy",
   },
   "spriteMaskId": null,
   "visible": true,

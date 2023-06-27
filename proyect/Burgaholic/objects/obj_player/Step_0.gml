@@ -40,6 +40,14 @@ if(hp > 0)
 		case STATE_MACHINE.pound:
 			state_pound();
 		break;
+		
+		case STATE_MACHINE.preBounce:
+			state_preBounce();
+		break;
+		
+		case STATE_MACHINE.bounce:
+			state_bounce();
+		break;
 	
 		case STATE_MACHINE.roll:
 			state_roll();
@@ -64,6 +72,18 @@ if(hp > 0)
 		case STATE_MACHINE.tubeOut:
 			state_tubeOut();
 		break;
+		
+		case STATE_MACHINE.still:
+			state_still();
+		break;
+		
+		case STATE_MACHINE.submarine:
+			state_submarine();
+		break;
+		
+		case STATE_MACHINE.submarineDash:
+			state_submarineDash();
+		break;
 	}
 }
 else //DEAD
@@ -84,7 +104,6 @@ else //DEAD
 }
 
 var _halfSprite = 12;
-//Switch Room
 
 //Get hurt with spike
 if(place_meeting(x, y, obj_spike)) and 
@@ -174,20 +193,31 @@ if(place_meeting(x, y, obj_water))
 {
 	if(var_effect != 1)
 	{
-		var_grav = -.65;
+		var_grav = -.45;
 		var_vspd = clamp(var_vspd, -var_jspd*1.5, var_jspd)
 	}
 	else
 	{
-		var_grav = .40;
+		var_grav = .35;
 	}
-	var_mspd = 1;
+	var_fric = .15;
+	var_mspd = con_mspd/2;
 	var_jspd = 6.25;
+	
+	var_wasUnderwater = true;
 };
-else
+else if(place_meeting(x, y+1, obj_ice))
 {
 	var_grav = .45;
-	var_mspd = 2;
+	var_fric = .05;
+	var_jspd = 6.25;
+	var_mspd = var_mspd*1.5;
+}
+else //Normal Stats
+{
+	var_fric = .15;
+	var_grav = .45;
+	var_mspd = con_mspd;
 	var_jspd = 6.25;
 };
 
@@ -201,14 +231,16 @@ switch (var_effect)
 		var_spriteMod = "_crab";
 	break;
 	
+	case 2:
+		var_spriteMod = "_pepper";
+	break;
+	
 	default:
 		var_spriteMod = "";
 	break;
 }
 //DIE INSTANTLY WHEN FALLING TO A PIT
 if(y > room_height + sprite_height){hp = 0};
-
-//show_debug_message(var_picklesFollowing)
 
 if(keyboard_check_pressed(ord("R")))
 {

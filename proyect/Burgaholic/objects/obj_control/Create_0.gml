@@ -26,9 +26,7 @@ enum substage
 {
 	normal,
 	bonus,
-	shop,
-	boss,
-	lobby
+	boss
 };
 
 global.stage = stage.forest;
@@ -46,14 +44,20 @@ global.music = mus_0;
 
 global.lang = lang.english;
 
+global.currentRoom = rm_forest;
+
 //GUI
-drawPickle = false;
-pickleDisplace = 64;
-pickleDisplaceValue = 64;
+isUnlockingBurg = false;
+isUnlockingBurg_type = 0;
+burgerDisplace = 64;
+burgerDisplace_current = burgerDisplace;
+
 global.pickles = 0;
+
 ini_open("data.ini");
 	global.pickles = ini_read_real("PicklesUnlocked", "Held", global.pickles);
 ini_close();
+
 global.onionRoom = 0;
 //Load Data
 
@@ -94,13 +98,19 @@ audio_group_set_gain(ag_music, 1, 0);
 audio_group_load(ag_sfx);
 
 //Keys
-global.k_left = vk_left;
-global.k_right = vk_right;
-global.k_up = vk_up;
-global.k_down = vk_down;
+global.k_left = ord("A");
+global.k_right = ord("D");
+global.k_up = ord("W");
+global.k_down = ord("S");
 
-global.k_jump = ord("Z");
-global.k_special = ord("X")
+global.k_jump = ord("O");
+global.k_special = ord("I");
+
+arr_lang[lang.english] = "english"
+arr_lang[lang.spanish] = "spanish"
+
+global.lang = 0;
+global.langString = arr_lang[global.lang];
 
 /*Unlock/Lock ALL Burgers
 ini_open("data.ini");

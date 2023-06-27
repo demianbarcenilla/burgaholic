@@ -1,2 +1,1 @@
-image_speed = IMAGE_SPEED;
-mask_index = var_idleSprite;
+var_state = SLIME_STATE.running;

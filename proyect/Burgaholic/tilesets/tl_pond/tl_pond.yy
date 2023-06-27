@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Main",
+    "path": "folders/Tile Sets/Main.yy",
   },
   "spriteId": {
     "name": "spr_tilesPond",
@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Pond",
+    "path": "texturegroups/Pond",
   },
   "tile_count": 50,
   "tileAnimation": {

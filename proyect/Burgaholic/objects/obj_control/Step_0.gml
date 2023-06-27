@@ -52,21 +52,13 @@ switch(global.subStage) //Check if you're in the main zones or shops/bonus/boss/
 		_trackSubstage = "b";
 	break;
 	
-	case substage.shop:
-		_trackSubstage = "s";
-	break;
-	
 	case substage.bonus:
 		_trackSubstage = "f";
-	break;
-	
-	case substage.lobby:
-		_trackSubstage = "l";
 	break;
 }
 _track = "mus_" + string(global.stage) + _trackSubstage
 
-show_debug_message(_track);
+//show_debug_message(_track);
 global.music = asset_get_index(_track)
 
 //If the music isn't playing, play it

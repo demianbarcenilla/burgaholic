@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"36bd9ef9-3ddb-4601-b31b-316f09b67ba8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4664ee86-a5be-4f7f-b7a4-7b2534ae46fc",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 224,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"959557c2-b980-48b2-944c-3ea1d76f58a8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"25e2fb24-c315-4d34-9ed7-18a1f98782c2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"36bd9ef9-3ddb-4601-b31b-316f09b67ba8","path":"sprites/bg_beachDEEPEST/bg_beachDEEPEST.yy",},},},"Disabled":false,"id":"53f6c174-66e5-4c2e-aa8f-20dbca0edf3c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4664ee86-a5be-4f7f-b7a4-7b2534ae46fc","path":"sprites/bg_beachDEEPEST/bg_beachDEEPEST.yy",},},},"Disabled":false,"id":"d5ae0862-4a47-4cf0-ade9-cd1a8465add4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Beach",
+    "path": "texturegroups/Beach",
   },
   "type": 0,
   "VTile": false,

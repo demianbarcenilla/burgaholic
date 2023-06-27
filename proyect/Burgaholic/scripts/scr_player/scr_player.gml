@@ -1,13 +1,13 @@
 ///Player Functions!
 function state_normal()
 {	
-	var_canDMG = false;
+	var_canDMG = false
 	var _dir;
 	
 	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
-	
 	//Locks the direction in one place, for certain interactions with walljumps and such
-	if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
+	if(k_dirLock){_dir = 0; if(alarm[0] = -1){alarm[0] = 10}} //Locks movement completely
+	else if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
 	else{_dir = k_dirCap; if(alarm[0] = -1){alarm[0] = 10}};
 	
 	//Locks the jump button, for interactions with the Pound and Roll states
@@ -21,7 +21,8 @@ function state_normal()
 	}
 	else
 	{
-		var_spd = lerp(var_spd, 0, .2);
+		var _ice = place_meeting(x, y+1, obj_ice)
+		var_spd = lerp(var_spd, 0, _ice ? .05 : .2);
 	};
 	
 	//Instead of clamping, use linear interpolation so i can use 
@@ -47,19 +48,28 @@ function state_normal()
 		
 		if(keyboard_check_pressed(global.k_jump))
 		{
-			if(place_meeting(x, y+1, obj_magma))
+			if(keyboard_check(global.k_down)) and (!place_meeting(x, y+1, obj_ice))//ROLL
 			{
-				var_vspd = -var_jspd*1.5;
-				instance_create_depth(x, y, depth-1, obj_groundExplosion)
-				screenshake(5, 2, .1)
+				var_state = STATE_MACHINE.roll;
+				var_spd = var_mspd *image_xscale;
 			}
-			else
+			else //Jump like usual
 			{
-				var_vspd = -var_jspd;
-				audio_play_sound(sfx_jump, 0, 0)
-			};
-			var_groundCheck = -1;
+				if(place_meeting(x, y+1, obj_magma))
+				{
+					var_vspd = -var_jspd*1.5;
+					instance_create_depth(x, y, depth-1, obj_groundExplosion)
+					screenshake(5, 2, .1)
+				}
+				else
+				{
+					var_vspd = -var_jspd;
+					audio_play_sound(sfx_jump, 0, 0)
+				};
+				var_groundCheck = -1;
+			}
 		};
+		
 	};
 	else
 	{
@@ -74,7 +84,7 @@ function state_normal()
 				var_vspd = -var_jspd;
 				audio_play_sound(sfx_jump, 0, 0)
 			};
-			else
+			else if (!_waterEffect)
 			{
 				var_state = STATE_MACHINE.pound;
 			};
@@ -84,34 +94,49 @@ function state_normal()
 	//Variable Jump
 	if(keyboard_check_released(global.k_jump) and (var_vspd < 0)) and (!k_jumpCap){var_vspd /=4}
 	
-	//If touching a walking wall from the side, climb it
-	if(place_meeting(x+var_spd, y, obj_walkingWall)) and (abs(var_spd) >= var_mspd/2) and (!var_grounded)
-	{
-		while(!place_meeting(x+sign(var_spd), y, obj_walkingWall))
-		{
-			x += sign(var_spd)
-		};
-		
-		if(place_meeting(x+1, y, obj_walkingWall)){image_xscale = 1}
-		else if(place_meeting(x-1, y, obj_walkingWall)){image_xscale = -1}
-		
-		var_state = STATE_MACHINE.wallrun
-		
-	};
-	else //Collide as normal
-	{
-		collisions();
-	};
+	//If you're hitting a walking wall, walk on the wall. Else, collide as normal
+	walkingWall();
 	
 	//HIT SEQUENCE
 	hit_sequence();
-	canPunch();
+	
+	//DASH IF NOT UNDERWATER
+	if(!_waterEffect)
+	{
+		canPunch();
+	}
+	
+	//Jump on Ceilings
+	if(_waterEffect) and (place_meeting(x, y-1, obj_wall))
+	{
+		if(keyboard_check_pressed(global.k_jump))
+		{
+			var_vspd = var_jspd;
+			audio_play_sound(sfx_jump, 0, 0)
+		};
+	};
 	
 	//Animations
 	//Grounded
 	if(var_grounded)
 	{
-		if(abs(var_spd) <= .5){sprite_index = sprite("spr_playerIdle")}
+		if(abs(var_spd) <= .5)
+		{
+			if(keyboard_check(global.k_down))
+			{
+				sprite_index = sprite("spr_playerDown")
+			};
+			
+			else if(keyboard_check(global.k_up))
+			{
+				sprite_index = sprite("spr_playerUp")
+			};
+			
+			else
+			{
+				sprite_index = sprite("spr_playerIdle")
+			};
+		}
 		//else if(abs(var_spd) >= var_mspd/2){sprite_index = sprite("spr_playerRun")}
 		else if(sign(var_spd) = -sign(_dir))
 		{
@@ -122,20 +147,19 @@ function state_normal()
 	//Aereal
 	else
 	{
-		if(var_vspd <= 0)
+		var _ceiling = (_waterEffect) and (place_meeting(x, y-1, obj_wall));
+		
+		if(_ceiling)
 		{
-			sprite_index = sprite("spr_playerJump");
-		}
-		else
-		{
-			sprite_index = sprite("spr_playerFall");
-		}
-		/*
-		if(abs(var_spd) >= var_mspd/2)
-		{
-			sprite_index = sprite("spr_playerJumpRoll");
+			if(abs(var_spd) >= .5)
+			{
+				sprite_index = spr_playerRunRoof;
+			}
+			else
+			{
+				sprite_index = spr_playerIdleRoof;
+			};
 		};
-	
 		else
 		{
 			if(var_vspd <= 0)
@@ -146,7 +170,7 @@ function state_normal()
 			{
 				sprite_index = sprite("spr_playerFall");
 			}
-		}*/
+		};
 	}
 };
 
@@ -157,22 +181,22 @@ function state_normal()
 	sprite_index = sprite("spr_playerWall");
 	
 	var_vspd = -var_mspd;
-	/*//Vertical Collissions
-	if(place_meeting(x, y+var_vspd, obj_wall))
+	//Vertical Collissions
+	if(place_meeting(x, y+var_vspd, obj_walkingWall))
 	{
-		while(!place_meeting(x, y+sign(var_vspd), obj_wall))
+		while(!place_meeting(x, y+sign(var_vspd), obj_walkingWall))
 		{
 			y += sign(var_vspd);
 		};
 	
-		if(place_meeting(x, y+sign(var_vspd), obj_wall))
+		if(place_meeting(x, y+sign(var_vspd), obj_walkingWall))
 		{
 			var_spd = 0;
 			var_vspd = 0;
 			var_state = STATE_MACHINE.normal;
 		};
 	}
-	*/
+	
 	y += var_vspd;
 	
 	//HIT SEQUENCE
@@ -180,7 +204,7 @@ function state_normal()
 	
 	//RETURNING TO NORMAL
 	//when there's no more wall
-	if(!place_meeting(x+sign(var_spd), y, obj_wall))
+	if(!place_meeting(x+sign(var_spd), y, obj_walkingWall))
 	{
 		var_spd = sign(var_spd) *var_mspd;
 		var_vspd = -var_jspd/2;
@@ -219,7 +243,7 @@ function state_hit()
 	
 	
 	//Back to Normal
-	if(var_grounded) or (place_meeting(x, y+1, obj_wall) and (place_meeting(x, y, obj_water)))
+	if(var_grounded) or (place_meeting(x, y-1, obj_wall) and (place_meeting(x, y, obj_water)))
 	{
 		invincibleFrames = true;
 		var_state = STATE_MACHINE.normal;
@@ -228,18 +252,33 @@ function state_hit()
 
 function state_bump()
 {
-	sprite_index = sprite("spr_playerHit");
 	
-	collisions();
-	
-	//Gravity
-	var_vspd += var_grav;
-	
-	//Back to Normal
-	if(var_grounded)
+	if(place_meeting(x, y, obj_water))
 	{
 		var_state = STATE_MACHINE.normal;
 	};
+	sprite_index = sprite("spr_playerHit");
+	if(var_effect = 2)
+	{
+		var_effect = 0;
+		instance_create_depth(x, y, depth, obj_explosion);
+		
+		var_state = STATE_MACHINE.normal;
+		var_vspd = -var_jspd;
+	};
+	else
+	{
+		//Gravity
+		var_vspd += var_grav;
+	
+		//Back to Normal
+		if(var_grounded)
+		{
+			var_state = STATE_MACHINE.normal;
+		};
+	}
+	
+	collisions();
 };
 
 function state_dead()
@@ -256,39 +295,59 @@ function state_dead()
 function state_pound()
 {
 	var_canDMG = true;
-	
-	sprite_index = sprite("spr_playerJumpRoll");
-	if(var_effect = 1)
-	{
-		var_effect = 0;
-		instance_create_depth(x, y, depth, obj_discardedCrab);
-	};
+	var_spd = 0;
+	var_vspd = var_jspd;
+	sprite_index = sprite("spr_playerPound");
 	
 	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
 	
-	if(!_waterEffect)
+	if(_waterEffect)
 	{
 		var_vspd = var_mspd*4;
 		var_spd = 0;
-	}
-	else
-	{
 		var_state = STATE_MACHINE.roll;
-	};
-	
-	collisions();
-	
-	if(place_meeting(x, y, obj_enemy))
+	}
+	else if(var_effect = 1)
 	{
-		var_state = STATE_MACHINE.normal;
-		var_spd = var_mspd *image_xscale;
-		k_jumpCap = 1;
-		k_dirCap = sign(var_vspd);
+		var_effect = 0;
+		instance_create_depth(x, y, depth+1, obj_discardedCrab);
+	};
+		
+	collisions();
+	_enemy = instance_nearest(x, y, obj_enemy)
+	if(place_meeting(x, y, _enemy)) and (!_enemy.untouchable)
+	{
+		var_state = STATE_MACHINE.bounce;
+		var_vspd = -var_jspd*1.2;
 	};
 	else if(var_grounded)
 	{
-		var_state = STATE_MACHINE.roll;
-		screenshake(3, .5, .1);
+		var _boat = instance_nearest(x, y, obj_boat)
+		if(place_meeting(x, y+1, _boat))
+		{
+			with(_boat)
+			{
+				if(place_meeting(x, y-1, obj_player))
+				{
+					var _dir = obj_player.image_xscale;
+					
+					var_spd = var_mspd*(_dir)
+					image_xscale = _dir;
+				};
+			};
+			screenshake(5, 5, .1);
+			
+			var_state = STATE_MACHINE.bounce;
+			var_vspd = -var_jspd*1.5;
+			y -= 2;
+		}
+		else
+		{
+			var_state = STATE_MACHINE.preBounce;
+			image_index = 0;
+			screenshake(3, .5, .1);
+		}
+		
 		
 		audio_play_sound(sfx_pound, 0, 0);
 	}
@@ -299,11 +358,18 @@ function state_pound()
 function state_roll()
 {
 	var_canDMG = true;
-	
+	var _ice = place_meeting(x, y+1, obj_ice)
+
 	var _alarm = 20, _inverse = global.k_left;
 	
 	sprite_index = sprite("spr_playerRoll");
 	var_spd = var_mspd*2*image_xscale
+	
+	if(var_effect = 1) //Discard the Jellyfish
+	{
+		var_effect = 0;
+		instance_create_depth(x, y, depth, obj_discardedCrab);
+	};
 	
 	if(!var_grounded)
 	{
@@ -314,21 +380,21 @@ function state_roll()
 		var_vspd = 0;
 	}
 	
-	if(place_meeting(x+sign(var_spd), y, obj_wall))
+	if(place_meeting(x+sign(var_spd), y, obj_wall)) or (_ice)
 	{
 		var_state = STATE_MACHINE.normal;
 	};
 	
 	canPunch()
 	
-	collisions();
+	walkingWall();
 	
 	if(alarm[1] = -1){alarm[1] = _alarm}
 	
 	if(keyboard_check_pressed(global.k_jump))
 	{
 		var_state = STATE_MACHINE.dash
-		var_spd = var_mspd *2 *image_xscale;
+		var_mspd = con_mspd *2 *image_xscale;
 		if(place_meeting(x, y+1, obj_magma))
 		{
 			var_vspd = -var_jspd*1.5;
@@ -384,6 +450,7 @@ function state_dash()
 	sprite_index = sprite("spr_playerRoll");
 	var_spd = var_mspd*2*image_xscale
 	var_vspd += var_grav;
+	var_groundCheck = -1;
 	
 	if(var_grounded)
 	{
@@ -409,46 +476,49 @@ function state_dash()
 	{
 		var_state = STATE_MACHINE.pound;
 	}
+	walkingWall();
 	
 	canPunch();
-	
 	hit_sequence();
-	
-	//If touching a walking wall from the side, climb it
-	if(place_meeting(x+var_spd, y, obj_walkingWall)) and (abs(var_spd) >= var_mspd/2) and (!place_meeting(x, y+1, obj_wall))
-	{
-		while(!place_meeting(x+sign(var_spd), y, obj_walkingWall))
-		{
-			x += sign(var_spd)
-		};
-		
-		if(place_meeting(x+1, y, obj_walkingWall)){image_xscale = 1}
-		else if(place_meeting(x-1, y, obj_walkingWall)){image_xscale = -1}
-		
-		var_state = STATE_MACHINE.wallrun
-		
-	};
-	else //Collide as normal
-	{
-		collisions();
-	};
 };
 
 function state_punch()
 {
 	var_canDMG = true;
-	var_vspd += var_grav;
-	if(alarm[8] = -1)
+	
+	if(var_effect = 2)
 	{
-		alarm[8] = 15;
+		var_spd = var_mspd*3*image_xscale;
+		var_vspd = 0;
+		if(alarm[9] = -1){alarm[9] = 3}
+	}
+	else if(var_effect = 1) //Discard the Jellyfish
+	{
+		var_effect = 0;
+		instance_create_depth(x, y, depth, obj_discardedCrab);
+		
+		if(place_meeting(x, y, obj_water))
+		{
+			var_vspd = 0;
+		};	
+		image_speed = IMAGE_SPEED *2;
+	};
+	else
+	{
+		var_vspd += var_grav;
+		if(alarm[8] = -1)
+		{
+			alarm[8] = 15;
+		};
 	};
 	
 	sprite_index = sprite("spr_playerPunch");
-	image_speed = IMAGE_SPEED *2;
-	collisions();
 	
+	walkingWall();
 	hit_sequence();
-	/*if(place_meeting(x+sign(var_spd), y, obj_wall)) and (!place_meeting(x+sign(var_spd), y, obj_walkingWall))
+	
+	//Bump against normal walls
+	if(place_meeting(x+sign(var_spd), y, obj_wall)) and (!place_meeting(x+sign(var_spd), y, obj_walkingWall))
 	{
 		var_spd = var_mspd * -image_xscale;
 		var_vspd = -var_jspd/2;
@@ -461,8 +531,9 @@ function state_punch()
 		}
 		
 		image_speed = IMAGE_SPEED;
-	};*/
-	//If touching a walking wall from the side, climb it
+	};
+	/*
+	//If touching a NORMAL wall from the side, climb it
 	if(place_meeting(x+var_spd, y, obj_wall)) and (abs(var_spd) >= var_mspd/2) and (!var_grounded)
 	{
 		while(!place_meeting(x+sign(var_spd), y, obj_wall))
@@ -474,8 +545,9 @@ function state_punch()
 		else if(place_meeting(x-1, y, obj_wall)){image_xscale = -1}
 		
 		var_state = STATE_MACHINE.wallrun
-		
+		image_speed = IMAGE_SPEED;
 	};
+	*/
 };
 
 function state_tube()
@@ -490,7 +562,16 @@ function state_tube()
 	
 	if(y < 0)
 	{
-		room_goto(rm_levelSelect);
+		if(room = rm_lobby)
+		{
+			room_goto(rm_levelSelect);
+		}
+		else
+		{
+			room_goto(rm_lobby);
+		};
+		
+		instance_destroy();
 	};
 };
 
@@ -519,3 +600,166 @@ function state_tubeOut()
 		screenshake(2, 1, .2)
 	};
 };
+
+function state_preBounce()
+{
+	sprite_index = sprite("spr_playerPrebounce")
+	if(image_index = image_number -1)
+	{
+		if(place_meeting(x, y+1, obj_magma))
+		{
+			var_vspd = -var_jspd*1.8;
+			instance_create_depth(x, y, depth-1, obj_groundExplosion)
+			screenshake(5, 2, .1)
+		};
+		else
+		{
+			var_vspd = -var_jspd*1.5;
+			
+		}
+		y -= 5;
+		var_state = STATE_MACHINE.bounce;
+	};
+};
+
+function state_bounce()
+{
+	sprite_index = sprite("spr_playerBounce")
+	var_canDMG = true;
+	
+	//Horizontal Movement
+	var _dir;
+	//Locks the direction in one place, for certain interactions with walljumps and such
+	if(k_dirLock){_dir = 0; if(alarm[0] = -1){alarm[0] = 10}} //Locks movement completely
+	else if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
+	else{_dir = k_dirCap; if(alarm[0] = -1){alarm[0] = 10}};
+	
+	if(_dir != 0)
+	{
+		var_spd += var_fric*_dir;
+		image_xscale = _dir; //Flip Sprite
+	}
+	else
+	{
+		var_spd = lerp(var_spd, 0, .2);
+	};
+	
+	//Instead of clamping, use linear interpolation so i can use 
+	//higher speeds than the max, for certain game feel fx
+	if(var_spd > var_mspd)
+	{
+		var_spd = lerp(var_spd, var_mspd, .1)
+	}
+	else if(var_spd < -var_mspd)
+	{
+		var_spd = lerp(var_spd, -var_mspd, .1) 
+	};
+	
+	//add gravity
+	if(!var_grounded)
+	{
+		var_vspd += var_grav;
+	};
+	else
+	{
+		var_vspd = 0;
+	}
+	
+	if(var_grounded)
+	{
+		var_state = STATE_MACHINE.normal;
+	};
+	
+	if(place_meeting(x, y+1, obj_magma))
+	{
+		var_vspd = -var_jspd*1.8;
+		instance_create_depth(x, y, depth-1, obj_groundExplosion)
+		screenshake(5, 2, .1)
+	}
+	
+	hit_sequence();
+	
+	canPunch();
+	walkingWall();
+	
+	if(keyboard_check_pressed(global.k_jump))
+	{
+		var_state = STATE_MACHINE.pound
+		var_spd = var_mspd *2 *image_xscale;
+		y -= 1;
+		screenshake(3, .5, .1);
+		
+		audio_play_sound(sfx_jump, 0, 0);
+	};
+};
+
+function state_still()
+{
+	sprite_index = spr_playerStatic;
+	var_vspd = 0;
+	var_spd = 0;
+	
+	if(!instance_exists(obj_shop)) and (!instance_exists(obj_chat))
+	{
+		var_state = STATE_MACHINE.normal;
+	};
+};
+
+function state_submarine()
+{
+	var _dir = keyboard_check(global.k_right) - keyboard_check(global.k_left),
+		_dirV = keyboard_check(global.k_down) - keyboard_check(global.k_up);	
+
+if(!place_meeting(x, y, obj_water))
+{
+	if(var_wasUnderwater)
+	{
+		var_wasUnderwater = false;
+		var_vspd = -var_jspd;
+	};
+	var_vspd += var_grav;
+};
+else
+{		
+	//Horizontal Movement
+	if(_dir != 0)
+	{
+		var_spd += var_fric*_dir;
+	}
+	else
+	{
+		var_spd = lerp(var_spd, 0, .2);
+	};
+	//Vertical Movement
+	if(_dirV != 0)
+	{
+		var_vspd += var_fric*_dirV;
+	}
+	else
+	{
+		var_vspd = lerp(var_vspd, 0, .2);
+	};
+	
+	var_spd = clamp(var_spd, -var_mspd*1.5, var_mspd*1.5);
+	var_vspd = clamp(var_vspd, -var_mspd*1.5, var_mspd*1.5);
+	
+	//ANIMATE
+	if(_dir != 0) or (_dirV != 0)
+	{
+		sprite_index = spr_submarineRunning
+	};
+	else
+	{
+		sprite_index = spr_submarine;
+	};
+	
+	image_xscale = sign(var_spd);
+};
+
+collisions();
+}
+
+function state_submarineDash()
+{
+	
+}

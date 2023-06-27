@@ -65,7 +65,7 @@ if(keyboard_check_pressed(global.k_jump))
 	};
 	
 	room_goto(_room);
-	alarm[0] = 1;
+	//alarm[0] = 1;
 };
 
 var_selected = clamp(var_selected, 0, 8)

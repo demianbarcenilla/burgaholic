@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Misc",
+    "path": "texturegroups/Misc",
   },
   "tile_count": 6,
   "tileAnimation": {

@@ -63,7 +63,7 @@ if(var_selectedX > -1) and (var_selectedX < 8) //Burger Selected
 	
 	if(_unlocked)
 	{
-		ini_open("lang_english.ini")
+		ini_open("lang_" + global.langString + ".ini")
 			draw_set_color(make_color_rgb(226, 243, 228))
 			draw_set_font(fnt_holic)
 			draw_text_ext(SCREEN_WIDTH/2, 24, ini_read_string("burgNames", var_burgerSelected, 0), 0, 240)
@@ -75,6 +75,9 @@ if(var_selectedX > -1) and (var_selectedX < 8) //Burger Selected
 	}
 	else
 	{
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_top)
+		
 		draw_set_color(make_color_rgb(60, 84, 96))
 		draw_text_ext(SCREEN_WIDTH/2, 24, "Locked", 0, 240)
 

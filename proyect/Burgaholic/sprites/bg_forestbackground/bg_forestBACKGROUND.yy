@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0c3648e1-59ef-483f-95e9-9d29f22c2763",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"df2ccbd0-2827-4408-8ae4-3e3de7a66e09",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 224,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"04d717c0-81f8-4767-9221-2249f41ef9cd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ce9f445a-e9db-4969-ab1e-1cfeb74c1090","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0c3648e1-59ef-483f-95e9-9d29f22c2763","path":"sprites/bg_forestBACKGROUND/bg_forestBACKGROUND.yy",},},},"Disabled":false,"id":"80046c71-5ee1-42d7-ab1c-5bd2fc0a8134","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"df2ccbd0-2827-4408-8ae4-3e3de7a66e09","path":"sprites/bg_forestBACKGROUND/bg_forestBACKGROUND.yy",},},},"Disabled":false,"id":"e570d773-bce4-48bf-b553-b02037f73068","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Forest",
+    "path": "texturegroups/Forest",
   },
   "type": 0,
   "VTile": false,

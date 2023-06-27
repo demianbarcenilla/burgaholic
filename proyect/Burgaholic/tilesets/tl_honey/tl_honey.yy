@@ -12,8 +12,8 @@
   "out_tilehborder": 0,
   "out_tilevborder": 0,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Main",
+    "path": "folders/Tile Sets/Main.yy",
   },
   "spriteId": {
     "name": "spr_tilesHoney",
@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Environment",
+    "path": "texturegroups/Environment",
   },
   "tile_count": 40,
   "tileAnimation": {

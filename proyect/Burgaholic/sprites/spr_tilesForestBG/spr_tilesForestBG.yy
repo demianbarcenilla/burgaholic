@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilesForestBG",
-  "bbox_bottom": 47,
+  "bbox_bottom": 79,
   "bbox_left": 0,
   "bbox_right": 143,
   "bbox_top": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8046df1c-ce51-49b5-81a1-9c7bb2fda0ab",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"50bae20d-3b6e-4dfd-b3c6-370477a398ec",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 48,
+  "height": 80,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8f0ff906-b1bd-4267-9f5a-71c1fee3d4c8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"43fc3b08-da42-40b8-a469-e9eb33192096","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8046df1c-ce51-49b5-81a1-9c7bb2fda0ab","path":"sprites/spr_tilesForestBG/spr_tilesForestBG.yy",},},},"Disabled":false,"id":"544ff53a-ee92-480b-8832-d2939cf4ab0a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"50bae20d-3b6e-4dfd-b3c6-370477a398ec","path":"sprites/spr_tilesForestBG/spr_tilesForestBG.yy",},},},"Disabled":false,"id":"bcd71462-cecd-4c14-abac-538174e6949f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Forest",
+    "path": "texturegroups/Forest",
   },
   "type": 0,
   "VTile": false,

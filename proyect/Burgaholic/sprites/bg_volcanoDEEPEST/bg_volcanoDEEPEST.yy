@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8aef1fe7-0941-4e77-b552-0e50d82f59c0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9be453e6-3099-4c77-8f3e-f347fe759b90",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 224,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4167205c-5cf8-47ad-bde7-95947f43f65e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a32164c1-274e-4332-87df-a573109f2fb9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8aef1fe7-0941-4e77-b552-0e50d82f59c0","path":"sprites/bg_volcanoDEEPEST/bg_volcanoDEEPEST.yy",},},},"Disabled":false,"id":"3c263d63-d9aa-42aa-b385-cbd58f840537","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9be453e6-3099-4c77-8f3e-f347fe759b90","path":"sprites/bg_volcanoDEEPEST/bg_volcanoDEEPEST.yy",},},},"Disabled":false,"id":"8ecedbbd-a5e1-4ce7-aed7-10b37ec3805d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Volcano",
+    "path": "texturegroups/Volcano",
   },
   "type": 0,
   "VTile": false,

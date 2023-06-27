@@ -7,13 +7,15 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENEMIES",
-    "path": "folders/Objects/ENEMIES.yy",
+    "name": "FOREST",
+    "path": "folders/Objects/ENEMIES/FOREST.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",
@@ -35,12 +37,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enSlimeKingIdle",
-    "path": "sprites/spr_enSlimeKingIdle/spr_enSlimeKingIdle.yy",
+    "name": "spr_enSlimeKingShowup",
+    "path": "sprites/spr_enSlimeKingShowup/spr_enSlimeKingShowup.yy",
   },
   "spriteMaskId": {
-    "name": "spr_enSlimeIdle",
-    "path": "sprites/spr_enSlimeIdle/spr_enSlimeIdle.yy",
+    "name": "spr_enJumpIdle",
+    "path": "sprites/spr_enJumpIdle/spr_enJumpIdle.yy",
   },
   "visible": true,
 }

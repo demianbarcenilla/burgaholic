@@ -41,6 +41,7 @@ function pickleFollow()
 		x = obj_player.x + lengthdir_x(distance, angle)
 		y = obj_player.y -(obj_player.sprite_height/2) + lengthdir_y(distance, angle)
 	}	
+	if(pickleNumber > obj_player.var_picklesFollowing){pickleNumber = obj_player.var_picklesFollowing}
 }
 
 function bossBarriers()

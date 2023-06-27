@@ -1,5 +1,10 @@
 image_speed = IMAGE_SPEED;
-//depth = -1;
+depth = 250;
+
+if(instance_number(obj_player) > 1)
+{
+	instance_destroy();
+};
 //STATES
 enum STATE_MACHINE
 {
@@ -8,20 +13,32 @@ enum STATE_MACHINE
 	hit,
 	pound,
 	roll,
+	
+	preBounce,
+	bounce,
+	
 	bump,
 	dash,
 	punch,
 	dead,
 	
+	still, 
 	tubeIn,
-	tubeOut
+	tubeOut,
+	
+	submarine,
+	submarineDash
 };
 
 var_state = STATE_MACHINE.normal
+
+var_dir = 0;
 //SPEED
 //Horizontal
 var_spd = 0;
-var_mspd = 2;
+con_mspd = 1.7;
+var_mspd = con_mspd;
+
 
 var_spdCarry = 0;
 var_vspdCarry = 0;
@@ -45,9 +62,14 @@ var_picklesFollowing = 0;
 var_canDMG = false;
 var_canPunch = true;
 
+var_wasUnderwater = false; //For FISH
 k_dirCap = 0;
 k_jumpCap = 0;
+k_dirLock = 0;
 mask_index = spr_playerIdle;
+
+//The sprite that displays when in the middle of an event (chatting, shopping, cutscene)
+var_stillSprite = spr_playerStatic;
 
 maxHp = 3;
 hp = maxHp;
@@ -56,7 +78,7 @@ var_checkpoint = rm_forest;
 var_checkpointX = 136;
 var_checkpointY = 208 -64;
 
-var_effect = 0; //Carrying a crab/exploding baby, etc
+var_effect = 0; //Carrying a jellyfish/pepperBoy, etc
 var_spriteMod = "";
 
 var_combo = 0; //ammount of enemies you've hit

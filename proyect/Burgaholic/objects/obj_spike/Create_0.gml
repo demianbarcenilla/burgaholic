@@ -1,6 +1,6 @@
 image_speed = 0;
 
-var_subimage = global.stage+1;
+var_subimage = global.stage+2;
 image_index = var_subimage;
 
 var_angle = 0;

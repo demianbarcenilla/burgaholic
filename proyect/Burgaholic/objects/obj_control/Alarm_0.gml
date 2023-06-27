@@ -1,2 +1,2 @@
-drawPickle = false;
-pickleDisplaceValue = 64
+isUnlockingBurg = false;
+burgerDisplace = 64;

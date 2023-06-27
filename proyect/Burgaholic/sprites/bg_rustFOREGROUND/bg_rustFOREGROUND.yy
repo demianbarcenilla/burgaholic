@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"49084c3e-4490-4a64-ba94-46f5fe1994e8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b82e0334-9749-49ed-979f-c2ed09f32cac",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 224,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"89f0b9f4-16d0-4248-b9e0-66c5c6cffcd5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"685a9d75-dc58-4b3d-aa2a-8ee389863ba9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"49084c3e-4490-4a64-ba94-46f5fe1994e8","path":"sprites/bg_rustFOREGROUND/bg_rustFOREGROUND.yy",},},},"Disabled":false,"id":"d3bfb142-5f39-4eab-b7bd-fd564c9e5bec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b82e0334-9749-49ed-979f-c2ed09f32cac","path":"sprites/bg_rustFOREGROUND/bg_rustFOREGROUND.yy",},},},"Disabled":false,"id":"9cdf2232-c9a7-4581-b97a-98b6ffc92e9e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Ice",
+    "path": "texturegroups/Ice",
   },
   "type": 0,
   "VTile": false,

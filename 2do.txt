@@ -7,16 +7,31 @@ finish 1st world:
 -working tubes
 FIX ENEMIES - when you hit em, the despawn var triggers. maybe make a new variable that identifies the kind of hit? X
 
+BUGS
+Wall clipping (softlock)
+when you change the chat array, it doesn't update
 
 add Burger menu X
-add crouching/looking up animations
+add crouching/looking up animations X
 
 MUSIC
 each stage has:
 main
 boss
 bonus
-shop
-lobby
 
 pause menu is silent
+
+OPTIONS
+MAIN MENU
+	START - Resumes the game
+
+	OPTIONS
+		Continue
+		Controls
+		Audio
+		Language
+	
+	ACHIEVEMENTS - Go to achievements room
+	
+	EXIT

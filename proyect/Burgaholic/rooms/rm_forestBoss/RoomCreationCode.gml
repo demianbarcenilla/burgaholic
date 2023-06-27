@@ -1,3 +1,3 @@
 global.prevRoom = rm_forest24;
-global.nextRoom = rm_forestLobby;
+global.nextRoom = -1;
 global.stage = stage.forest;

@@ -18,3 +18,8 @@ same as hatburgers classic (with different sprites and reworked rooms) but the 3
 
 Booze Driver:
 you gotta get a bus from point A to point B. problem is the bus will NOT stop. 3 small levels. Finish them all and you get 3 burgers
+
+Cyclebird
+flip between colors to do platforming
+
+BITTER JUICE

@@ -7,6 +7,9 @@ if(place_meeting(x, y, obj_player))
 	{
 		alarm[0] = 60;
 	};
+	
+	obj_player.k_dirLock = 0;
+	obj_player.k_jumpCap = 0;
 };
 
 if(sprite_index = spr_statueAnim) and (image_index = image_number -1)
@@ -21,6 +24,14 @@ if(sprite_index = spr_statueAnim) and (image_index = image_number -1)
 	alarm[2] = 60;
 	
 	ini_open("data.ini");
+		//If not previously unlocked, announce to the player that the new burger has been unlocked
+		if(!ini_read_real("burgersUnlocked", var_burgerGenie, false))
+		{
+			obj_control.isUnlockingBurg = true
+			obj_control.isUnlockingBurg_type = var_burgerGenie
+		};
+	
+		//Write the burger unlocked
 		ini_write_real("burgersUnlocked", var_burgerGenie, true);
 	ini_close();
 };

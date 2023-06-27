@@ -1,2 +1,4 @@
 global.prevRoom = rm_beach3;
-global.nextRoom = -1;
+global.nextRoom = rm_beach5;
+
+global.stage = stage.beach
