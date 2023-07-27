@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENVIRONMENT",
-    "path": "folders/Objects/ENVIRONMENT.yy",
+    "name": "VOLCANO",
+    "path": "folders/Objects/ENVIRONMENT/VOLCANO.yy",
   },
   "parentObjectId": {
     "name": "obj_wall",

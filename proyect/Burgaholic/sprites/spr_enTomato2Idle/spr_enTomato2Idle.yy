@@ -32,7 +32,7 @@
   "origin": 4,
   "parent": {
     "name": "WORLD 1",
-    "path": "folders/Sprites/ENEMIES/WORLD 1.yy",
+    "path": "folders/Sprites/WORLDS/WORLD 1.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

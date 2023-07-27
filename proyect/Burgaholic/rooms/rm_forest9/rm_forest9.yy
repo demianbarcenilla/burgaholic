@@ -12,6 +12,7 @@
     {"name":"inst_5EF5440D","path":"rooms/rm_forest9/rm_forest9.yy",},
     {"name":"inst_5469B13D","path":"rooms/rm_forest9/rm_forest9.yy",},
     {"name":"inst_6D09E33F","path":"rooms/rm_forest9/rm_forest9.yy",},
+    {"name":"inst_583B96C8","path":"rooms/rm_forest9/rm_forest9.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -21,14 +22,16 @@
 18,-18,0,2,17,18,-18,0,2,25,18,-18,0,2,9,18,-18,0,2,17,
 18,-18,0,2,25,18,-10,0,],"TileDataFormat":1,},"tilesetId":{"name":"tl_honey","path":"tilesets/tl_honey/tl_honey.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"SolidTiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":14,"SerialiseWidth":20,"TileCompressedData":[
--49,0,2,12,14,-18,0,2,32,34,-18,0,1,12,-4,13,1,14,-14,0,
-1,22,-3,23,2,46,24,-14,0,6,22,23,23,47,23,24,-14,0,1,22,
--4,23,1,24,-14,0,1,22,-4,23,1,24,-14,0,1,22,-4,23,1,24,
--5,0,-6,13,4,14,0,0,22,-4,23,6,24,0,0,12,13,13,-5,23,
-5,46,24,0,0,22,-4,23,5,24,0,0,22,46,-7,23,5,24,0,0,
-22,47,-3,23,4,24,0,0,22,-4,23,1,47,-3,23,4,24,0,0,22,
--4,23,6,24,0,0,22,23,23,],"TileDataFormat":1,},"tilesetId":{"name":"tl_forest","path":"tilesets/tl_forest/tl_forest.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+-49,0,2,12,14,-18,0,2,22,24,-18,0,2,22,36,-3,13,1,14,-14,
+0,1,22,-3,23,2,46,24,-14,0,6,22,23,23,47,23,24,-14,0,1,
+22,-4,23,1,24,-14,0,1,22,-4,23,1,24,-14,0,1,22,-4,23,1,
+24,-5,0,-6,13,4,14,0,0,22,-4,23,6,24,0,0,12,13,13,-5,
+23,5,46,24,0,0,22,-4,23,5,24,0,0,22,46,-7,23,5,24,0,
+0,22,47,-3,23,4,24,0,0,22,-4,23,1,47,-3,23,4,24,0,0,
+22,-4,23,6,24,0,0,22,23,23,],"TileDataFormat":1,},"tilesetId":{"name":"tl_forest","path":"tilesets/tl_forest/tl_forest.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_583B96C8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pickle","path":"objects/obj_pickle/obj_pickle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":48.0,},
+      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Walls","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_565B7996","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":7.0,"scaleY":4.0,"x":0.0,"y":160.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4609E05","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":5.0,"scaleY":10.0,"x":160.0,"y":64.0,},

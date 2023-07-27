@@ -49,3 +49,10 @@ function bossBarriers()
 	instance_create_depth(0, room_height-16, depth, obj_barrierBoss);
 	instance_create_depth(room_width-16, room_height-16, depth, obj_barrierBoss);
 };
+
+function easeInOutBack(xx){
+var c1 = 1.70158,
+	c3 = c1 + 1;
+
+return 1 + c3 * power(xx - 1, 3) + c1 * power(xx - 1, 2);
+}

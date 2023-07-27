@@ -25,7 +25,7 @@ if(instance_exists(obj_player)) and (!instance_exists(obj_chat))
 	draw_text(_textCenter, _textVertical, "x"+ string(global.pickles))
 	
 	//DRAW HEARTS
-	for(i=0; i < obj_player.maxHp; i++)
+	for(var i=0; i < obj_player.maxHp; i++)
 	{ 	
 		if(obj_player.hp >= i+1)
 		{

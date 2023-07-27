@@ -38,7 +38,8 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 					{
 						pickleSave();
 					}
-				};
+				}
+				
 				else
 				{
 					if(alarm[0] = -1)
@@ -46,7 +47,7 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 						if(delay != 0)
 						{
 							alarm[0] = delay
-						};
+						}
 						else
 						{
 							alarm[0] = 1
@@ -68,7 +69,7 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 	};
 
 	persistent = true;
-};
+}
 else
 {
 	y += osc_step(1, .1); //Oscillate in place

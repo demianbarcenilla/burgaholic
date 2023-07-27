@@ -31,7 +31,7 @@ var_burgerSelected = var_selectedX + (var_selectedY*5);
 for(i = 0; i < 5; i++) //Draw Burgers
 {
 	var _xpos = i
-	for(ii = 0; ii < 3; ii++)
+	for(var ii = 0; ii < 3; ii++)
 	{
 		var _ypos = ii;
 		var _id = _xpos + (_ypos*5);

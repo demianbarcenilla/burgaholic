@@ -12,7 +12,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "VOLCANO",
-    "path": "folders/Objects/ENEMIES/VOLCANO.yy",
+    "path": "folders/Objects/ENVIRONMENT/VOLCANO.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",

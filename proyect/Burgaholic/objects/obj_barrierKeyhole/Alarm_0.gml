@@ -1,6 +1,6 @@
 instance_destroy();
 
-for(i = 0; i < 3; i++)
+for(var i = 0; i < 3; i++)
 {
 	var _fx = instance_create_depth(x, y, depth, obj_barrierFX)
 	if(i % 2 = 0)

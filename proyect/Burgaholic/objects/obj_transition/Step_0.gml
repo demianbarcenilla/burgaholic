@@ -4,12 +4,12 @@ if(image_index = 3)
 	{
 		room_goto(specialRoom);
 		global.subStage = substage.bonus;
-	};
+	}
 	else
 	{
 		room_goto(global.onionRoom)
 		global.subStage = substage.normal;
-	}
+	};
 };
 if(image_index = 4)
 {

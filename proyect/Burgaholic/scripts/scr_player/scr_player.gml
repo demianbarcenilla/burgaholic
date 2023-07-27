@@ -70,29 +70,59 @@ function state_normal()
 			}
 		};
 		
-	};
+	}
 	else
 	{
-		var_vspd += var_grav;
-		var_groundCheck --;
-		var_groundCheck = clamp(var_groundCheck, -1, var_coyoteTime)
+		if(var_effect != 3)
+		{
+			var_vspd += var_grav;
+			var_groundCheck --;
+			var_groundCheck = clamp(var_groundCheck, -1, var_coyoteTime)
+		}
+		else
+		{
+			var_vspd += var_grav/1.5;
+		};
+		
 		
 		if(keyboard_check_pressed(global.k_jump))
 		{
-			if(var_groundCheck > -1)
+			if(var_effect != 3) //If you're not a FISH
 			{
-				var_vspd = -var_jspd;
-				audio_play_sound(sfx_jump, 0, 0)
-			};
-			else if (!_waterEffect)
+				if(var_groundCheck > -1)
+				{
+					var_vspd = -var_jspd;
+					audio_play_sound(sfx_jump, 0, 0)
+				}
+				else if (!_waterEffect)
+				{
+					var_state = STATE_MACHINE.pound;
+				};
+			}
+				
+			else //If you DO have infinite jumps + NO GROUNDPOUND
 			{
-				var_state = STATE_MACHINE.pound;
-			};
+				if(keyboard_check_pressed(global.k_jump))
+				{
+					var_vspd = -var_jspd;
+					audio_play_sound(sfx_jump, 0, 0)
+				};
+			}
 		}
 	};
 	
 	//Variable Jump
-	if(keyboard_check_released(global.k_jump) and (var_vspd < 0)) and (!k_jumpCap){var_vspd /=4}
+	if(var_effect != 3)
+	{
+		if(keyboard_check_released(global.k_jump) and (var_vspd < 0)) and (!k_jumpCap)
+		{
+			var_vspd /=4
+		};
+	};
+	else
+	{
+		var_canPunch = true;
+	};
 	
 	//If you're hitting a walking wall, walk on the wall. Else, collide as normal
 	walkingWall();
@@ -125,12 +155,12 @@ function state_normal()
 			if(keyboard_check(global.k_down))
 			{
 				sprite_index = sprite("spr_playerDown")
-			};
+			}
 			
 			else if(keyboard_check(global.k_up))
 			{
 				sprite_index = sprite("spr_playerUp")
-			};
+			}
 			
 			else
 			{
@@ -159,7 +189,7 @@ function state_normal()
 			{
 				sprite_index = spr_playerIdleRoof;
 			};
-		};
+		}
 		else
 		{
 			if(var_vspd <= 0)
@@ -174,7 +204,7 @@ function state_normal()
 	}
 };
 
- function state_walkingWall()
+function state_walkingWall()
 {	
 	var_canDMG = false;
 	
@@ -217,6 +247,8 @@ function state_normal()
 		var_spd = k_dirCap*var_mspd*4;
 		var_vspd = -var_jspd/2;
 		var_state = STATE_MACHINE.normal;
+		
+		var_canPunch = true;
 		
 		freezeframes(.5);
 		screenshake(5, 2, .3);
@@ -265,7 +297,7 @@ function state_bump()
 		
 		var_state = STATE_MACHINE.normal;
 		var_vspd = -var_jspd;
-	};
+	}
 	else
 	{
 		//Gravity
@@ -319,7 +351,7 @@ function state_pound()
 	{
 		var_state = STATE_MACHINE.bounce;
 		var_vspd = -var_jspd*1.2;
-	};
+	}
 	else if(var_grounded)
 	{
 		var _boat = instance_nearest(x, y, obj_boat)
@@ -343,9 +375,16 @@ function state_pound()
 		}
 		else
 		{
-			var_state = STATE_MACHINE.preBounce;
-			image_index = 0;
-			screenshake(3, .5, .1);
+			if(place_meeting(x, y+1, obj_noBounce))
+			{
+				var_state = STATE_MACHINE.normal;
+			}
+			else
+			{
+				var_state = STATE_MACHINE.preBounce;
+				image_index = 0;
+				screenshake(3, .5, .1);
+			}
 		}
 		
 		
@@ -363,7 +402,7 @@ function state_roll()
 	var _alarm = 20, _inverse = global.k_left;
 	
 	sprite_index = sprite("spr_playerRoll");
-	var_spd = var_mspd*2*image_xscale
+	var_spd = var_mspd*2.5*image_xscale
 	
 	if(var_effect = 1) //Discard the Jellyfish
 	{
@@ -374,7 +413,7 @@ function state_roll()
 	if(!var_grounded)
 	{
 		var_vspd += var_grav;
-	};
+	}
 	else
 	{
 		var_vspd = 0;
@@ -448,7 +487,7 @@ function state_dash()
 	var_canDMG = true;
 	
 	sprite_index = sprite("spr_playerRoll");
-	var_spd = var_mspd*2*image_xscale
+	var_spd = var_mspd*2.5*image_xscale
 	var_vspd += var_grav;
 	var_groundCheck = -1;
 	
@@ -474,8 +513,17 @@ function state_dash()
 	}
 	if(keyboard_check_pressed(global.k_jump))
 	{
-		var_state = STATE_MACHINE.pound;
-	}
+		if(var_effect!= 3)
+		{
+			var_state = STATE_MACHINE.pound;
+		}
+		else
+		{
+			var_vspd = -var_jspd;
+			audio_play_sound(sfx_jump, 0, 0)
+		}
+	};
+	
 	walkingWall();
 	
 	canPunch();
@@ -502,7 +550,7 @@ function state_punch()
 			var_vspd = 0;
 		};	
 		image_speed = IMAGE_SPEED *2;
-	};
+	}
 	else
 	{
 		var_vspd += var_grav;
@@ -562,13 +610,14 @@ function state_tube()
 	
 	if(y < 0)
 	{
+		var _transition = instance_create_depth(0, 0, depth, obj_transition2);
 		if(room = rm_lobby)
 		{
-			room_goto(rm_levelSelect);
+			_transition.var_room = rm_levelSelect;
 		}
 		else
 		{
-			room_goto(rm_lobby);
+			_transition.var_room = rm_lobby;
 		};
 		
 		instance_destroy();
@@ -611,7 +660,7 @@ function state_preBounce()
 			var_vspd = -var_jspd*1.8;
 			instance_create_depth(x, y, depth-1, obj_groundExplosion)
 			screenshake(5, 2, .1)
-		};
+		}
 		else
 		{
 			var_vspd = -var_jspd*1.5;
@@ -659,7 +708,7 @@ function state_bounce()
 	if(!var_grounded)
 	{
 		var_vspd += var_grav;
-	};
+	}
 	else
 	{
 		var_vspd = 0;
@@ -705,6 +754,31 @@ function state_still()
 	};
 };
 
+function state_moss()
+{
+	var_vspd += var_grav/4
+	y += var_vspd
+	if(!place_meeting(x+sign(var_spd), y, obj_jumpingWall))
+	{
+		if(place_meeting(x, y+1, obj_wall))
+		{
+			x -= 3*sign(var_spd)
+			var_spd = -sign(var_spd)*var_mspd
+			var_vspd = 0;
+		};
+		var_state = STATE_MACHINE.normal;
+	};
+	
+	sprite_index = spr_playerMoss;
+	if(keyboard_check_pressed(global.k_jump))
+	{
+		k_dirCap = -sign(var_spd) 
+		var_spd = k_dirCap*var_mspd*4;
+		var_vspd = -var_jspd*1.2;
+		var_state = STATE_MACHINE.normal
+		var_canPunch = true;
+	};
+};
 function state_submarine()
 {
 	var _dir = keyboard_check(global.k_right) - keyboard_check(global.k_left),
@@ -718,7 +792,7 @@ if(!place_meeting(x, y, obj_water))
 		var_vspd = -var_jspd;
 	};
 	var_vspd += var_grav;
-};
+}
 else
 {		
 	//Horizontal Movement
@@ -747,7 +821,7 @@ else
 	if(_dir != 0) or (_dirV != 0)
 	{
 		sprite_index = spr_submarineRunning
-	};
+	}
 	else
 	{
 		sprite_index = spr_submarine;

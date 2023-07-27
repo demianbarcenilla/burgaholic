@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENVIRONMENT",
-    "path": "folders/Objects/ENVIRONMENT.yy",
+    "name": "BEACH",
+    "path": "folders/Objects/ENVIRONMENT/BEACH.yy",
   },
   "parentObjectId": null,
   "persistent": false,

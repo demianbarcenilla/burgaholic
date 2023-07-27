@@ -14,7 +14,7 @@ if((place_meeting(x, y+1, obj_wall)) or (var_oneWayGrounded))
 {
 	var_grounded = true;
 	var_canPunch = true;
-};
+}
 else
 {
 	var_grounded = false;
@@ -65,6 +65,10 @@ if(hp > 0)
 			state_punch();
 		break;
 		
+		case STATE_MACHINE.moss:
+			state_moss();
+		break;
+		
 		case STATE_MACHINE.tubeIn:
 			state_tube();
 		break;
@@ -96,17 +100,18 @@ else //DEAD
 		{
 			instance_create_depth(x, y, depth-1, obj_cloudSFX);
 		};
-	};
+	}
 	else
 	{
 		state_dead();
 	};
+	global.subStage = 0;
 }
 
 var _halfSprite = 12;
 
 //Get hurt with spike
-if(place_meeting(x, y, obj_spike)) and 
+if(place_meeting(x, y, obj_onlyHit)) and 
 (var_state != STATE_MACHINE.hit) and
 (var_state != STATE_MACHINE.dead) and
 (!invincibleFrames)
@@ -119,6 +124,21 @@ if(place_meeting(x, y, obj_spike)) and
 		y -= 2;
 };
 
+if(var_effect = 3) //Can't go offscreen when you're a fish
+{
+	if(y < sprite_height)
+	{
+		y = sprite_height;
+	};
+}
+
+//IN REEF YOU'RE ALWAYS A FISH
+if(global.stage = stage.reef) and (room != rm_reef)
+{
+	var_effect = 3;
+};
+
+//Change your room
 if(x > room_width -_halfSprite+1)
 {
 	if(global.nextRoom != -1) and (!roomCooldown)//IF THERE'S OTHER ROOM
@@ -154,7 +174,7 @@ if(x > room_width -_halfSprite+1)
 	{
 		x = room_width -_halfSprite+1;
 	};
-};
+}
 else if((x < _halfSprite))
 {
 	if(global.prevRoom != -1) and (!roomCooldown)
@@ -205,7 +225,7 @@ if(place_meeting(x, y, obj_water))
 	var_jspd = 6.25;
 	
 	var_wasUnderwater = true;
-};
+}
 else if(place_meeting(x, y+1, obj_ice))
 {
 	var_grav = .45;
@@ -233,6 +253,10 @@ switch (var_effect)
 	
 	case 2:
 		var_spriteMod = "_pepper";
+	break;
+	
+	case 3:
+		var_spriteMod = "_fish";
 	break;
 	
 	default:

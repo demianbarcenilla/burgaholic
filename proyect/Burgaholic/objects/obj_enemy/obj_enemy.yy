@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENEMIES",
-    "path": "folders/Objects/ENEMIES.yy",
+    "name": "PARENTS-RESOURCES",
+    "path": "folders/Objects/ENVIRONMENT/PARENTS-RESOURCES.yy",
   },
   "parentObjectId": null,
   "persistent": true,

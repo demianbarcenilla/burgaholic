@@ -4,14 +4,13 @@
   "name": "en_pepper",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "VOLCANO",
-    "path": "folders/Objects/ENEMIES/VOLCANO.yy",
+    "path": "folders/Objects/ENVIRONMENT/VOLCANO.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",

@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENVIRONMENT",
-    "path": "folders/Objects/ENVIRONMENT.yy",
+    "name": "PARENTS-RESOURCES",
+    "path": "folders/Objects/ENVIRONMENT/PARENTS-RESOURCES.yy",
   },
   "parentObjectId": null,
   "persistent": false,

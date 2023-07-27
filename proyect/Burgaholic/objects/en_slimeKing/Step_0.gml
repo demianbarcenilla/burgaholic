@@ -67,8 +67,13 @@ if(var_hp <= 0)
 	var _keeper = instance_create_depth(x, y-32, depth, obj_keeperBeaten)
 	repeat(16){instance_create_depth(x, y-32, depth, obj_wasteFX)};
 	screenshake(5, 1, .2)
+	ini_open("data.ini");
+		if(ini_read_real("Stages", "Total", 0) < 1)
+		{
+			ini_write_real("Stages", "Total", 1)
+		};
+	ini_close();
 	instance_destroy();
-	
 }
 //Bounce off walls
 if(place_meeting(x+sign(var_spd), y, obj_wall))

@@ -1,5 +1,5 @@
 //draw burgers
-for(i = 0; i < 3; i++)
+for(var i = 0; i < 3; i++)
 {
 	ini_open("data.ini");
 		var _unlocked = ini_read_real("burgersUnlocked", var_arcadeBurgerStart+i, 0);

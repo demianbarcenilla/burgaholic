@@ -60,8 +60,10 @@ ini_close();
 
 global.onionRoom = 0;
 //Load Data
+audio_group_load(ag_music);
+audio_group_load(ag_sfx);
 
-ini_open("data.ini")
+ini_open("settings.ini")
 	//Window Size
 	var _window = ini_read_real("options", "window", 0), _width = 320, _height = 224;
 	switch(_window)
@@ -85,6 +87,19 @@ ini_open("data.ini")
 			window_set_fullscreen(true);
 		break;
 	};
+	
+	//Music and sound
+	audio_group_set_gain(ag_music, ini_read_real("options", "musicVol", 1), 0)
+	audio_group_set_gain(ag_sfx, ini_read_real("options", "sfxVol", 1), 0)
+	
+	//Keys
+	global.k_left = ini_read_real("keys", "left", vk_left);
+	global.k_right = ini_read_real("keys", "right", vk_right);
+	global.k_up = ini_read_real("keys", "up", vk_up);
+	global.k_down = ini_read_real("keys", "down", vk_down);
+
+	global.k_jump = ini_read_real("keys", "jump", ord("Z"));
+	global.k_special = ini_read_real("keys", "dash", ord("X"));
 ini_close();
 
 if(room = rm_init)
@@ -92,26 +107,12 @@ if(room = rm_init)
 	room_goto(rm_mainMenu)
 };
 
-audio_group_load(ag_music);
-audio_group_set_gain(ag_music, 1, 0);
-
-audio_group_load(ag_sfx);
-
-//Keys
-global.k_left = ord("A");
-global.k_right = ord("D");
-global.k_up = ord("W");
-global.k_down = ord("S");
-
-global.k_jump = ord("O");
-global.k_special = ord("I");
-
 arr_lang[lang.english] = "english"
 arr_lang[lang.spanish] = "spanish"
 
 global.lang = 0;
 global.langString = arr_lang[global.lang];
-
+global.specialMusic = false;
 /*Unlock/Lock ALL Burgers
 ini_open("data.ini");
 	for(i = 0; i < 300; i++)
@@ -119,4 +120,3 @@ ini_open("data.ini");
 		ini_write_real("burgersUnlocked", i, 1);
 	};
 ini_close();
-instance_create_depth(x, y, depth, obj_shader);

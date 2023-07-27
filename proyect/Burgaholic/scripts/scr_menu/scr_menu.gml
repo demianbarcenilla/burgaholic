@@ -45,7 +45,14 @@ function scr_menuPause(){
 			break;
 		
 			case 3: //Exit
-				game_end();
+				if(room != rm_mainMenu)
+				{
+					room_goto(rm_mainMenu)
+				}
+				else
+				{
+					var_state = MAIN_MENU.main;
+				};
 			break;
 	
 			default: //Default to Continue if you choose an option outside of the range
@@ -75,7 +82,7 @@ function scr_menuOptions(){
 	//Draw Background
 	draw_sprite(bg_pause, 0, 0, 0)
 
-	var _options = 3, _sprHeight = 48, _langAmmount = 1;
+	var _options = 6, _sprHeight = 28, _langAmmount = 1;
 
 	//Displace Sprites
 	var_selectedDisplace = lerp(var_selectedDisplace, 8, .1);
@@ -95,24 +102,65 @@ function scr_menuOptions(){
 	};
 
 	//Draw Language Flag
-	draw_sprite(spr_language, global.lang, 192, 160)
+	draw_sprite(spr_language, global.lang, 96, 16+(28*4))
 	
 	//Draw Current Window Size (SPRITE)
-	ini_open("data.ini");
-		draw_sprite(spr_window, ini_read_real("options", "window", 0), 192, 64);
+	ini_open("settings.ini");
+		draw_sprite(spr_window, ini_read_real("options", "window", 0), 96, 16+(28*2));
 	ini_close();
 	
-	//TRIGGER THE OPTIONS
-	if(keyboard_check_pressed(global.k_jump)) 
-	{
-		switch(var_selected)
-		{
-			case 0: //Sound
-				
-			break;
+	//DRAW SLIDERS
+	ini_open("settings.ini")
+		var _musGain = ini_read_real("options", "musicVol", 1),
+			_sfxGain = ini_read_real("options", "sfxVol", 1);
+		slider(96, 16, _musGain) //Music
+		slider(96, 16+28, _sfxGain) //SFX
+	ini_close()
 	
-			case 1: //Window
-				ini_open("data.ini")
+	//TRIGGER THE OPTIONS
+	switch(var_selected)
+	{
+		case 0: //Music
+			var _curGain = audio_group_get_gain(ag_music),
+			_volumeAdd = .1
+			if(keyboard_check_pressed(global.k_left))
+			{
+				audio_group_set_gain(ag_music, _curGain-_volumeAdd, 0);
+			}
+				
+			else if(keyboard_check_pressed(global.k_right))
+			{
+				audio_group_set_gain(ag_music, _curGain+_volumeAdd, 0);
+			};
+				
+			ini_open("settings.ini")
+				ini_write_real("options", "musicVol", clamp(audio_group_get_gain(ag_music), 0, 1));
+			ini_close();
+		break;
+	
+	
+		case 1: //SFX
+			_curGain = audio_group_get_gain(ag_sfx);
+			_volumeAdd = .1;
+			if(keyboard_check_pressed(global.k_left))
+			{
+				audio_group_set_gain(ag_sfx, _curGain-_volumeAdd, 0);
+			}
+				
+			else if(keyboard_check_pressed(global.k_right))
+			{
+				audio_group_set_gain(ag_sfx, _curGain+_volumeAdd, 0);
+			};
+			
+			ini_open("settings.ini")
+				ini_write_real("options", "sfxVol", clamp(audio_group_get_gain(ag_sfx), 0, 1));
+			ini_close();
+		break;
+			
+		case 2: //Window
+			if(keyboard_check_pressed(global.k_jump))
+			{
+				ini_open("settings.ini")
 					var _window = ini_read_real("options", "window", 0)
 					
 					//Increase Window Size
@@ -151,27 +199,223 @@ function scr_menuOptions(){
 						break;
 					};
 				ini_close();
-			break;
-	
-			case 2: //Controls
-			
-			break;
+			};
+		break;
 		
-			case 3: //Language
-				global.lang ++;
-				if(global.lang > _langAmmount)
+		case 3: //Controls
+			if(keyboard_check_pressed(global.k_jump))
+			{
+				var_isChangingControls = true;
+			};
+		break;
+			
+		case 4: //Language
+			ini_open("settings.ini")
+				if(keyboard_check_pressed(global.k_jump))
 				{
-					global.lang = 0
+					global.lang ++;
+					if(global.lang > _langAmmount)
+					{
+						global.lang = 0
+						ini_write_real("options", "language", global.lang);
+					};
 				};
-			break;
+			ini_close();
+		break;
+			
+		case 5: //Wipe Save
+			if(keyboard_check_pressed(global.k_jump))
+			{
+				file_delete("data.ini")
+			};
+		break;
+			
+		case 6: //Back
+			if(keyboard_check_pressed(global.k_jump))
+			{
+				if(room != rm_mainMenu)
+				{
+					var_state = menu.pause;
+					var_selected = 0;
+				}
+				else
+				{
+					var_state = MAIN_MENU.main;	
+					var_selected = 0;
+				};
+			};
+		break;
+			
+		default: //Default to Continue if you choose an option outside of the range
+			instance_activate_all();
+			instance_destroy();
+		break;
+	}
 	
-			default: //Default to Continue if you choose an option outside of the range
-				instance_activate_all();
-				instance_destroy();
+	if(var_isChangingControls)
+	{
+		var _string;
+		switch(var_keybind)
+		{
+			case 0:
+				_string = "UP"
 			break;
+			
+			case 1:
+				_string = "UP"
+			break;
+			
+			case 2:
+				_string = "LEFT"
+			break;
+			
+			case 3:
+				_string = "DOWN"
+			break;
+			
+			case 4:
+				_string = "RIGHT"
+			break;
+			
+			case 5:
+				_string = "JUMP/SELECT"
+			break;
+			
+			case 6:
+				_string = "DASH/RETURN"
+			break;
+		};
+		
+		//Draw text!
+		draw_set_font(fnt_holicSmall);
+		draw_set_valign(fa_center);
+		draw_set_halign(fa_left);
+		draw_text(96, 16+(28*3)+8, "Press Your New " + _string + " Key!")
+		draw_set_valign(fa_none);
+		draw_set_halign(fa_none);
+		
+		if(keyboard_check_pressed(vk_anykey))
+		{
+			ini_open("settings.ini")
+				switch(var_keybind)
+				{
+					case 0:
+						//Do nothing. This would change the first input to the current jump button
+						//(keyboard_check_pressed() automatically takes the last input you did {select button} and replaces UP with it. so just go to the next case instead)
+					break;
+					case 1:
+						global.k_up = keyboard_key;
+						ini_write_real("keys", "up", global.k_up)
+					break;
+			
+					case 2:
+						global.k_left = keyboard_key;
+						ini_write_real("keys", "left", global.k_left)
+					break;
+			
+					case 3:
+						global.k_down = keyboard_key;
+						ini_write_real("keys", "down", global.k_down)
+					break;
+			
+					case 4:
+						global.k_right = keyboard_key;
+						ini_write_real("keys", "right", global.k_right)
+					break;
+			
+					case 5:
+						global.k_jump = keyboard_key;
+						ini_write_real("keys", "jump", global.k_jump)
+					break;
+			
+					case 6:
+						global.k_special = keyboard_key;
+						ini_write_real("keys", "dash", global.k_special)
+					break;
+				};
+			ini_close();
+			
+			if(var_keybind < 6)
+			{
+				var_keybind++;
+			}
+			else
+			{
+				var_isChangingControls = false;
+				var_keybind = 0;
+			};
+		};
+	};
+	else
+	{
+		//Select Different Options
+		if(keyboard_check_pressed(global.k_up))
+		{
+			var_selected --;
+			var_selectedDisplace = 0;
+		}
+
+		else if(keyboard_check_pressed(global.k_down))
+		{
+			var_selected ++;
+			var_selectedDisplace = 0;
+		};
+	}
+	
+
+	var_selected = clamp(var_selected, 0, _options)
+};
+	
+function scr_menuMain(){
+	//Draw Background
+	var _options = 3, _sprHeight = 32;
+	
+	draw_sprite(spr_title, 0, room_width/2, 32)
+	
+	//Displace Sprites
+	var_selectedDisplace = lerp(var_selectedDisplace, 8, .1);
+
+	for(var i = 0; i <= _options; i++)
+	{
+		if(var_selected = i)
+		{
+			draw_sprite(asset_get_index("spr_mainMenuSelected" + string(global.lang)), i, room_width/2 +var_selectedDisplace, 96+(i*_sprHeight))
+		}
+		else
+		{
+			draw_sprite(asset_get_index("spr_mainMenu" + string(global.lang)), i, room_width/2, 96+(i*_sprHeight))
 		}
 	};
 
+	//TRIGGER THE OPTIONS
+	if(keyboard_check_pressed(global.k_jump)) 
+	{
+		switch(var_selected)
+		{
+			case 0: //Start
+				global.specialMusic = false;
+				room_goto(rm_levelSelect)
+			break;
+	
+			case 1: //Options
+				var_state = menu.options
+				var_selected = 0;
+				screenshake(8, 10, .1)
+			break;
+	
+			case 2: //Achievements
+			break;
+		
+			case 3: //Exit
+				game_end();
+			break;
+	
+			default: //Default to Continue if you choose an option outside of the range
+				room_goto(rm_forest)
+			break;
+		}
+	};
+	
 	//Select Different Options
 	if(keyboard_check_pressed(global.k_up))
 	{
@@ -186,4 +430,18 @@ function scr_menuOptions(){
 	};
 
 	var_selected = clamp(var_selected, 0, _options)
-};
+}
+	
+function slider(xx, yy, gain){
+	var _margin = 2,
+		_height = 5,
+		_baseWidth = sprite_get_width(spr_soundBar),
+		_baseHeight = sprite_get_height(spr_soundBar),
+		_width = gain*(_baseWidth-(_margin*2));
+		
+	draw_sprite(spr_soundBar, 0, xx, yy +(_baseHeight/2))
+	draw_set_color(#FF7259)
+		draw_rectangle(xx+_margin, yy+(_baseHeight/2)+_margin, (xx+_margin)+_width, yy+(_baseHeight/2)+_margin+_height, false);
+	draw_set_color(c_white);
+	draw_sprite(spr_soundBarBURG, 0, xx+_margin+_width, yy+_margin-1+(_baseHeight/2))
+}; 

@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "FOREST",
-    "path": "folders/Objects/ENEMIES/FOREST.yy",
+    "path": "folders/Objects/ENVIRONMENT/FOREST.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -1,5 +1,5 @@
 image_speed = IMAGE_SPEED;
-depth = 250;
+depth = 350;
 
 if(instance_number(obj_player) > 1)
 {
@@ -25,6 +25,8 @@ enum STATE_MACHINE
 	still, 
 	tubeIn,
 	tubeOut,
+	
+	moss,
 	
 	submarine,
 	submarineDash
@@ -62,7 +64,6 @@ var_picklesFollowing = 0;
 var_canDMG = false;
 var_canPunch = true;
 
-var_wasUnderwater = false; //For FISH
 k_dirCap = 0;
 k_jumpCap = 0;
 k_dirLock = 0;

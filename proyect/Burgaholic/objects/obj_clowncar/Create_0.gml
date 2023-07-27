@@ -17,4 +17,7 @@ kb_left =  global.k_left;
 kb_right = global.k_right;
 kb_honk = global.k_jump;
 
+var_xspd = 0;
+var_yspd = 0;
+
 bounced = false;

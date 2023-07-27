@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "RUST",
-    "path": "folders/Objects/ENEMIES/RUST.yy",
+    "path": "folders/Objects/ENVIRONMENT/RUST.yy",
   },
   "parentObjectId": null,
   "persistent": false,

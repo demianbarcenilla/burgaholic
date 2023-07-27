@@ -9,10 +9,13 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENEMIES",
-    "path": "folders/Objects/ENEMIES.yy",
+    "name": "ENVIRONMENT",
+    "path": "folders/Objects/ENVIRONMENT.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_onlyHit",
+    "path": "objects/obj_onlyHit/obj_onlyHit.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

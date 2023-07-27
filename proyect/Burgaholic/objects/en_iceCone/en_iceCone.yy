@@ -4,18 +4,17 @@
   "name": "en_iceCone",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "RUST",
-    "path": "folders/Objects/ENEMIES/RUST.yy",
+    "path": "folders/Objects/ENVIRONMENT/RUST.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy",
-    "path": "objects/obj_enemy/obj_enemy.yy",
+    "name": "obj_onlyHit",
+    "path": "objects/obj_onlyHit/obj_onlyHit.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

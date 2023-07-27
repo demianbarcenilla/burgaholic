@@ -1,5 +1,6 @@
 if(var_state != SLIME_STATE.spawning)
 {
+	var i;
 	 //DRAW HEALTH
 	 for(i = 0; i < var_maxHp; i++)
 	 {

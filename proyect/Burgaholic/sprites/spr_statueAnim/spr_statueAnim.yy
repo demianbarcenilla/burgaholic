@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "ENVIRONMENT",
-    "path": "folders/Sprites/ENVIRONMENT.yy",
+    "name": "WORLDS",
+    "path": "folders/Sprites/WORLDS.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

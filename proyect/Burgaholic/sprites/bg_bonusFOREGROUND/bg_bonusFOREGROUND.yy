@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "bonus",
-    "path": "folders/Sprites/BACKGROUNDS/bonus.yy",
+    "name": "forest",
+    "path": "folders/Sprites/BACKGROUNDS/bonus/forest.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

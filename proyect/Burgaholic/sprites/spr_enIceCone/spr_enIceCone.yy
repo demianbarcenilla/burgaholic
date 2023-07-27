@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 1,
   "parent": {
-    "name": "WORLD4",
-    "path": "folders/Sprites/ENEMIES/WORLD4.yy",
+    "name": "WORLD 4",
+    "path": "folders/Sprites/WORLDS/WORLD 4.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

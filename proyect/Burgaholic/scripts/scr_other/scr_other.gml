@@ -10,7 +10,7 @@ function pickleSave()
 		global.pickles ++;
 		
 		ini_open("data.ini");
-			ini_write_real("PicklesUnlocked", id, true)
+			ini_write_real("PicklesUnlocked", string(id), true)
 			ini_write_real("PicklesUnlocked", "Held", global.pickles);
 		ini_close();
 	};

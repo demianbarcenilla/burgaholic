@@ -1,1 +1,19 @@
-draw_sprite(spr_title, 0, room_width/2, 32);
+
+switch(var_state)
+{
+	case 0:
+		scr_menuMain()
+	break;
+	
+	case 1:
+		scr_menuOptions()
+	break;
+	
+	case 2:
+		scr_menuOptions()
+	break;
+	
+	default:
+		scr_menuMain()
+	break;
+};

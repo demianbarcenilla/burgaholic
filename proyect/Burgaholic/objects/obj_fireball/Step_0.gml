@@ -5,7 +5,7 @@ var_vspd = lerp(var_vspd, 0, .05)
 if(var_vspd > -0.5)
 {
 	instance_destroy();
-	for(i=0; i < 8; i++)
+	for(var i=0; i < 8; i++)
 	{
 		var _smallBall = instance_create_depth(x, y, depth, obj_fireballSmall),
 			_dir = 45*i;

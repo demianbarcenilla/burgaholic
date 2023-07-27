@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 234.696,
+  "duration": 232.728,
   "parent": {
     "name": "volcano",
     "path": "folders/Sounds/music/volcano.yy",

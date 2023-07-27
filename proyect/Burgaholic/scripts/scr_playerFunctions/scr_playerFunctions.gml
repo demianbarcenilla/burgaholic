@@ -23,7 +23,7 @@ function hit_sequence()
 					sprite_index = spr_blank; //Make it actually dissapear. Maybe change it to a resting sprite later?
 					_respawnTime = 120; //Make respawn time longer
 				};
-			};
+			}
 			else //If it can't despawn, make it look hit, at least.
 			{
 				if(_enemy.var_isBoss)
@@ -38,9 +38,6 @@ function hit_sequence()
 			
 			_enemy.action(); //All enemies have interactions. Execute it
 			
-			/*x = _enemy.x;
-			y = _enemy.y;*/
-			
 			_enemy.untouchable = true; //If the enemy was hit, it cannot be hit until this resets trough alarm[11]
 			if(_enemy.alarm[11] = -1) and (_enemy.var_canRespawn){_enemy.alarm[11] = _respawnTime}; //Reenables the enemy's hitbox
 			
@@ -51,7 +48,7 @@ function hit_sequence()
 				var_state = STATE_MACHINE.normal
 			};
 			var_canPunch = true;
-		};
+		}
 		else //CASE 2: You don't have enough speed. You're getting hurt.
 		{
 			audio_play_sound(sfx_hitSelf, 0, 0)
@@ -143,7 +140,7 @@ function collisions()
 			{
 				y--
 			};
-		};
+		}
 		else if(!place_meeting(x, y+16, obj_wall))
 		{
 			while(place_meeting(x, y-1, obj_wall))
@@ -174,7 +171,10 @@ function hitSetup()
 
 function sprite(name) //Shorthand for asset_get_index
 {
-	return asset_get_index(string(name) + string(var_spriteMod));
+	if(sprite_exists(asset_get_index(string(name) + string(var_spriteMod))))
+	{
+		return asset_get_index(string(name) + string(var_spriteMod));
+	};
 };
 
 function playHit() //Plays the corresponding hit sound
@@ -226,7 +226,7 @@ function canPunch()
 	};
 }
 
-function walkingWall() //Also includes normal collisions
+function walkingWall() //Also includes normal/moss collisions
 {
 	//If touching a walking wall from the side, climb it
 	if(place_meeting(x+var_spd, y, obj_walkingWall)) and (abs(var_spd) >= var_mspd/2) and (!var_grounded)
@@ -236,12 +236,35 @@ function walkingWall() //Also includes normal collisions
 			x += sign(var_spd)
 		};
 		
-		if(place_meeting(x+1, y, obj_walkingWall)){image_xscale = 1}
-		else if(place_meeting(x-1, y, obj_walkingWall)){image_xscale = -1}
+		if(place_meeting(x+1, y, obj_walkingWall))
+		{
+			image_xscale = 1
+		}
+		else if(place_meeting(x-1, y, obj_walkingWall))
+		{
+			image_xscale = -1
+		};
 		
 		var_state = STATE_MACHINE.wallrun
+	}
+	else if(place_meeting(x+var_spd, y, obj_jumpingWall))
+	{
+		while(!place_meeting(x+sign(var_spd), y, obj_jumpingWall))
+		{
+			x += sign(var_spd)
+		};
 		
-	};
+		if(place_meeting(x+1, y, obj_jumpingWall))
+		{
+			image_xscale = 1
+		}
+		else if(place_meeting(x-1, y, obj_jumpingWall))
+		{
+			image_xscale = -1
+		};
+		var_state = STATE_MACHINE.moss
+		var_canPunch = true;
+	}
 	else //Collide as normal
 	{
 		collisions();

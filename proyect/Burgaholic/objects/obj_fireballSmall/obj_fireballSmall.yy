@@ -5,17 +5,16 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "VOLCANO",
-    "path": "folders/Objects/ENEMIES/VOLCANO.yy",
+    "path": "folders/Objects/ENVIRONMENT/VOLCANO.yy",
   },
   "parentObjectId": {
-    "name": "obj_spike",
-    "path": "objects/obj_spike/obj_spike.yy",
+    "name": "obj_onlyHit",
+    "path": "objects/obj_onlyHit/obj_onlyHit.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

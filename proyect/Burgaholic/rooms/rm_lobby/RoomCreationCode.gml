@@ -1,3 +1,4 @@
+global.specialMusic = true;
+global.music = mus_lobby;
 global.prevRoom = -1;
-global.nextRoom = rm_forest;
-global.stage = stage.forest;
+global.nextRoom = -1;

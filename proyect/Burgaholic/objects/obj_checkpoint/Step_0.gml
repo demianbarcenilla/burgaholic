@@ -21,9 +21,9 @@ if(instance_exists(obj_player))
 	if(obj_player.var_checkpoint = room)
 	{
 		sprite_index = spr_checkpointUp
-	};
+	}
 	else
 	{
 		sprite_index = spr_checkpoint;
-	}
+	};
 };

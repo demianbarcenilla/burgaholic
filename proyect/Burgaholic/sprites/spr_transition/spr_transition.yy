@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "HUD",
-    "path": "folders/Sprites/MISC/HUD.yy",
+    "name": "FX",
+    "path": "folders/Sprites/MISC/FX.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

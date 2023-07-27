@@ -1,6 +1,5 @@
 instance_deactivate_all(true);
 instance_activate_object(obj_control);
-instance_activate_object(obj_shader);
 enum menu
 {
 	pause,
@@ -8,6 +7,9 @@ enum menu
 	burgers
 };
 var_selected = 0;
+
+var_isChangingControls = false; //Declared HERE
+var_keybind = 0; //The current key you're changing
 
 //For making a lerping VFX
 var_selectedDisplace = 0;

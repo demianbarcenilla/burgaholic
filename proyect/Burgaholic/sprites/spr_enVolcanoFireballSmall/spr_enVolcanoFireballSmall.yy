@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "WORLD 2",
-    "path": "folders/Sprites/ENEMIES/WORLD 2.yy",
+    "path": "folders/Sprites/WORLDS/WORLD 2.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

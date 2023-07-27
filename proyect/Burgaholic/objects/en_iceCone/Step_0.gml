@@ -21,6 +21,3 @@ if(y>room_height)
 	instance_destroy();
 }
 y += var_spd;
-
-// Inherit the parent event
-event_inherited();

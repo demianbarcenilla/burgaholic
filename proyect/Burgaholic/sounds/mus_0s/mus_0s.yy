@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 96.048,
+  "duration": 76.848,
   "parent": {
     "name": "forest",
     "path": "folders/Sounds/music/forest.yy",

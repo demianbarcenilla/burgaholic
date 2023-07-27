@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilesRustBG",
-  "bbox_bottom": 47,
+  "bbox_bottom": 79,
   "bbox_left": 0,
-  "bbox_right": 111,
+  "bbox_right": 143,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a22d43dd-8769-4915-8c7f-037e61594cdf",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"147450d3-ce7d-4c7f-bceb-e31e98626b72",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 48,
+  "height": 80,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4cf7f33e-3851-4360-83ef-78be10de0a37","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e30c2995-2eb0-4875-b914-0f06939d37f8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a22d43dd-8769-4915-8c7f-037e61594cdf","path":"sprites/spr_tilesRustBG/spr_tilesRustBG.yy",},},},"Disabled":false,"id":"933eecfc-6a66-4947-8446-02aee6b4e16b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"147450d3-ce7d-4c7f-bceb-e31e98626b72","path":"sprites/spr_tilesRustBG/spr_tilesRustBG.yy",},},},"Disabled":false,"id":"647d56ea-9968-40a4-a209-3c23eee02f5c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

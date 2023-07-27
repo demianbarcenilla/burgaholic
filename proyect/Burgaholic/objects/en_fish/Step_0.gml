@@ -7,5 +7,3 @@ if(place_meeting(x+sign(var_spd), y, obj_wall))
 };
 
 image_xscale = sign(var_spd);
-// Inherit the parent event
-event_inherited();

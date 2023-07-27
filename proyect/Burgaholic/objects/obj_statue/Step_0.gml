@@ -10,6 +10,8 @@ if(place_meeting(x, y, obj_player))
 	
 	obj_player.k_dirLock = 0;
 	obj_player.k_jumpCap = 0;
+	
+	persistent = true;
 };
 
 if(sprite_index = spr_statueAnim) and (image_index = image_number -1)
@@ -19,7 +21,7 @@ if(sprite_index = spr_statueAnim) and (image_index = image_number -1)
 	sprite_index = spr_blank;
 	
 	room_goto(global.onionRoom);
-	global.stage = global.prevStage;
+	global.subStage = substage.normal
 	alarm[1] = 2;
 	alarm[2] = 60;
 	

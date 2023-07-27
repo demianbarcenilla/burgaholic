@@ -1,5 +1,8 @@
 draw_sprite(spr_burgerList, var_page, SCREEN_WIDTH/2, 14)
 
+draw_set_halign(fa_center);
+draw_set_valign(fa_top);
+		
 if(keyboard_check_pressed(global.k_right))
 {
 	var_selectedX ++;
@@ -24,10 +27,10 @@ var_selectedX = clamp(var_selectedX, -1, 8)
 var_selectedY = clamp(var_selectedY, 0, 2)
 var _arrowDisplace = 8;
 
-for(i = 0; i < 8; i++) //Draw Burgers
+for(var i = 0; i < 8; i++) //Draw Burgers
 {
 	var _xpos = i
-	for(ii = 0; ii < 3; ii++)
+	for(var ii = 0; ii < 3; ii++)
 	{
 		var _ypos = ii;
 		var _id = _xpos + (_ypos*8) +(var_page*8*3);
@@ -75,9 +78,6 @@ if(var_selectedX > -1) and (var_selectedX < 8) //Burger Selected
 	}
 	else
 	{
-		draw_set_halign(fa_center);
-		draw_set_valign(fa_top)
-		
 		draw_set_color(make_color_rgb(60, 84, 96))
 		draw_text_ext(SCREEN_WIDTH/2, 24, "Locked", 0, 240)
 
@@ -85,7 +85,7 @@ if(var_selectedX > -1) and (var_selectedX < 8) //Burger Selected
 		draw_set_font(fnt_holicSmall)
 		draw_text_ext(SCREEN_WIDTH/2, 130+24, "...", 0, 240)
 	};
-};
+}
 else if(var_selectedX <= -1) //Left Arrow Selected
 {
 	draw_sprite(spr_arrow, 2, _arrowDisplace, SCREEN_HEIGHT/2)
@@ -102,7 +102,7 @@ else if(var_selectedX <= -1) //Left Arrow Selected
 			var_page--;
 		};
 	};
-};
+}
 else //Right Arrow Selected
 {
 	draw_sprite(spr_arrow, 0, _arrowDisplace, SCREEN_HEIGHT/2)
@@ -120,7 +120,7 @@ else //Right Arrow Selected
 		};
 		
 	};
-}
+};
 
 var_page = clamp(var_page, 0, 6);
 

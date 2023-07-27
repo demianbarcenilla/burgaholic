@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "BEACH",
-    "path": "folders/Objects/ENEMIES/BEACH.yy",
+    "path": "folders/Objects/ENVIRONMENT/BEACH.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",

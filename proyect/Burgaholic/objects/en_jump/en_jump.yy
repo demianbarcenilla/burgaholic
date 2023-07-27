@@ -4,14 +4,13 @@
   "name": "en_jump",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "FOREST",
-    "path": "folders/Objects/ENEMIES/FOREST.yy",
+    "path": "folders/Objects/ENVIRONMENT/FOREST.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",

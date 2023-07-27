@@ -13,7 +13,7 @@ if(shaking)
 	camera_set_view_pos(
 		view_camera[0], 
 		camera_get_view_x(view_camera[0]) +xx,
-		camera_get_view_y(view_camera[0]) +yy
+		camera_get_view_y(view_camera[0]) //+yy
 	);
 	
 	if(shakeTime <= 0)
@@ -23,9 +23,8 @@ if(shaking)
 		shakeAmmount = 0;
 		shakeFade = 0;
 	};
-};
-else
-{
+}
+else{
 	camera_set_view_pos(
 		view_camera[0], 
 		clamp(x-(camera_get_view_width(view_camera[0])/2), 0, room_width-camera_get_view_width(view_camera[0])), 
@@ -41,29 +40,37 @@ layer_x(layer_get_id("P_MIDDLE"), _x/1.2);
 layer_x(layer_get_id("P_FOREGROUND"), _x /1.5);
 
 //MUSIC CONTROL
-var _trackSubstage = "", var _track = "";
-switch(global.subStage) //Check if you're in the main zones or shops/bonus/boss/lobby
+if(!global.specialMusic)
 {
-	case substage.normal:
-		_trackSubstage = "";
-	break;
+	var _trackSubstage = "", _track = "";
+	switch(global.subStage) //Check if you're in the main zones or shops/bonus/boss/lobby
+	{
+		case substage.normal:
+			_trackSubstage = "";
+		break;
 	
-	case substage.boss:
-		_trackSubstage = "b";
-	break;
+		case substage.boss:
+			_trackSubstage = "b";
+		break;
 	
-	case substage.bonus:
-		_trackSubstage = "f";
-	break;
-}
-_track = "mus_" + string(global.stage) + _trackSubstage
-
-//show_debug_message(_track);
-global.music = asset_get_index(_track)
+		case substage.bonus:
+			_trackSubstage = "s";
+		break;
+	}
+	_track = "mus_" + string(global.stage) + _trackSubstage
+	
+	//Play the track
+	global.music = asset_get_index(_track)
+};
 
 //If the music isn't playing, play it
-if(!audio_is_playing(global.music))// and (!instance_exists(obj_pause))
+if(!instance_exists(obj_levelSelect))
 {
-	audio_stop_all();
-	audio_play_sound(global.music, 0, true)
+	if(!audio_is_playing(global.music))// and (!instance_exists(obj_pause))
+	{
+		audio_stop_all();
+		audio_play_sound(global.music, 0, true)
+	};
 };
+
+

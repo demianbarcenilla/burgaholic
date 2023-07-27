@@ -24,7 +24,6 @@ if(keyboard_check_pressed(kb_honk)) and (var_honkRecharged)
 
 var_speed = lerp(var_speed, var_curSpd, .2);
 
-
 var_xspd = lengthdir_x(var_speed, var_dir);
 var_yspd = lengthdir_y(var_speed, var_dir);
 

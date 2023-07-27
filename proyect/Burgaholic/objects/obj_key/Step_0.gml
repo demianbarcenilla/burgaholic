@@ -26,7 +26,6 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 	{
 		if(var_destroy)
 		{	
-			
 			if(instance_exists(obj_barrierKeyhole))
 			{
 				var _keyHole = instance_nearest(x, y, obj_barrierKeyhole)
@@ -46,8 +45,19 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 							alarm[0] = 5;
 						}
 						obj_player.var_picklesFollowing --;
-					}
-				};
+						
+						if(instance_exists(obj_follower))
+						{
+							if(obj_follower.pickleNumber > pickleNumber)
+							{
+								with(obj_follower)
+								{
+									obj_follower.pickleNumber --;
+								};
+							};
+						};
+					};
+				}
 				else
 				{
 					if(alarm[0] = -1)
@@ -55,7 +65,7 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 						if(delay != 0)
 						{
 							alarm[0] = delay
-						};
+						}
 						else
 						{
 							alarm[0] = 1
@@ -78,7 +88,8 @@ if(var_touched) //If touched by the player follow behind em until you go to the 
 	};
 
 	persistent = true;
-};
+}
+
 else
 {
 	y += osc_step(1, .1); //Oscillate in place

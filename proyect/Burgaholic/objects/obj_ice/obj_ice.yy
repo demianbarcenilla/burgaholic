@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ENVIRONMENT",
-    "path": "folders/Objects/ENVIRONMENT.yy",
+    "name": "RUST",
+    "path": "folders/Objects/ENVIRONMENT/RUST.yy",
   },
   "parentObjectId": {
     "name": "obj_wall",
