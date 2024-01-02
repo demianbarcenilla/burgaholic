@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 1,
   "conversionMode": 0,
-  "duration": 38.448,
+  "duration": 76.872,
   "parent": {
     "name": "level select",
     "path": "folders/Sounds/music/level select.yy",

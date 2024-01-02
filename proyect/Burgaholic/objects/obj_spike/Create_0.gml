@@ -35,3 +35,4 @@ if(place_meeting(x+1, y, obj_walkingWall)) or
 
 if(global.subStage = substage.bonus)
 image_index = var_subimage;
+mask_index = spr_spikesHITBOX;

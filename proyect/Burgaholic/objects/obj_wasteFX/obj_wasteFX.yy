@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "FX",
-    "path": "folders/Objects/MISC/FX.yy",
+    "path": "folders/Objects/FX.yy",
   },
   "parentObjectId": {
     "name": "obj_cloudSFX",

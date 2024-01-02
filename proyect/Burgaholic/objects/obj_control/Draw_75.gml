@@ -35,7 +35,7 @@ if(instance_exists(obj_player)) and (!instance_exists(obj_chat))
 		{
 			draw_sprite(spr_heart, 1, 16 +i*sep, 16)
 		};
-	}
+	};
 };
 
 //Burger Unlock
@@ -48,3 +48,23 @@ if(isUnlockingBurg)
 burgerDisplace_current = lerp(burgerDisplace_current, burgerDisplace, .1)
 draw_sprite(spr_burgerUnlocked, 0, SCREEN_WIDTH/2, 16 -burgerDisplace_current)
 draw_sprite(spr_burgers, isUnlockingBurg_type, SCREEN_WIDTH/2 -32, 16 -burgerDisplace_current)
+
+//Draw Death Count
+if(var_drawDeathCount)
+{
+	if(alarm[1] = -1){alarm[1] = 120};
+	
+	deathCountDisplace = 0;		
+	audio_sound_pitch(global.music, .8)
+};
+deathCountDisplace_current = lerp(deathCountDisplace_current, deathCountDisplace, .1);
+
+draw_sprite(spr_deaths, 0, SCREEN_WIDTH-8, SCREEN_HEIGHT-8 +deathCountDisplace_current)
+
+draw_set_halign(fa_right)
+		
+ini_open("data.ini");
+	var _deaths = ini_read_real("other", "deaths", 0);
+ini_close();
+		
+draw_text(SCREEN_WIDTH-24, SCREEN_HEIGHT-8-5 +deathCountDisplace_current, "x" + string(_deaths))

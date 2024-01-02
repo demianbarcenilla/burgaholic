@@ -41,8 +41,8 @@ if(hp > 0)
 			state_pound();
 		break;
 		
-		case STATE_MACHINE.preBounce:
-			state_preBounce();
+		case STATE_MACHINE.windup:
+			state_windup();
 		break;
 		
 		case STATE_MACHINE.bounce:
@@ -69,6 +69,10 @@ if(hp > 0)
 			state_moss();
 		break;
 		
+		case STATE_MACHINE.shroomed:
+			state_shroomed();
+		break;
+		
 		case STATE_MACHINE.tubeIn:
 			state_tube();
 		break;
@@ -81,25 +85,36 @@ if(hp > 0)
 			state_still();
 		break;
 		
-		case STATE_MACHINE.submarine:
-			state_submarine();
+		case STATE_MACHINE.bubble:
+			state_bubble();
 		break;
 		
-		case STATE_MACHINE.submarineDash:
-			state_submarineDash();
+		case STATE_MACHINE.respawn:
+			state_respawn();
 		break;
-	}
-}
+	};
+};
 else //DEAD
 {
 	if(var_state != STATE_MACHINE.dead)
 	{
 		var_state = STATE_MACHINE.dead
 		var_vspd = -6;
+		
 		repeat(4)
 		{
 			instance_create_depth(x, y, depth-1, obj_cloudSFX);
 		};
+		
+		ini_open("data.ini");
+			var _deaths = ini_read_real("other", "deaths", 0);
+			_deaths ++;
+			ini_write_real("other", "deaths", _deaths);
+		ini_close();
+		
+		with(obj_control){var_drawDeathCount = true};
+		screenshake(10, .5, .1)
+		audio_play_sound(sfx_dead, 1, false)
 	}
 	else
 	{
@@ -130,7 +145,7 @@ if(var_effect = 3) //Can't go offscreen when you're a fish
 	{
 		y = sprite_height;
 	};
-}
+};
 
 //IN REEF YOU'RE ALWAYS A FISH
 if(global.stage = stage.reef) and (room != rm_reef)
@@ -223,8 +238,6 @@ if(place_meeting(x, y, obj_water))
 	var_fric = .15;
 	var_mspd = con_mspd/2;
 	var_jspd = 6.25;
-	
-	var_wasUnderwater = true;
 }
 else if(place_meeting(x, y+1, obj_ice))
 {
@@ -239,6 +252,12 @@ else //Normal Stats
 	var_grav = .45;
 	var_mspd = con_mspd;
 	var_jspd = 6.25;
+	
+	/*Bump head against ceilings (unused, makes game WAY harder)
+	if(place_meeting(x, y-1, obj_wall))
+	{
+		if(var_vspd < 0){var_vspd = 0};
+	}*/
 };
 
 switch (var_effect)
@@ -259,12 +278,35 @@ switch (var_effect)
 		var_spriteMod = "_fish";
 	break;
 	
+	case 4:
+		var_spriteMod = "_core";
+	break;
+	
 	default:
 		var_spriteMod = "";
 	break;
 }
+if(place_meeting(x, y, obj_water)) or (global.stage = stage.reef)
+{
+	var_bubbleTimer --;
+	if(var_bubbleTimer = -1)
+	{
+		var_bubbleTimer = 20;
+		var _bubble = instance_create_depth(x+irandom_range(-8, 8), y-24, depth-1, obj_bubbleFX);
+	};
+};
+
 //DIE INSTANTLY WHEN FALLING TO A PIT
-if(y > room_height + sprite_height){hp = 0};
+var _pitDie = true
+if(instance_exists(obj_statue)) //Don't die if you're in a bonus level transition
+{
+	if(obj_statue.var_flash = true)
+	{
+		_pitDie = false;
+	};
+};	
+
+if(y > room_height + sprite_height) and (_pitDie){hp = 0};
 
 if(keyboard_check_pressed(ord("R")))
 {

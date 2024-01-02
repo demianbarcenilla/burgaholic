@@ -40,21 +40,25 @@ function hit_sequence()
 			
 			_enemy.untouchable = true; //If the enemy was hit, it cannot be hit until this resets trough alarm[11]
 			if(_enemy.alarm[11] = -1) and (_enemy.var_canRespawn){_enemy.alarm[11] = _respawnTime}; //Reenables the enemy's hitbox
-			
 			playHit();
 			
 			if(var_state = STATE_MACHINE.punch)
 			{
 				var_state = STATE_MACHINE.normal
 			};
+			
+			if(var_state = STATE_MACHINE.roll)
+			{
+				var_state = STATE_MACHINE.dash;
+			};
 			var_canPunch = true;
 		}
 		else //CASE 2: You don't have enough speed. You're getting hurt.
 		{
-			audio_play_sound(sfx_hitSelf, 0, 0)
 			if(!invincibleFrames)
 			{
 				hitSetup(); //And so, the player gets sent to hit state
+				audio_play_sound(sfx_hitSelf, 0, 0)
 			};
 		};
 		
@@ -223,8 +227,10 @@ function canPunch()
 		{
 			instance_create_depth(x, y, depth+1, obj_cloud2SFX)
 		};
+		
+		audio_play_sound(sfx_dash, 1, 0, 1, 0, random_range(.7, 1.3))
 	};
-}
+};
 
 function walkingWall() //Also includes normal/moss collisions
 {
@@ -270,3 +276,15 @@ function walkingWall() //Also includes normal/moss collisions
 		collisions();
 	};
 }
+
+function newAlarm(time, func)
+{
+	if(var_time = -1){var_time = time};
+	var_time--;
+	
+	var_time = clamp(var_time, -1, 999999)
+	if(var_time = -1)
+	{
+		func();
+	};
+};

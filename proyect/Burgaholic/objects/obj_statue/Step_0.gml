@@ -20,7 +20,9 @@ if(sprite_index = spr_statueAnim) and (image_index = image_number -1)
 	
 	sprite_index = spr_blank;
 	
+	obj_player.y = -255;
 	room_goto(global.onionRoom);
+	
 	global.subStage = substage.normal
 	alarm[1] = 2;
 	alarm[2] = 60;

@@ -68,8 +68,8 @@ if(!instance_exists(obj_levelSelect))
 {
 	if(!audio_is_playing(global.music))// and (!instance_exists(obj_pause))
 	{
-		audio_stop_all();
-		audio_play_sound(global.music, 0, true)
+		audio_group_stop_all(ag_music);
+		audio_play_sound(global.music, 0, true);
 	};
 };
 

@@ -1,0 +1,1 @@
+var_arcadeGame = rm_arcadeBUMB;

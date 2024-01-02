@@ -5,6 +5,7 @@ function state_normal()
 	var _dir;
 	
 	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
+	
 	//Locks the direction in one place, for certain interactions with walljumps and such
 	if(k_dirLock){_dir = 0; if(alarm[0] = -1){alarm[0] = 10}} //Locks movement completely
 	else if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
@@ -142,7 +143,7 @@ function state_normal()
 		if(keyboard_check_pressed(global.k_jump))
 		{
 			var_vspd = var_jspd;
-			audio_play_sound(sfx_jump, 0, 0)
+			audio_play_sound(sfx_jump, 0, 0);
 		};
 	};
 	
@@ -290,13 +291,14 @@ function state_bump()
 		var_state = STATE_MACHINE.normal;
 	};
 	sprite_index = sprite("spr_playerHit");
+	
 	if(var_effect = 2)
 	{
 		var_effect = 0;
 		instance_create_depth(x, y, depth, obj_explosion);
 		
 		var_state = STATE_MACHINE.normal;
-		var_vspd = -var_jspd;
+		var_vspd = -var_jspd*1.2;
 	}
 	else
 	{
@@ -381,7 +383,24 @@ function state_pound()
 			}
 			else
 			{
-				var_state = STATE_MACHINE.preBounce;
+				var_state = STATE_MACHINE.windup;
+				var_sprite = sprite("spr_playerPrebounce");
+				var_windupFunc = function(){
+					if(place_meeting(x, y+1, obj_magma))
+					{
+						var_vspd = -var_jspd*1.8;
+						instance_create_depth(x, y, depth-1, obj_groundExplosion)
+						screenshake(5, 2, .1)
+					}
+					else
+					{
+						var_vspd = -var_jspd*1.5;
+			
+					}
+					y -= 5;
+					var_state = STATE_MACHINE.bounce;
+				};
+				
 				image_index = 0;
 				screenshake(3, .5, .1);
 			}
@@ -432,7 +451,8 @@ function state_roll()
 	
 	if(keyboard_check_pressed(global.k_jump))
 	{
-		var_state = STATE_MACHINE.dash
+		var_state = STATE_MACHINE.dash;
+		
 		var_mspd = con_mspd *2 *image_xscale;
 		if(place_meeting(x, y+1, obj_magma))
 		{
@@ -457,7 +477,7 @@ function state_roll()
 		}
 		else
 		{
-			var_state = STATE_MACHINE.dash
+			var_state = STATE_MACHINE.dash;
 			var_spd = var_mspd *2 *image_xscale;
 			var_vspd = -var_jspd;
 			y -= 1;
@@ -580,22 +600,6 @@ function state_punch()
 		
 		image_speed = IMAGE_SPEED;
 	};
-	/*
-	//If touching a NORMAL wall from the side, climb it
-	if(place_meeting(x+var_spd, y, obj_wall)) and (abs(var_spd) >= var_mspd/2) and (!var_grounded)
-	{
-		while(!place_meeting(x+sign(var_spd), y, obj_wall))
-		{
-			x += sign(var_spd)
-		};
-		
-		if(place_meeting(x+1, y, obj_wall)){image_xscale = 1}
-		else if(place_meeting(x-1, y, obj_wall)){image_xscale = -1}
-		
-		var_state = STATE_MACHINE.wallrun
-		image_speed = IMAGE_SPEED;
-	};
-	*/
 };
 
 function state_tube()
@@ -650,25 +654,10 @@ function state_tubeOut()
 	};
 };
 
-function state_preBounce()
+function state_windup()
 {
-	sprite_index = sprite("spr_playerPrebounce")
-	if(image_index = image_number -1)
-	{
-		if(place_meeting(x, y+1, obj_magma))
-		{
-			var_vspd = -var_jspd*1.8;
-			instance_create_depth(x, y, depth-1, obj_groundExplosion)
-			screenshake(5, 2, .1)
-		}
-		else
-		{
-			var_vspd = -var_jspd*1.5;
-			
-		}
-		y -= 5;
-		var_state = STATE_MACHINE.bounce;
-	};
+	sprite_index = var_sprite;
+	newAlarm(2, var_windupFunc)
 };
 
 function state_bounce()
@@ -779,61 +768,79 @@ function state_moss()
 		var_canPunch = true;
 	};
 };
-function state_submarine()
-{
-	var _dir = keyboard_check(global.k_right) - keyboard_check(global.k_left),
-		_dirV = keyboard_check(global.k_down) - keyboard_check(global.k_up);	
 
-if(!place_meeting(x, y, obj_water))
-{
-	if(var_wasUnderwater)
+function state_bubble()
+{	
+	collisions();
+	
+	var_spd = lerp(var_spd, 0, .01);
+	
+	sprite_index = spr_playerBubble;
+	
+	if(place_meeting(x, y, obj_wall))
 	{
-		var_wasUnderwater = false;
-		var_vspd = -var_jspd;
+		var_spd = -var_spd;
 	};
-	var_vspd += var_grav;
-}
-else
-{		
+	
+	if(keyboard_check_pressed(global.k_jump)) or (keyboard_check_pressed(global.k_special))
+	{
+		var_state = STATE_MACHINE.normal;
+		var_vspd = -var_jspd;
+		
+		instance_create_depth(x, y, depth-1, obj_popFX);
+		
+		var_canPunch = true;
+	};
+};
+
+function state_shroomed()
+{
+	sprite_index = spr_playerShroomed;
+	
+	var _vspd = 1
+	var_vspd = -_vspd
+	
+	var _dir = keyboard_check(global.k_right) - keyboard_check(global.k_left);
+	
 	//Horizontal Movement
 	if(_dir != 0)
 	{
 		var_spd += var_fric*_dir;
+		image_xscale = _dir; //Flip Sprite
 	}
 	else
 	{
 		var_spd = lerp(var_spd, 0, .2);
 	};
-	//Vertical Movement
-	if(_dirV != 0)
+	
+	//Instead of clamping, use linear interpolation so i can use 
+	//higher speeds than the max, for certain game feel fx
+	if(var_spd > var_mspd)
 	{
-		var_vspd += var_fric*_dirV;
+		var_spd = lerp(var_spd, var_mspd, .1)
 	}
-	else
+	else if(var_spd < -var_mspd)
 	{
-		var_vspd = lerp(var_vspd, 0, .2);
+		var_spd = lerp(var_spd, -var_mspd, .1) 
 	};
 	
-	var_spd = clamp(var_spd, -var_mspd*1.5, var_mspd*1.5);
-	var_vspd = clamp(var_vspd, -var_mspd*1.5, var_mspd*1.5);
-	
-	//ANIMATE
-	if(_dir != 0) or (_dirV != 0)
+	if(keyboard_check(global.k_down))
 	{
-		sprite_index = spr_submarineRunning
-	}
-	else
-	{
-		sprite_index = spr_submarine;
+		var_vspd = _vspd;
 	};
 	
-	image_xscale = sign(var_spd);
+	var_canPunch = true;
+	
+	canPunch();
+	
+	collisions();
 };
 
-collisions();
-}
-
-function state_submarineDash()
+function state_respawn()
 {
-	
-}
+	sprite_index = spr_playerGhost;
+	if(image_index = image_number -1)
+	{
+		var_state = STATE_MACHINE.normal;
+	};
+};

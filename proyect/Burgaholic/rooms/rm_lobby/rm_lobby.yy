@@ -15,6 +15,10 @@
     {"name":"inst_4322601E","path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"inst_60F05705","path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"inst_390233C3","path":"rooms/rm_lobby/rm_lobby.yy",},
+    {"name":"inst_5E71E532","path":"rooms/rm_lobby/rm_lobby.yy",},
+    {"name":"inst_7442FEE1","path":"rooms/rm_lobby/rm_lobby.yy",},
+    {"name":"inst_172DD19","path":"rooms/rm_lobby/rm_lobby.yy",},
+    {"name":"inst_26A754B6","path":"rooms/rm_lobby/rm_lobby.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -22,6 +26,10 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4481D029_1_1_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":144.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_229F89A4_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_tube","path":"objects/obj_tube/obj_tube.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":128.0,"y":176.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_390233C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnDakota","path":"objects/obj_chatSpawnDakota/obj_chatSpawnDakota.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":128.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5E71E532","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnCedric","path":"objects/obj_chatSpawnCedric/obj_chatSpawnCedric.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":48.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7442FEE1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnCamella","path":"objects/obj_chatSpawnCamella/obj_chatSpawnCamella.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":80.0,"y":112.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_172DD19","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnCrystal","path":"objects/obj_chatSpawnCrystal/obj_chatSpawnCrystal.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":192.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_26A754B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnMadame","path":"objects/obj_chatSpawnMadame/obj_chatSpawnMadame.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":304.0,"y":192.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tube","depth":-100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":14,"SerialiseWidth":20,"TileCompressedData":[
 -8,0,2,1,2,-18,0,2,1,2,-18,0,2,4,5,-230,0,],"TileDataFormat":1,},"tilesetId":{"name":"tl_tube","path":"tilesets/tl_tube/tl_tube.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},

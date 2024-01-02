@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "ASSETS",
-    "path": "folders/Sprites/ASSETS.yy",
+    "name": "KEEPERS",
+    "path": "folders/Sprites/MISC/KEEPERS.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

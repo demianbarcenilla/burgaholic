@@ -14,7 +14,7 @@ enum STATE_MACHINE
 	pound,
 	roll,
 	
-	preBounce,
+	windup,
 	bounce,
 	
 	bump,
@@ -27,9 +27,10 @@ enum STATE_MACHINE
 	tubeOut,
 	
 	moss,
+	bubble,
+	shroomed,
 	
-	submarine,
-	submarineDash
+	respawn
 };
 
 var_state = STATE_MACHINE.normal
@@ -67,6 +68,8 @@ var_canPunch = true;
 k_dirCap = 0;
 k_jumpCap = 0;
 k_dirLock = 0;
+
+var_time = -1; //NEW ALARMS;
 mask_index = spr_playerIdle;
 
 //The sprite that displays when in the middle of an event (chatting, shopping, cutscene)
@@ -86,3 +89,4 @@ var_combo = 0; //ammount of enemies you've hit
 t = 0; //for oscilation in the hearts
 
 var_redAlpha = 0; //The opacity for the red when you step on magma
+var_bubbleTimer = 0;

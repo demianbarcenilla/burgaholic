@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "rm_forestHome",
-  "creationCodeFile": "${project_dir}/rooms/rm_forest/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/rm_forestHome/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -17,6 +17,7 @@
     {"name":"inst_1B086ADF","path":"rooms/rm_forestHome/rm_forestHome.yy",},
     {"name":"inst_50D89016","path":"rooms/rm_forestHome/rm_forestHome.yy",},
     {"name":"inst_3E7C1962","path":"rooms/rm_forestHome/rm_forestHome.yy",},
+    {"name":"inst_732253CE","path":"rooms/rm_forestHome/rm_forestHome.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -31,6 +32,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_15552997","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":1.5,"scaleY":5.0,"x":32.0,"y":128.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_19F5187C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":112.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3E7C1962","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"rotation":0.0,"scaleX":0.5,"scaleY":1.0,"x":136.0,"y":176.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_732253CE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_signHome","path":"objects/obj_signHome/obj_signHome.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":88.0,"y":172.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"TilesAssets","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":14,"SerialiseWidth":20,"TileCompressedData":[
 -21,-2147483648,-12,0,-7,-2147483648,-13,0,-7,-2147483648,-13,0,-7,-2147483648,-13,0,-7,-2147483648,-7,0,

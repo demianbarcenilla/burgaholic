@@ -4,15 +4,17 @@
   "name": "obj_explosion",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "FX",
-    "path": "folders/Objects/MISC/FX.yy",
+    "path": "folders/Objects/FX.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_staticFX",
+    "path": "objects/obj_staticFX/obj_staticFX.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

@@ -8,5 +8,8 @@ var_grav = .1;
 
 var_chatbox = 0
 var_chat = "ChatDakota"
-var_event = function(){room_goto(rm_lobby); instance_destroy(obj_player)}
+var_event = function(){
+	var _trans = instance_create_depth(0, 0, depth, obj_transition2)
+	_trans.var_room = rm_lobby;
+}
 var_sprite = spr_dakotaStanding;

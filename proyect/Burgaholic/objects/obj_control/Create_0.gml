@@ -52,6 +52,9 @@ isUnlockingBurg_type = 0;
 burgerDisplace = 64;
 burgerDisplace_current = burgerDisplace;
 
+var_drawDeathCount = false;
+deathCountDisplace = 32;
+deathCountDisplace_current = deathCountDisplace;
 global.pickles = 0;
 
 ini_open("data.ini");

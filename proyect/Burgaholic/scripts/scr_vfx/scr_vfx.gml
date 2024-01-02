@@ -28,6 +28,15 @@ function osc_step(increment, amplitude)
 	return _shift;
 };
 
+function shk_step(ammount)
+{
+	var _shift;
+	
+	t = random_range(-ammount, ammount);
+	
+	return t;
+};
+
 function pickleFollow()
 {
 	if(obj_player.var_picklesFollowing <= 2)

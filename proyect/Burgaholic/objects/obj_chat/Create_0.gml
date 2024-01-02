@@ -1,4 +1,4 @@
-var_chat = "ChatGreg"
+var_chat = "ChatNothing"
 var_chatbox = 7;
 
 var_event = function(){};

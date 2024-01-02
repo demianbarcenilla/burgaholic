@@ -14,9 +14,9 @@ var_dir = round(var_dir);
 //HONK
 if(keyboard_check_pressed(kb_honk)) and (var_honkRecharged)
 {
-	if(!instance_exists(obj_honk))
+	if(!instance_exists(obj_bumbExplosion))
 	{
-		instance_create_depth(x, y, depth+1, obj_honk);
+		instance_create_depth(x, y, depth+1, obj_bumbExplosion);
 	};
 	var_honkRecharged = false;
 	alarm[2] = 30;

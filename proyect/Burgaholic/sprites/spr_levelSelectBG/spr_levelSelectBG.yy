@@ -79,8 +79,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "UI",
-    "path": "texturegroups/UI",
+    "name": "Misc",
+    "path": "texturegroups/Misc",
   },
   "type": 0,
   "VTile": false,

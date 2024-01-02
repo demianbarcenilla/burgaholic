@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 133.608,
   "parent": {
-    "name": "music",
-    "path": "folders/Sounds/music.yy",
+    "name": "rust",
+    "path": "folders/Sounds/music/rust.yy",
   },
   "preload": false,
   "sampleRate": 44100,

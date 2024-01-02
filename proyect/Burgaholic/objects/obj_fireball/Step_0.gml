@@ -4,6 +4,7 @@ var_vspd = lerp(var_vspd, 0, .05)
 
 if(var_vspd > -0.5)
 {
+	audio_play_sound(sfx_explosion, 10, 0, .8, 0, 1.5);
 	instance_destroy();
 	for(var i=0; i < 8; i++)
 	{

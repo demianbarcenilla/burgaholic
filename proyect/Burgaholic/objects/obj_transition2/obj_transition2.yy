@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "FX",
-    "path": "folders/Objects/MISC/FX.yy",
+    "path": "folders/Objects/FX.yy",
   },
   "parentObjectId": null,
   "persistent": true,

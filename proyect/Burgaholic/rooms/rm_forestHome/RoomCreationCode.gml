@@ -1,3 +1,3 @@
-global.prevRoom = rm_forestTube;
-global.nextRoom = rm_forest2;
+global.specialMusic = true;
+global.music = mus_home;
 global.stage = stage.forest;

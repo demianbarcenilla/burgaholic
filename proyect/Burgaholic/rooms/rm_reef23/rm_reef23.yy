@@ -20,10 +20,11 @@
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"SolidTiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":14,"SerialiseWidth":20,"TileCompressedData":[
-2,23,24,-4,0,1,22,-12,23,3,24,23,24,-4,0,1,32,-10,33,5,
-27,23,24,23,24,-15,0,5,22,23,24,23,24,-15,0,5,22,23,24,33,
-34,-15,0,3,22,23,24,-6,0,1,12,-10,13,3,37,23,24,-6,0,1,
-22,-12,23,1,24,-6,0,1,32,-12,33,1,34,-106,0,1,12,-13,13,],"TileDataFormat":1,},"tilesetId":{"name":"tl_reef","path":"tilesets/tl_reef/tl_reef.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+2,23,24,-4,0,3,22,23,47,-9,23,4,46,23,47,24,-4,0,1,32,
+-10,33,5,27,23,23,46,24,-15,0,1,22,-3,23,1,24,-15,0,5,22,
+23,23,33,34,-15,0,3,22,23,47,-6,0,1,12,-10,13,3,37,23,23,
+-6,0,1,22,-6,23,1,47,-6,23,-6,0,1,32,-13,33,-106,0,1,12,
+-13,13,],"TileDataFormat":1,},"tilesetId":{"name":"tl_reef","path":"tilesets/tl_reef/tl_reef.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Walls","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_49EF5C6D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":2.000002,"scaleY":5.0,"x":0.0,"y":0.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_8F7B019","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":11.000002,"scaleY":3.0,"x":96.0,"y":80.0,},
