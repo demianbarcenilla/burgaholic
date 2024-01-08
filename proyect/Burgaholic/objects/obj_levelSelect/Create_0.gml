@@ -5,7 +5,7 @@ var_displaceDir = 1;
 var_hasSelected = false;
 
 ini_open("data.ini")
-var_worldNumber = 7//ini_read_real("Stages", "Total", 0); //Counting from 0, the ammount of levels u got available
+	var_worldNumber = ini_read_real("Stages", "Total", 0); //Counting from 0, the ammount of levels u got available. 0 being the tutorial
 ini_close();
 var_worldMAX = 7;
 var_mus = audio_play_sound(asset_get_index("mus_lvl"+string(var_selected)), 100, true);

@@ -69,21 +69,21 @@ if(var_selectedX > -1) and (var_selectedX < 8) //Burger Selected
 		ini_open("lang_" + global.langString + ".ini")
 			draw_set_color(make_color_rgb(226, 243, 228))
 			draw_set_font(fnt_holic)
-			draw_text_ext(SCREEN_WIDTH/2, 24, ini_read_string("burgNames", var_burgerSelected, 0), 0, 240)
+			draw_text_ext(SCREEN_WIDTH/2, 24, ini_read_string("burgNames", var_burgerSelected, 0), 11, 240)
 			
 			draw_set_color(make_color_rgb(70, 135, 143))
 			draw_set_font(fnt_holicSmall)
-			draw_text_ext(SCREEN_WIDTH/2, 130+24, ini_read_string("burgDescriptions", var_burgerSelected, 0), 0, 240)
+			draw_text_ext(SCREEN_WIDTH/2, 130+24, ini_read_string("burgDescriptions", var_burgerSelected, 0), 11, 240)
 		ini_close();
 	}
 	else
 	{
 		draw_set_color(make_color_rgb(60, 84, 96))
-		draw_text_ext(SCREEN_WIDTH/2, 24, "Locked", 0, 240)
+		draw_text_ext(SCREEN_WIDTH/2, 24, "Locked", 11, 240)
 
 		draw_set_color(make_color_rgb(52, 65, 99))
 		draw_set_font(fnt_holicSmall)
-		draw_text_ext(SCREEN_WIDTH/2, 130+24, "...", 0, 240)
+		draw_text_ext(SCREEN_WIDTH/2, 130+24, "...", 11, 240)
 	};
 }
 else if(var_selectedX <= -1) //Left Arrow Selected

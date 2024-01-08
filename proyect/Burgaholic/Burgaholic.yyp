@@ -120,6 +120,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Arcade","folderPath":"folders/Tile Sets/Arcade.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Main","folderPath":"folders/Tile Sets/Main.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tutorial","folderPath":"folders/Rooms/Tutorial.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"lang_english.ini","CopyToMask":3035426170322551022,"filePath":"datafiles",},
@@ -142,6 +143,7 @@
     {"id":{"name":"sfx_chat","path":"sounds/sfx_chat/sfx_chat.yy",},},
     {"id":{"name":"bg_reefFOREGROUND","path":"sprites/bg_reefFOREGROUND/bg_reefFOREGROUND.yy",},},
     {"id":{"name":"rm_volcano11","path":"rooms/rm_volcano11/rm_volcano11.yy",},},
+    {"id":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
     {"id":{"name":"tl_tube","path":"tilesets/tl_tube/tl_tube.yy",},},
     {"id":{"name":"spr_ice","path":"sprites/spr_ice/spr_ice.yy",},},
     {"id":{"name":"obj_bubbleSpawner","path":"objects/obj_bubbleSpawner/obj_bubbleSpawner.yy",},},
@@ -512,6 +514,7 @@
     {"id":{"name":"spr_playerStatic_core","path":"sprites/spr_playerStatic_core/spr_playerStatic_core.yy",},},
     {"id":{"name":"tl_honey","path":"tilesets/tl_honey/tl_honey.yy",},},
     {"id":{"name":"rm_ashtray21","path":"rooms/rm_ashtray21/rm_ashtray21.yy",},},
+    {"id":{"name":"spr_tilesTutorial","path":"sprites/spr_tilesTutorial/spr_tilesTutorial.yy",},},
     {"id":{"name":"spr_pickleShop","path":"sprites/spr_pickleShop/spr_pickleShop.yy",},},
     {"id":{"name":"spr_playerBounce_fish","path":"sprites/spr_playerBounce_fish/spr_playerBounce_fish.yy",},},
     {"id":{"name":"spr_playerBounce_crab","path":"sprites/spr_playerBounce_crab/spr_playerBounce_crab.yy",},},
@@ -1007,6 +1010,7 @@
     {"roomId":{"name":"rm_arcadeBurg10","path":"rooms/rm_arcadeBurg10/rm_arcadeBurg10.yy",},},
     {"roomId":{"name":"rm_arcadeBUMB","path":"rooms/rm_arcadeBUMB/rm_arcadeBUMB.yy",},},
     {"roomId":{"name":"rm_arcadeBUMBMAIN","path":"rooms/rm_arcadeBUMBMAIN/rm_arcadeBUMBMAIN.yy",},},
+    {"roomId":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
