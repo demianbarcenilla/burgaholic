@@ -36,6 +36,78 @@ function hit_sequence()
 				}
 			};
 			
+			_enemy.untouchable = true; //If the enemy was hit, it cannot be hit until this resets trough alarm[11]
+			if(_enemy.alarm[11] = -1) and (_enemy.var_canRespawn){_enemy.alarm[11] = _respawnTime}; //Reenables the enemy's hitbox
+			playHit();
+			
+			if(var_state = STATE_MACHINE.punch)
+			{
+				var_state = STATE_MACHINE.normal
+			};
+			
+			if(var_state = STATE_MACHINE.roll)
+			{
+				var_state = STATE_MACHINE.dash;
+			};
+			var_canPunch = true;
+			
+			_enemy.action(); //All enemies have interactions. Execute it
+		}
+		else //CASE 2: You don't have enough speed. You're getting hurt.
+		{
+			if(!invincibleFrames)
+			{
+				hitSetup(); //And so, the player gets sent to hit state
+				audio_play_sound(sfx_hitSelf, 0, 0)
+			};
+		};
+		
+		//Visual effects after contact
+		if(!invincibleFrames)
+		{
+			freezeframes(.8);
+			screenshake(5, 3, .3);
+		};
+	};
+};
+
+function hit_sequence_old()
+{
+	//HIT SEQUENCE
+	
+	var _enemy = instance_nearest(x, y, obj_enemy), _respawnTime = 15; //The enemy we're hitting and the time it'll take for it to allow us to hit it again
+	
+	//You find the enemy, and they're completely visible and available to hit
+	if(place_meeting(x, y, _enemy)) and (!_enemy.untouchable)
+	{
+		//abs(var_spd) >= var_mspd/2
+		if(var_canDMG) //CASE 1: You're Going at Damaging Speed
+		{
+			if(_enemy.var_canDespawn) //If the enemy CAN be killed
+			{
+				with(_enemy)
+				{
+					repeat(4) //Create some clouds when the enemy dissapears
+					{
+						instance_create_depth(x, y, depth+1, obj_cloudSFX);
+					};
+					
+					sprite_index = spr_blank; //Make it actually dissapear. Maybe change it to a resting sprite later?
+					_respawnTime = 120; //Make respawn time longer
+				};
+			}
+			else //If it can't despawn, make it look hit, at least.
+			{
+				if(_enemy.var_isBoss)
+				{
+					with(_enemy)
+					{
+						var_hp --;
+						var_state = var_hitState;
+					};
+				}
+			};
+			
 			_enemy.action(); //All enemies have interactions. Execute it
 			
 			_enemy.untouchable = true; //If the enemy was hit, it cannot be hit until this resets trough alarm[11]

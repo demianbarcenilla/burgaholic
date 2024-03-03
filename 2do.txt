@@ -1,47 +1,43 @@
-finish 1st world:
--explain mechanics
--add pickle/onion shells
--add a hub
--when hitting a ceiling underwater, it acts as ground and you can jump off of it
--make world map
--working tubes
-FIX ENEMIES - when you hit em, the despawn var triggers. maybe make a new variable that identifies the kind of hit? X
+HUB
+-make prettier/organic, more organized. bigger screen
+-shopkeepers sprites
 
-SFX
-BEACH
+ASHTRAY
+-find main mechanic
+-make 20 levels (0/20) (remake current levels)
+
+CORE
+-find main mechanic (core transformation)
+-make 20 levels (0/20)
+
+POND
+-make bullfrog enemy (a frog riding a bull)
+-make 20 levels (0/20)
+
+BIG
+-finish every arcade game
+-finish/make every boss
+-finish main/pause menu
+-make achievements
+-REEF/ASHTRAY/CORE/POND bonus rooms
+-finish dialogue
+-spanish translation
+
+SFX:
 boat moving
 jellyfish grab/delete
 BOINNNG
 
-VFX
-bubbles underwater
-
-BUGS
-Wall clipping in fridge(softlock)
-Exiting arcade puts u in a weird layer
-every key you own gets used instead of just one
-when you change the chat array, it doesn't update X
-add Burger menu X
-add crouching/looking up animations X
+FIXES
+-enemies sometimes kill you when you hit them (mostly slimes) [luka]
+-can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF [luka]
+-every key you have gets used up on the same door
+-gap between orbitals when you use keys
+-exiting arcade despawns your pickles/keys
+-dash doesn't work to exit the burger menu
 
 MUSIC
-each stage has:
-main
-boss
-bonus
+-EVERY BOSS TRACK besides forest/volcano. ALSO:
+-ASHTRAY (bonus/BOSS)
+-POND (bonus/BOSS)
 
-pause menu is silent
-
-OPTIONS
-MAIN MENU
-	START - Resumes the game
-
-	OPTIONS
-		Continue
-		Controls
-		Audio
-		Language
-	
-	ACHIEVEMENTS - Go to achievements room
-	
-	EXIT

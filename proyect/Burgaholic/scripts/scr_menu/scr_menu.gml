@@ -394,7 +394,7 @@ function scr_menuMain(){
 		{
 			case 0: //Start
 				global.specialMusic = false;
-				room_goto(rm_levelSelect)
+				room_goto(rm_tutorial)
 			break;
 	
 			case 1: //Options

@@ -1,5 +1,5 @@
 image_speed = IMAGE_SPEED;
-depth = 350;
+depth = 50;
 
 if(instance_number(obj_player) > 1)
 {

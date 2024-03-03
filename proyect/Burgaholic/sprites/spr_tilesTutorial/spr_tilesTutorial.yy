@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_tilesTutorial",
   "bbox_bottom": 79,
-  "bbox_left": 0,
-  "bbox_right": 143,
+  "bbox_left": 24,
+  "bbox_right": 127,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"64ecb353-ed36-41f1-afb6-4e992ec51bad",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ad4d5b20-b9f5-4ad7-98ef-4c544d395ed2",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 80,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48075de-9e06-4ce6-b1cb-f5cbeeed8149","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1d406efa-f856-4be8-84c5-6ea57d27dde4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"64ecb353-ed36-41f1-afb6-4e992ec51bad","path":"sprites/spr_tilesTutorial/spr_tilesTutorial.yy",},},},"Disabled":false,"id":"a17951bb-ed52-40ea-b905-63940a991794","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ad4d5b20-b9f5-4ad7-98ef-4c544d395ed2","path":"sprites/spr_tilesTutorial/spr_tilesTutorial.yy",},},},"Disabled":false,"id":"8a3470cf-7ba0-4b1a-93bd-8ee69856ea56","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 144,
+  "width": 160,
 }

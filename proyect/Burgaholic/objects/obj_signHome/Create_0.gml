@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-var_chatbox = 11;
+var_chatbox = 10;
 var_chat = "ChatHouse"
 var_event = function(){ //This is triggered once the chatbox is destroyed
 	if(!instance_exists(obj_chat) and (!instance_exists(obj_shop)))

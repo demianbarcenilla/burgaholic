@@ -1,3 +1,4 @@
+draw_set_font(fnt_holicSmall)
 draw_sprite(spr_chatBackground, 0, 0, 0)
 draw_sprite(spr_chatBoxes, var_chatbox, 0, 0)
 

@@ -733,7 +733,15 @@ function state_bounce()
 
 function state_still()
 {
-	sprite_index = spr_playerStatic;
+	if(place_meeting(x, y+1, obj_wall))
+	{
+		sprite_index = sprite("spr_playerIdle");
+	}
+	else
+	{
+		sprite_index = sprite("spr_playerFall");
+	};
+	
 	var_vspd = 0;
 	var_spd = 0;
 	
