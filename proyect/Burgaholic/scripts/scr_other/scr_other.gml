@@ -94,3 +94,39 @@ function setKeeperChat()
 		}	
 	}
 }
+
+function setKeeperChat_emptyShop(emptyShopChat)
+{	
+	//This is triggered once the chatbox is destroyed
+	var_event = function(){};
+	var_chat = emptyShopChat;
+	var_action = function() //This is triggered once you interact with the character
+	{
+		if(!instance_exists(obj_chat) and (!instance_exists(obj_shop)))
+		{
+			var _chat = instance_create_depth(0, 0, 0, obj_chat)
+				_chat.var_chatbox = var_chatbox
+				_chat.var_chat = var_chat
+				_chat.var_event = var_event
+		}	
+	}
+}
+
+function checkAllBought(_pool)
+{
+	var _allBought = true;
+	
+	ini_open("data.ini")
+	var i,
+		iEND = _pool+15;
+	for(i = _pool; i < iEND; i++)
+	{
+		if(ini_read_real("burgersUnlocked", string(i), false) == false)
+		{
+			_allBought = false;
+			break;
+		};	
+	};
+	ini_close();
+	return _allBought;
+};

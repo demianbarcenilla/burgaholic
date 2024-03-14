@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "spr_lobby",
-    "path": "sprites/spr_lobby/spr_lobby.yy",
+    "name": "spr_tilesLobby",
+    "path": "sprites/spr_tilesLobby/spr_tilesLobby.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

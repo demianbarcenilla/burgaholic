@@ -75,11 +75,17 @@ if(keyboard_check_pressed(global.k_jump))
 		var _card = instance_create_depth(80 + (32*var_selectedX), 64 + (32*var_selectedY), depth, obj_cardDiscarded)
 		_card.image_index = cardColor;
 		
+		if(audio_is_playing(sfx_burgerBuy))
+		{
+			audio_stop_sound(sfx_burgerBuy)
+		};
+		
+		audio_play_sound(sfx_burgerBuy, 10, 0, 1, 0, random_range(.6, 1.4))
 		screenshake(5, 2, .1)
 	};
 };
 
-if(keyboard_check_pressed(global.k_special))
+if(keyboard_check_pressed(global.k_special)) or (checkAllBought(var_poolStart))
 {
 	instance_destroy();	
 };

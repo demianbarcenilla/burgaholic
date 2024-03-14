@@ -11,3 +11,4 @@ var_action = function(){
 	}	
 }
 image_speed = IMAGE_SPEED;
+var_pool = 0;

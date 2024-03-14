@@ -12,8 +12,8 @@
     "path": "folders/Objects/MISC.yy",
   },
   "parentObjectId": {
-    "name": "obj_interact",
-    "path": "objects/obj_interact/obj_interact.yy",
+    "name": "obj_chatSpawn",
+    "path": "objects/obj_chatSpawn/obj_chatSpawn.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

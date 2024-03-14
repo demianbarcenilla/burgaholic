@@ -6,4 +6,3 @@ if(var_talkingAgain)
 
 // Inherit the parent event
 event_inherited();
-

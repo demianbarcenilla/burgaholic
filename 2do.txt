@@ -1,25 +1,23 @@
-HUB
--make prettier/organic, more organized. bigger screen
--shopkeepers sprites
-
 ASHTRAY
 -find main mechanic
 -make 20 levels (0/20) (remake current levels)
+-bonus rooms 
 
 CORE
 -find main mechanic (core transformation)
 -make 20 levels (0/20)
+-bonus rooms 
 
 POND
 -make bullfrog enemy (a frog riding a bull)
 -make 20 levels (0/20)
+-bonus rooms 
 
 BIG
 -finish every arcade game
 -finish/make every boss
 -finish main/pause menu
--make achievements
--REEF/ASHTRAY/CORE/POND bonus rooms
+-make achievements?
 -finish dialogue
 -spanish translation
 
@@ -29,15 +27,13 @@ jellyfish grab/delete
 BOINNNG
 
 FIXES
--enemies sometimes kill you when you hit them (mostly slimes) [luka]
--can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF [luka]
+-enemies sometimes kill you when you hit them (mostly slimes)
+-can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF
 -every key you have gets used up on the same door
 -gap between orbitals when you use keys
 -exiting arcade despawns your pickles/keys
--dash doesn't work to exit the burger menu
 
 MUSIC
--EVERY BOSS TRACK besides forest/volcano. ALSO:
--ASHTRAY (bonus/BOSS)
--POND (bonus/BOSS)
+-EVERY BOSS TRACK besides forest/volcano
+-Normalize the volume of every track (MP3GAIN should do it)
 

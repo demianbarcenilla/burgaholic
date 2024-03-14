@@ -394,7 +394,19 @@ function scr_menuMain(){
 		{
 			case 0: //Start
 				global.specialMusic = false;
-				room_goto(rm_tutorial)
+				
+				ini_open("data.ini")
+					var _stagesFinished = ini_read_real("Stages", "Total", 0);
+				ini_close();
+				
+				if(_stagesFinished = 0)
+				{
+					room_goto(rm_tutorial)
+				};
+				else
+				{
+					room_goto(rm_lobby)
+				};
 			break;
 	
 			case 1: //Options
