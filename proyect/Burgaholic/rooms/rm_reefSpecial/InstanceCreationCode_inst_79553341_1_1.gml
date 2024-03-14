@@ -1,1 +1,1 @@
-var_burgerGenie = 61;
+var_burgerGenie = 80;

@@ -31,7 +31,7 @@ FIXES
 -can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF
 -every key you have gets used up on the same door
 -gap between orbitals when you use keys
--exiting arcade despawns your pickles/keys
+-the way exiting arcades work (despawns your pickles/keys, resets your hp)
 
 MUSIC
 -EVERY BOSS TRACK besides forest/volcano
