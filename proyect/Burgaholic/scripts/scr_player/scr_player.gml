@@ -733,7 +733,7 @@ function state_bounce()
 
 function state_still()
 {
-	if(place_meeting(x, y+1, obj_wall))
+	if(var_grounded)
 	{
 		sprite_index = sprite("spr_playerIdle");
 	}
@@ -851,4 +851,9 @@ function state_respawn()
 	{
 		var_state = STATE_MACHINE.normal;
 	};
+};
+
+function state_dissapear()
+{
+	sprite_index = spr_blank
 };

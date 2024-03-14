@@ -1,6 +1,5 @@
 if(keyboard_check_pressed(global.k_special))
 {
-	room_goto(global.currentRoom);
 	with(obj_control){alarm[10] = 2};
 	
 	instance_destroy();
