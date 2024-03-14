@@ -26,7 +26,7 @@ boat moving
 jellyfish grab/delete
 BOINNNG
 
-FIXES
+FIX
 -enemies sometimes kill you when you hit them (mostly slimes)
 -can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF
 -every key you have gets used up on the same door
