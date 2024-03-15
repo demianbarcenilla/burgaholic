@@ -18,6 +18,7 @@ draw_set_color(c_white)
 draw_text_ext(36, 6, arr_dialogue[dialogue_current], 11, 280)
 if(keyboard_check_pressed(global.k_jump))
 {
+	audio_play_sound(sfx_chat, 2, 0);
 	dialogue_current++
 	if(dialogue_current > array_length(arr_dialogue)-1)
 	{

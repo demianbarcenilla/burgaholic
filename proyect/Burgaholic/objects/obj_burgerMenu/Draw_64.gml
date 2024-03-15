@@ -6,21 +6,25 @@ draw_set_valign(fa_top);
 if(keyboard_check_pressed(global.k_right))
 {
 	var_selectedX ++;
+	audio_play_sound(sfx_chat, 2, 0);
 }
 
 if(keyboard_check_pressed(global.k_left))
 {
 	var_selectedX --;
+	audio_play_sound(sfx_chat, 2, 0);
 }
 
 if(keyboard_check_pressed(global.k_down))
 {
 	var_selectedY ++;
+	audio_play_sound(sfx_chat, 2, 0);
 }
 
 if(keyboard_check_pressed(global.k_up))
 {
 	var_selectedY --;
+	audio_play_sound(sfx_chat, 2, 0);
 }
 
 var_selectedX = clamp(var_selectedX, -1, 8)
