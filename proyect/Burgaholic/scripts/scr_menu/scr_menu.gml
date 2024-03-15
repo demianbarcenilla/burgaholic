@@ -26,6 +26,7 @@ function scr_menuPause(){
 	//TRIGGER THE OPTIONS
 	if(keyboard_check_pressed(global.k_jump)) 
 	{
+		audio_play_sound(sfx_menuS, 2, 0);
 		switch(var_selected)
 		{
 			case 0: //Continue
@@ -67,12 +68,14 @@ function scr_menuPause(){
 	{
 		var_selected --;
 		var_selectedDisplace = 0;
+		audio_play_sound(sfx_menuU, 2, 0);
 	}
 
 	else if(keyboard_check_pressed(global.k_down))
 	{
 		var_selected ++;
 		var_selectedDisplace = 0;
+		audio_play_sound(sfx_menuD, 2, 0);
 	};
 
 	var_selected = clamp(var_selected, 0, _options)
@@ -126,7 +129,7 @@ function scr_menuOptions(){
 			if(keyboard_check_pressed(global.k_left))
 			{
 				audio_group_set_gain(ag_music, _curGain-_volumeAdd, 0);
-			}
+			};
 				
 			else if(keyboard_check_pressed(global.k_right))
 			{
@@ -145,11 +148,13 @@ function scr_menuOptions(){
 			if(keyboard_check_pressed(global.k_left))
 			{
 				audio_group_set_gain(ag_sfx, _curGain-_volumeAdd, 0);
+				audio_play_sound(sfx_menuD, 2, 0);
 			}
 				
 			else if(keyboard_check_pressed(global.k_right))
 			{
 				audio_group_set_gain(ag_sfx, _curGain+_volumeAdd, 0);
+				audio_play_sound(sfx_menuU, 2, 0);
 			};
 			
 			ini_open("settings.ini")
@@ -160,6 +165,8 @@ function scr_menuOptions(){
 		case 2: //Window
 			if(keyboard_check_pressed(global.k_jump))
 			{
+				audio_play_sound(sfx_menuS, 2, 0);
+				
 				ini_open("settings.ini")
 					var _window = ini_read_real("options", "window", 0)
 					
@@ -205,6 +212,7 @@ function scr_menuOptions(){
 		case 3: //Controls
 			if(keyboard_check_pressed(global.k_jump))
 			{
+				audio_play_sound(sfx_menuS, 2, 0);
 				var_isChangingControls = true;
 			};
 		break;
@@ -213,6 +221,8 @@ function scr_menuOptions(){
 			ini_open("settings.ini")
 				if(keyboard_check_pressed(global.k_jump))
 				{
+					audio_play_sound(sfx_menuS, 2, 0);
+					
 					global.lang ++;
 					if(global.lang > _langAmmount)
 					{
@@ -233,6 +243,8 @@ function scr_menuOptions(){
 		case 6: //Back
 			if(keyboard_check_pressed(global.k_jump))
 			{
+				audio_play_sound(sfx_menuS, 2, 0);
+				
 				if(room != rm_mainMenu)
 				{
 					var_state = menu.pause;
@@ -296,6 +308,8 @@ function scr_menuOptions(){
 		
 		if(keyboard_check_pressed(vk_anykey))
 		{
+			audio_play_sound(sfx_chat, 2, 0);
+			
 			ini_open("settings.ini")
 				switch(var_keybind)
 				{
@@ -353,15 +367,16 @@ function scr_menuOptions(){
 		{
 			var_selected --;
 			var_selectedDisplace = 0;
+			audio_play_sound(sfx_menuU, 2, 0);
 		}
 
 		else if(keyboard_check_pressed(global.k_down))
 		{
 			var_selected ++;
 			var_selectedDisplace = 0;
+			audio_play_sound(sfx_menuD, 2, 0);
 		};
 	}
-	
 
 	var_selected = clamp(var_selected, 0, _options)
 };
@@ -389,6 +404,11 @@ function scr_menuMain(){
 	//TRIGGER THE OPTIONS
 	if(keyboard_check_pressed(global.k_jump)) 
 	{
+		if(var_selected != 0)
+		{
+			audio_play_sound(sfx_menuS, 2, 0);
+		};
+		
 		switch(var_selected)
 		{
 			case 0: //Start
@@ -438,12 +458,14 @@ function scr_menuMain(){
 	{
 		var_selected --;
 		var_selectedDisplace = 0;
+		audio_play_sound(sfx_menuU, 2, 0);
 	}
 
 	else if(keyboard_check_pressed(global.k_down))
 	{
 		var_selected ++;
 		var_selectedDisplace = 0;
+		audio_play_sound(sfx_menuD, 2, 0);
 	};
 
 	var_selected = clamp(var_selected, 0, _options)
