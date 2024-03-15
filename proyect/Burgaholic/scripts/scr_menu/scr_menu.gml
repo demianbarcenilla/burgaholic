@@ -370,20 +370,19 @@ function scr_menuMain(){
 	//Draw Background
 	var _options = 3, _sprHeight = 32;
 	
-	draw_sprite(spr_title, 0, room_width/2, 32)
-	
 	//Displace Sprites
 	var_selectedDisplace = lerp(var_selectedDisplace, 8, .1);
 
 	for(var i = 0; i <= _options; i++)
 	{
+		var _yDisplace = 100, _gap = 14;
 		if(var_selected = i)
 		{
-			draw_sprite(asset_get_index("spr_mainMenuSelected" + string(global.lang)), i, room_width/2 +var_selectedDisplace, 96+(i*_sprHeight))
+			draw_sprite(asset_get_index("spr_mainMenuSelected" + string(global.lang)), i, room_width/2 +var_selectedDisplace, _yDisplace +((i*_sprHeight)-_gap))
 		}
 		else
 		{
-			draw_sprite(asset_get_index("spr_mainMenu" + string(global.lang)), i, room_width/2, 96+(i*_sprHeight))
+			draw_sprite(asset_get_index("spr_mainMenu" + string(global.lang)), i, room_width/2, _yDisplace +((i*_sprHeight)-_gap))
 		}
 	};
 
@@ -394,19 +393,25 @@ function scr_menuMain(){
 		{
 			case 0: //Start
 				global.specialMusic = false;
-				
-				ini_open("data.ini")
-					var _stagesFinished = ini_read_real("Stages", "Total", 0);
-				ini_close();
-				
-				if(_stagesFinished = 0)
+				audio_play_sound(sfx_gameStart, 1, false)
+				if(!instance_exists(obj_transition2))
 				{
-					room_goto(rm_tutorial)
-				};
-				else
-				{
-					room_goto(rm_lobby)
-				};
+					var _transition = instance_create_depth(0, 0, depth, obj_transition2)
+					_transition.var_action = function(){ //Go to desired room when transition is over
+						ini_open("data.ini")
+							var _stagesFinished = ini_read_real("Stages", "Total", 0);
+						ini_close();
+						
+						if(_stagesFinished = 0)
+						{
+							room_goto(rm_tutorial)
+						};
+						else
+						{
+							room_goto(rm_lobby)
+						};	
+					};
+				}
 			break;
 	
 			case 1: //Options
@@ -443,7 +448,21 @@ function scr_menuMain(){
 
 	var_selected = clamp(var_selected, 0, _options)
 }
+
+function scr_menuHolic(){
+	draw_sprite(spr_title, 0, room_width/2, room_height/2 + osc_step(1, 3))
+		
+	global.music = mus_silence;
 	
+	if(keyboard_check_pressed(vk_anykey))
+	{
+		var_state = MAIN_MENU.main;
+		global.music = mus_mainMenu;
+		
+		screenshake(10, .5, .2)
+	};
+};
+
 function slider(xx, yy, gain){
 	var _margin = 2,
 		_height = 5,

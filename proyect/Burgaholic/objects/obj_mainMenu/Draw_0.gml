@@ -13,6 +13,10 @@ switch(var_state)
 		scr_menuOptions()
 	break;
 	
+	case 3:
+		scr_menuHolic()
+	break;
+	
 	default:
 		scr_menuMain()
 	break;
