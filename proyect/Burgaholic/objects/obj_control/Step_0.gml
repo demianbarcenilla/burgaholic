@@ -4,6 +4,11 @@ if(instance_exists(obj_player))
 	y = obj_player.y
 };
 
+if (keyboard_check_pressed(ord("R")))
+{
+	room_goto(rm_arcadeTennis);
+}
+
 if(shaking)
 {
 

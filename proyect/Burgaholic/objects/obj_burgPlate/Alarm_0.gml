@@ -21,7 +21,6 @@ if(var_finalCheck)
 	
 	instance_destroy(obj_arcadeController);
 }
-	
 else
 {
 	screenshake(10, 1, 1);
