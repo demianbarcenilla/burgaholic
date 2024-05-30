@@ -1,4 +1,4 @@
-image_speed = .4;
+image_speed = .6;
 spd = 1;
 ball = instance_nearest(x, y, obj_tennis_ball);
 

@@ -16,6 +16,16 @@ if (place_meeting(x, y + ydir * yspd, obj_tennis_wall))
 	{
 		y += ydir;
 	}
+	
+	if (ydir > 0)
+	{
+		obj_tennis_BG.current_score --;
+	}
+	else
+	{
+		obj_tennis_BG.current_score ++;
+	}
+	
 	ydir *= -1;
 }
 else
@@ -37,3 +47,6 @@ if (place_meeting(x - obj_tennis_slime.image_xscale * 6, y + 5, obj_tennis_slime
 	ydir = 1;
 	xdir = choose(-1, 1);
 }
+
+shadow.x = x;
+shadow.y = y + sin(current_time * .005) * 6 + 6;

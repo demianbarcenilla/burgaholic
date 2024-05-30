@@ -20,6 +20,7 @@
     {"name":"inst_725C30AC","path":"rooms/rm_arcadeTennis2/rm_arcadeTennis2.yy",},
     {"name":"inst_684CA8B5","path":"rooms/rm_arcadeTennis2/rm_arcadeTennis2.yy",},
     {"name":"inst_2E4B62E2","path":"rooms/rm_arcadeTennis2/rm_arcadeTennis2.yy",},
+    {"name":"inst_5855429D","path":"rooms/rm_arcadeTennis2/rm_arcadeTennis2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -33,6 +34,7 @@
 -6,11,1,40,-12,41,1,42,-6,11,1,40,-3,27,-9,41,1,42,-6,11,
 1,8,-12,4,1,43,-3,11,],"TileDataFormat":1,},"tilesetId":{"name":"tl_arcade","path":"tilesets/tl_arcade/tl_arcade.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5855429D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_tennis_BG","path":"objects/obj_tennis_BG/obj_tennis_BG.yy",},"properties":[],"rotation":0.0,"scaleX":20.0,"scaleY":14.0,"x":80.0,"y":32.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2A551669_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":8.0,"x":64.0,"y":24.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_16D4E87B_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":12.0,"scaleY":0.5,"x":64.0,"y":80.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1FB3F4D3_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":8.5,"x":240.0,"y":16.0,},
