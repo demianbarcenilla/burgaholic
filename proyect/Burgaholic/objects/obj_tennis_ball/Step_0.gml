@@ -17,6 +17,7 @@ if (place_meeting(x, y + ydir * yspd, obj_tennis_wall))
 		y += ydir;
 	}
 	
+	screenshake(10, 1, 1);
 	if (ydir > 0)
 	{
 		obj_tennis_BG.current_score --;
