@@ -14,7 +14,7 @@ if(var_state = 0)
 	if(keyboard_check_pressed(global.k_jump))
 	{
 		var_state = 1;
-		sprite_index = spr_burgTennisDash;
+		sprite_index = spr_burgTennis;
 		dash_timer = dash_timer_max;
 		audio_play_sound(sfx_jump, 0, 0);
 	}
@@ -31,13 +31,13 @@ else if(var_state = 1)
 	{
 		var_state = 0;
 		
-		sprite_index = spr_burg;
+		sprite_index = spr_burgTennisStill;
 	}
 	
 	collisionBasic();
 }
 else
 {
-	sprite_index = spr_burgDead;
+	sprite_index = spr_burgTennis;
 	image_angle += 15;
 };

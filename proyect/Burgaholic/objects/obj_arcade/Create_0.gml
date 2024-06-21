@@ -6,7 +6,7 @@ image_index = global.stage;
 // Inherit the parent event
 event_inherited();
 
-arr_arcadeGame[0] = rm_arcadeBurg; //ARCADE GAME
+arr_arcadeGame[0] = rm_arcadeTennis; //ARCADE GAME
 arr_arcadeGame[1] = rm_arcadeBUMB;
 arr_arcadeGame[2] = rm_arcadeBurg;
 arr_arcadeGame[3] = rm_arcadeBurg;

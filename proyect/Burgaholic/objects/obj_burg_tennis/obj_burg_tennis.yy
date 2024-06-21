@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_burg",
-    "path": "sprites/spr_burg/spr_burg.yy",
+    "name": "spr_burgTennisStill",
+    "path": "sprites/spr_burgTennisStill/spr_burgTennisStill.yy",
   },
   "spriteMaskId": {
     "name": "spr_burg",
