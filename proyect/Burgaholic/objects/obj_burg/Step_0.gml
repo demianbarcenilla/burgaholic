@@ -32,7 +32,11 @@ if(var_state = 0)
 		{
 			var_vspd = -var_jspd;
 			audio_play_sound(sfx_jump, 0, 0);
-		};
+		}
+		else
+		{
+			var_vspd = 0;
+		}
 	
 		//Animate
 		image_speed = .4;
