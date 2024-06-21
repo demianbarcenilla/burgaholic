@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "PARENTS-RESOURCES",
-    "path": "folders/Objects/ENVIRONMENT/PARENTS-RESOURCES.yy",
+    "name": "FOREST",
+    "path": "folders/Objects/ENVIRONMENT/FOREST.yy",
   },
   "parentObjectId": {
     "name": "obj_wall",

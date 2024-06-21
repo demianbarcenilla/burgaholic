@@ -360,3 +360,14 @@ function newAlarm(time, func)
 		func();
 	};
 };
+
+function trailMake() 
+{
+	var_trailTimer --;
+	
+	if(var_trailTimer < -1)
+	{
+		instance_create_depth(x, y, depth+1, obj_trail)
+		var_trailTimer = var_trailTimerRate
+	};
+};

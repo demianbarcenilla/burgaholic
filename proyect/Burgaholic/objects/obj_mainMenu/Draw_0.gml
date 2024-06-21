@@ -2,7 +2,7 @@
 switch(var_state)
 {
 	case 0:
-		scr_menuMain()
+		scr_menuMain();
 	break;
 	
 	case 1:

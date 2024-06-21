@@ -129,7 +129,7 @@ function scr_menuOptions(){
 			if(keyboard_check_pressed(global.k_left))
 			{
 				audio_group_set_gain(ag_music, _curGain-_volumeAdd, 0);
-			};
+			}
 				
 			else if(keyboard_check_pressed(global.k_right))
 			{
@@ -224,6 +224,11 @@ function scr_menuOptions(){
 					audio_play_sound(sfx_menuS, 2, 0);
 					
 					global.lang ++;
+					with(obj_control)
+					{
+						global.langString = arr_lang[global.lang]
+					}
+					
 					if(global.lang > _langAmmount)
 					{
 						global.lang = 0
@@ -359,7 +364,7 @@ function scr_menuOptions(){
 				var_keybind = 0;
 			};
 		};
-	};
+	}
 	else
 	{
 		//Select Different Options
@@ -417,19 +422,9 @@ function scr_menuMain(){
 				if(!instance_exists(obj_transition2))
 				{
 					var _transition = instance_create_depth(0, 0, depth, obj_transition2)
-					_transition.var_action = function(){ //Go to desired room when transition is over
-						ini_open("data.ini")
-							var _stagesFinished = ini_read_real("Stages", "Total", 0);
-						ini_close();
-						
-						if(_stagesFinished = 0)
-						{
-							room_goto(rm_tutorial)
-						};
-						else
-						{
-							room_goto(rm_lobby)
-						};	
+					_transition.var_action = function() //Go to desired room when transition is over
+					{ 
+						room_goto(decide_startroom());
 					};
 				}
 			break;

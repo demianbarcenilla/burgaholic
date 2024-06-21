@@ -8,9 +8,9 @@ if(place_meeting(x, y, obj_player))
 	{
 		with(obj_pickle)
 		{
-			if(var_touched)
+			if(var_state = PICKLE_STATE.following)
 			{
-				var_destroy = true;
+				var_state = PICKLE_STATE.destroy
 			};
 		}
 	}

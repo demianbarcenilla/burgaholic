@@ -55,6 +55,7 @@ burgerDisplace_current = burgerDisplace;
 var_drawDeathCount = false;
 deathCountDisplace = 32;
 deathCountDisplace_current = deathCountDisplace;
+
 global.pickles = 0;
 
 ini_open("data.ini");
@@ -116,6 +117,7 @@ arr_lang[lang.spanish] = "spanish"
 global.lang = 0;
 global.langString = arr_lang[global.lang];
 global.specialMusic = false;
+
 /*Unlock/Lock ALL Burgers
 ini_open("data.ini");
 	for(i = 0; i < 300; i++)

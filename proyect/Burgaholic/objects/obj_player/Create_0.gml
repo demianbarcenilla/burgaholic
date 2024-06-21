@@ -42,7 +42,6 @@ var_spd = 0;
 con_mspd = 1.7;
 var_mspd = con_mspd;
 
-
 var_spdCarry = 0;
 var_vspdCarry = 0;
 
@@ -61,7 +60,7 @@ var_coyoteTime = 6; //Time before you can't jump on air anymore
 //MISC
 roomCooldown = false; //Cooldown for the transitions between rooms
 invincibleFrames = false;
-var_picklesFollowing = 0;
+
 var_canDMG = false;
 var_canPunch = true;
 
@@ -82,7 +81,10 @@ var_checkpoint = rm_forest;
 var_checkpointX = 136;
 var_checkpointY = 208 -64;
 
-var_effect = 0; //Carrying a jellyfish/pepperBoy, etc
+//FX LIST:
+//0 = Normal !! 1 = Jellyfish !! 2 = Pepperboy !! 3 = Fishy !! 4 = Core
+var_effect = 0;
+
 var_spriteMod = "";
 
 var_combo = 0; //ammount of enemies you've hit
@@ -90,3 +92,10 @@ t = 0; //for oscilation in the hearts
 
 var_redAlpha = 0; //The opacity for the red when you step on magma
 var_bubbleTimer = 0;
+
+//TRAIL
+var_trailTimer = -1;
+var_trailTimerRate = 1;
+//PICKLES
+arr_pickles = array_create(0)
+update_pickles = false;

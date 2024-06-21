@@ -1,23 +1,5 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function pickleSave()
-{
-	instance_destroy();
-	
-	if(!var_pickleUnlocked)
-	{
-		obj_control.drawPickle = true;
-		global.pickles ++;
-		
-		ini_open("data.ini");
-			ini_write_real("PicklesUnlocked", string(id), true)
-			ini_write_real("PicklesUnlocked", "Held", global.pickles);
-		ini_close();
-	};
-	
-	obj_player.var_picklesFollowing --;
-};
-
 function collisionBasic()
 {
 	var _spd = var_spd;
@@ -130,3 +112,32 @@ function checkAllBought(_pool)
 	ini_close();
 	return _allBought;
 };
+
+function resetAlarms(exceptFor)
+{
+	for(i = 0; i < 11; i++)
+	{
+		if(i != exceptFor)
+		{
+			alarm[i] = -1;
+		};
+	};
+}
+
+function stepAlarm(number, time)
+{
+	if(alarm[number] = -1)
+	{
+		alarm[number] = time;
+	}
+};
+
+function decide_startroom()
+{
+	ini_open("data.ini")
+		var _stagesFinished = ini_read_real("Stages", "Total", 0)
+	ini_close()
+	var _startRoom = _stagesFinished == 0 ? rm_tutorial : rm_lobby;
+	 _startRoom = rm_test;
+	 return _startRoom
+}

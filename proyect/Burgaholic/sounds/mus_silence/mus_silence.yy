@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "mus_silence",
   "audioGroupId": {
-    "name": "ag_music",
-    "path": "audiogroups/ag_music",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "bitDepth": 1,
   "bitRate": 128,

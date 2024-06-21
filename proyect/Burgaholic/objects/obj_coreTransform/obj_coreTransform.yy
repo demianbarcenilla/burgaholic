@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_jelly",
-    "path": "sprites/spr_jelly/spr_jelly.yy",
+    "name": "spr_coreTransform",
+    "path": "sprites/spr_coreTransform/spr_coreTransform.yy",
   },
   "spriteMaskId": {
     "name": "spr_enWalkIdle",

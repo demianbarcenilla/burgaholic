@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_dakotaShop",
-    "path": "sprites/spr_dakotaShop/spr_dakotaShop.yy",
+    "name": "spr_dakotaStanding",
+    "path": "sprites/spr_dakotaStanding/spr_dakotaStanding.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,0 +1,1 @@
+instance_create_depth(x + sprite_width/2, y, depth, obj_wasteDamage)

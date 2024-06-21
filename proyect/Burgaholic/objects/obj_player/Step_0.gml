@@ -93,7 +93,7 @@ if(hp > 0)
 			state_respawn();
 		break;
 	};
-};
+}
 else //DEAD
 {
 	if(var_state != STATE_MACHINE.dead)
@@ -113,8 +113,11 @@ else //DEAD
 		ini_close();
 		
 		with(obj_control){var_drawDeathCount = true};
+		
 		screenshake(10, .5, .1)
 		audio_play_sound(sfx_dead, 1, false)
+		
+		array_resize(arr_pickles, 0)
 	}
 	else
 	{
@@ -152,6 +155,13 @@ if(global.stage = stage.reef) and (room != rm_reef)
 {
 	var_effect = 3;
 };
+
+//IN CORE YOU'RE ALWAYS A ???
+if(global.stage = stage.core)
+{
+	var_effect = 4;
+};
+
 
 //Change your room
 if(x > room_width -_halfSprite+1)
@@ -286,6 +296,8 @@ switch (var_effect)
 		var_spriteMod = "";
 	break;
 }
+
+//Bubble FX when underwater
 if(place_meeting(x, y, obj_water)) or (global.stage = stage.reef)
 {
 	var_bubbleTimer --;
@@ -306,7 +318,12 @@ if(instance_exists(obj_statue)) //Don't die if you're in a bonus level transitio
 	};
 };	
 
-if(y > room_height + sprite_height) and (_pitDie){hp = 0};
+var _isOnPit = (y > room_height + sprite_height) and (_pitDie),
+	_isOnToxicWall = place_meeting(x, y, obj_walltoxic),
+	_isOnWaste = place_meeting(x, y, obj_wastePool),
+	_hpToZero = _isOnPit or _isOnToxicWall or _isOnWaste
+	
+if(_hpToZero){hp = 0};
 
 if(keyboard_check_pressed(ord("R")))
 {
@@ -317,3 +334,9 @@ if(place_meeting(x, y+1, obj_wall))
 {
 	var_combo = 0;
 };
+
+if(update_pickles)
+{
+	update_pickle_list();
+	update_pickles = false
+}

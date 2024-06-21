@@ -1,6 +1,5 @@
 // Inherit the parent event
 event_inherited();
-
 var_action = function(){
 	if(!instance_exists(obj_chat) and (!instance_exists(obj_shop)))
 	{
@@ -10,5 +9,7 @@ var_action = function(){
 			_chat.var_event = var_event
 	}	
 }
-image_speed = IMAGE_SPEED;
+image_speed = .2;
 var_pool = 0;
+var_chatFinished = "ChatDakota";
+

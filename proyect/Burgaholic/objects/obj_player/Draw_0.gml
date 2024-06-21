@@ -44,3 +44,13 @@ else
 {
 	draw_self();
 }
+
+for(i = 0 ; i < array_length(arr_pickles) ; i++)
+{
+	show_debug_message(string(arr_pickles[i]))
+}
+/*
+for(i = 0 ; i < array_length(arr_pickles) ; i++)
+{
+	draw_text_outlined(x, y-(8*i), string(arr_pickles[i]))
+}

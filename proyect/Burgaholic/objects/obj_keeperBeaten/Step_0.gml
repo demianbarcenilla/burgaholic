@@ -1,16 +1,25 @@
-var_vspd += var_grav;
-x += var_spd;
-
-y += var_vspd;
-collisions();
-
-if(place_meeting(x, y+1, obj_wall))
+switch(var_state)
 {
-	var _keeper = instance_create_depth(x, y, depth, obj_chatSpawn);
+	case 0:
+		var_shake = true;
+		
+		stepAlarm(0, 60);
+	break;
 	
-	_keeper.var_chatbox = var_chatbox;
-	_keeper.var_chat = var_chat;
-	_keeper.var_event = var_event;
-	_keeper.sprite_index = var_sprite;
-	instance_destroy();
+	case 1:
+	//BOUNCE AROUND
+		var_vspd += var_grav;
+		collisionBasic();
+		enemy_wallBounce(true);
+		
+		if(place_meeting(x, y+1, obj_wall))
+		{
+			var _keeper = instance_create_depth(x, y, depth, obj_keeperBeatenSpawn);
+	
+			_keeper.var_chatbox = var_chatbox;
+			_keeper.var_chat = var_chat;
+			_keeper.sprite_index = var_sprite;
+			instance_destroy();
+		};
+	break;
 };

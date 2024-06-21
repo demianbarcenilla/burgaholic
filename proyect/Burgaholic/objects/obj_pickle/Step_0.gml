@@ -1,76 +1,67 @@
-//OSCILATE
-
-if(place_meeting(x, y, obj_player)) and (!var_touched)
+switch(var_state)
 {
-	var_touched = true;
-	
-	obj_player.var_picklesFollowing ++;
-	pickleNumber = obj_player.var_picklesFollowing;
-	
-	delay = 10* (pickleNumber -1);
-	
-	with(obj_follower)
-	{
-		angle = pickleNumber/obj_player.var_picklesFollowing *360;
-	};
-	
-	if(pickleNumber > 2)
-	{
-		screenshake(10, .6, .2)
-	};
-};
-
-if(var_touched) //If touched by the player follow behind em until you go to the next screen
-{
-	if(instance_exists(obj_player))
-	{
-		if(var_destroy)
-		{	
+	case PICKLE_STATE.still: //Starting POS
+		y += osc_step(1, .1); //Oscillate in place
+		
+		if(place_meeting(x, y, obj_player))
+		{
+			//We fill the last entry with the ID
+			array_push(obj_player.arr_pickles, id)
 			
-			if(instance_exists(obj_checkpoint))
+			pickle_set_number();
+			
+			//Set the delay for destroying
+			delay = 10*(pickleNumber) +1;
+			
+			//Update the angle the pickle is rotating
+			pickle_angleUpdate();
+			
+			//If rotating, Screenshake
+			if(pickleNumber > 2)
 			{
-				if(canLerp = true)
-				{
-					x = lerp(x, obj_checkpoint.x, .1);
-					y = lerp(y, obj_checkpoint.y-16, .1);
+				screenshake(10, .6, .2)
+			};
 			
-					if(round(x) = obj_checkpoint.x) and (round(y) = obj_checkpoint.y-16)
-					{
-						pickleSave();
-					}
-				}
-				
-				else
-				{
-					if(alarm[0] = -1)
-					{
-						if(delay != 0)
-						{
-							alarm[0] = delay
-						}
-						else
-						{
-							alarm[0] = 1
-						};
-					}
-					
-					pickleFollow();
-				};
+			player_pickleCheck()
+			
+			var_state = PICKLE_STATE.following;
+		};
+	break;
+	
+	case PICKLE_STATE.following: //Following Player
+		
+		//Make persistent
+		persistent = true;
+		
+		if(instance_exists(obj_player))
+		{
+			pickle_follow();
+		};
+		
+		pickle_set_number();
+	break;
+	
+	case PICKLE_STATE.destroy:
+		if(instance_exists(obj_checkpoint)) //If checkpoint exists, aproach
+		{
+			if(canLerp = true)
+			{
+				pickle_lerp_checkpoint()
 			}
 			else
 			{
-				pickleSave();
-			}
+				//Set delay between pickles
+				if(alarm[0] = -1)
+				{
+					alarm[0] = delay
+				}
+					
+				pickle_follow();
+			};
 		}
-		else
+		else //Otherwise, delete pickle and save automatically
 		{
-			pickleFollow();
-		};
-	};
-
-	persistent = true;
-}
-else
-{
-	y += osc_step(1, .1); //Oscillate in place
+			pickleSave();
+		}
+	break;
 }

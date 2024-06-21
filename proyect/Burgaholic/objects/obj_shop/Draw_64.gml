@@ -48,9 +48,10 @@ for(i = 0; i < 5; i++) //Draw Burgers
 		{
 			draw_sprite(spr_burgerCard, cardColor, 80 + (32*_xpos), 64 + (32*_ypos))
 			
-			gpu_set_fog(true, $502C33, 0, 10)
+			//Draws the burger you're buying	
+			/*gpu_set_fog(true, $502C33, 0, 10)
 				draw_sprite(spr_burgers, arr_burgerPool[_id], 80 + (32*_xpos), 64 + (32*_ypos))
-			gpu_set_fog(false, c_white, 0, 10)			
+			gpu_set_fog(false, c_white, 0, 10)			*/
 		};
 	};
 };
@@ -73,7 +74,7 @@ if(keyboard_check_pressed(global.k_jump))
 		ini_close();
 				
 		var _card = instance_create_depth(80 + (32*var_selectedX), 64 + (32*var_selectedY), depth, obj_cardDiscarded)
-		_card.image_index = cardColor;
+		_card.burgSprite = arr_burgerPool[var_burgerSelected];
 		
 		if(audio_is_playing(sfx_burgerBuy))
 		{

@@ -37,22 +37,6 @@ function shk_step(ammount)
 	return t;
 };
 
-function pickleFollow()
-{
-	if(obj_player.var_picklesFollowing <= 2)
-	{
-		x = lerp(x, obj_player.x -(17 * obj_player.image_xscale)*pickleNumber, .1);
-		y = lerp(y, obj_player.y -(obj_player.sprite_height/2), .1);
-	}
-	else if(obj_player.var_picklesFollowing > 2)
-	{
-		angle += angle_rate;
-		x = obj_player.x + lengthdir_x(distance, angle)
-		y = obj_player.y -(obj_player.sprite_height/2) + lengthdir_y(distance, angle)
-	}	
-	if(pickleNumber > obj_player.var_picklesFollowing){pickleNumber = obj_player.var_picklesFollowing}
-}
-
 function bossBarriers()
 {
 	instance_create_depth(0, room_height-16, depth, obj_barrierBoss);
@@ -64,4 +48,41 @@ var c1 = 1.70158,
 	c3 = c1 + 1;
 
 return 1 + c3 * power(xx - 1, 3) + c1 * power(xx - 1, 2);
+}
+	
+function vfx_dirt()
+{
+	repeat(4) //Creates 4 dirt particles
+	{
+		var _dirt = instance_create_depth(x, y, depth, obj_dirtFX)
+		_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
+	}
+	
+	audio_play_sound(sfx_bump, 1, false)
+}
+
+function draw_objectShake()
+{
+	if(var_shake)
+	{
+		draw_sprite(sprite_index, image_index, x+shk_step(1), y +shk_step(1));
+	}
+	else
+	{
+		draw_self();
+	};
+}
+
+function draw_text_outlined(xx, yy, text)
+{
+	//Outline
+	draw_set_color(c_black)
+	draw_text(xx+1, yy, text)
+	draw_text(xx-1, yy, text)
+	draw_text(xx, yy+1, text)
+	draw_text(xx, yy-1, text)
+	
+	//Fill
+	draw_set_color(c_white)
+	draw_text(xx, yy, text)
 }

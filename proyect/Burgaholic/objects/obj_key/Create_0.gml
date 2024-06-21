@@ -1,3 +1,12 @@
+enum KEY_STATE
+{
+	still,
+	following,
+	destroy
+}
+
+var_state = KEY_STATE.still;
+
 image_speed = IMAGE_SPEED;
 
 t = 0;

@@ -8,11 +8,11 @@ var_downAmmount = 0;
 var i = 0, ii = 0;
 
 //Count the Ammount of barriers to place
-while(!place_meeting(x, y -(var_upAmmount*var_escalate), obj_wall))
+while(!place_meeting(x, y -(var_upAmmount*var_escalate), obj_solid))
 {
 	var_upAmmount++; //Upwards
 };
-while(!place_meeting(x, y +(var_downAmmount*var_escalate), obj_wall))
+while(!place_meeting(x, y +(var_downAmmount*var_escalate), obj_solid))
 {
 	var_downAmmount++; //Downwards
 };
@@ -35,6 +35,6 @@ for(ii = 0; ii < var_downAmmount; ii++) //Generate the barriers
 	var_generateDown += var_escalate; //Generate the next barrier lower
 };
 
-
+var_canPickKey = true;
 var_id = id;
 var_breaking = false;

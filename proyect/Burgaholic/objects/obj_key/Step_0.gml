@@ -1,96 +1,63 @@
-//OSCILATE
-
-if(place_meeting(x, y, obj_player)) and (!var_touched)
+switch(var_state)
 {
-	var_touched = true;
-	
-	obj_player.var_picklesFollowing ++;
-	pickleNumber = obj_player.var_picklesFollowing;
-	
-	delay = 10* (pickleNumber -1);
-	
-	with(obj_follower)
-	{
-		angle = pickleNumber/obj_player.var_picklesFollowing *360;
-	};
-	
-	if(pickleNumber > 2)
-	{
-		screenshake(10, .6, .2)
-	};
-};
-
-if(var_touched) //If touched by the player follow behind em until you go to the next screen
-{
-	if(instance_exists(obj_player))
-	{
-		if(var_destroy)
-		{	
-			if(instance_exists(obj_barrierKeyhole))
-			{
-				var _keyHole = instance_nearest(x, y, obj_barrierKeyhole)
-				
-				if(canLerp = true)
-				{
-					x = lerp(x, _keyHole.x+8, .1);
-					y = lerp(y, _keyHole.y+8, .1);
+	case KEY_STATE.still: //Starting POS
+		y += osc_step(1, .1); //Oscillate in place
+		
+		if(place_meeting(x, y, obj_player))
+		{
+			//We fill the last entry with the ID
+			array_push(obj_player.arr_pickles, id)
 			
-					if(round(x) = _keyHole.x+8) and (round(y) = _keyHole.y+8)
-					{
-						instance_destroy();
-						audio_play_sound(sfx_key, 0, 0)
-						with(_keyHole)
-						{
-							var_breaking = true;
-							alarm[0] = 5;
-						}
-						obj_player.var_picklesFollowing --;
-						
-						if(instance_exists(obj_follower))
-						{
-							if(obj_follower.pickleNumber > pickleNumber)
-							{
-								with(obj_follower)
-								{
-									obj_follower.pickleNumber --;
-								};
-							};
-						};
-					};
-				}
-				else
-				{
-					if(alarm[0] = -1)
-					{
-						if(delay != 0)
-						{
-							alarm[0] = delay
-						}
-						else
-						{
-							alarm[0] = 1
-						};
-					};
-					
-					pickleFollow();
-				};
+			pickle_set_number();
+			
+			//Set the delay for destroying (always quick)
+			delay = 1
+			
+			//Update the angle the pickle is rotating
+			pickle_angleUpdate();
+			
+			//If rotating, Screenshake
+			if(pickleNumber > 2)
+			{
+				screenshake(10, .6, .2)
+			};
+			
+			player_pickleCheck()
+			
+			var_state = PICKLE_STATE.following;
+		};
+	break;
+	
+	case KEY_STATE.following: //Following Player
+		
+		//Make persistent
+		persistent = true;
+		
+		if(instance_exists(obj_player))
+		{
+			pickle_follow();
+		};
+		
+		pickle_set_number();
+	break;
+	
+	case KEY_STATE.destroy:
+		if(instance_exists(obj_barrierKeyhole))
+		{	
+			if(canLerp = true)
+			{
+				key_lerp_checkpoint()
 			}
 			else
 			{
-				instance_destroy();
-				obj_player.var_picklesFollowing --;
-			}
+				//Set delay between pickles
+				if(alarm[0] = -1)
+				{
+					alarm[0] = 1
+				}
+					
+				pickle_follow();
+			};
 		}
-		else
-		{
-			pickleFollow();
-		};
-	};
-
-	persistent = true;
-}
-
-else
-{
-	y += osc_step(1, .1); //Oscillate in place
+	break;	
 }

@@ -14,7 +14,7 @@ VOLCANO: 22
 ...142
 */
 var_poolStart = 2;
-cardColor = 1;
+cardColor = 2;
 
 for(i = 0; i < 15; i++)
 {

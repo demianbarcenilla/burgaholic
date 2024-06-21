@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "WORLD 1",
-    "path": "folders/Sprites/WORLDS/WORLD 1.yy",
+    "name": "ENEMIES",
+    "path": "folders/Sprites/WORLDS/WORLD 1/ENEMIES.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

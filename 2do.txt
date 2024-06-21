@@ -1,25 +1,23 @@
 ASHTRAY
--find main mechanic
--make 20 levels (0/20) (remake current levels)
+-find main mechanic (portals?)
+-make 24 levels (0/24) (remake current levels)
 -bonus rooms 
 
 CORE
--find main mechanic (core transformation)
--make 20 levels (0/20)
 -bonus rooms 
 
 POND
--make bullfrog enemy (a frog riding a bull)
--make 20 levels (0/20)
 -bonus rooms 
 
 BIG
 -finish every arcade game
 -finish/make every boss
 -finish main/pause menu
+
 -make achievements?
--finish dialogue
--spanish translation
+
+-finish dialogueX
+-spanish translationX
 
 SFX:
 boat moving
@@ -29,8 +27,6 @@ BOINNNG
 FIX
 -enemies sometimes kill you when you hit them (mostly slimes)
 -can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF
--every key you have gets used up on the same door
--gap between orbitals when you use keys
 -the way exiting arcades work (despawns your pickles/keys, resets your hp)
 
 MUSIC

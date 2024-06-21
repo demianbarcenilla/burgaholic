@@ -22,7 +22,7 @@ function state_normal()
 	}
 	else
 	{
-		var _ice = place_meeting(x, y+1, obj_ice)
+		var _ice = place_meeting(x, y+1, obj_ice) //Unused
 		var_spd = lerp(var_spd, 0, _ice ? .05 : .2);
 	};
 	
@@ -119,7 +119,7 @@ function state_normal()
 		{
 			var_vspd /=4
 		};
-	};
+	}
 	else
 	{
 		var_canPunch = true;
@@ -328,8 +328,9 @@ function state_dead()
 
 function state_pound()
 {
+	trailMake();
 	var_canDMG = true;
-	var_spd = 0;
+	var_spd = var_effect == 4 ? var_mspd * 4 * image_xscale : 0;
 	var_vspd = var_jspd;
 	sprite_index = sprite("spr_playerPound");
 	
@@ -348,6 +349,7 @@ function state_pound()
 	};
 		
 	collisions();
+	
 	_enemy = instance_nearest(x, y, obj_enemy)
 	if(place_meeting(x, y, _enemy)) and (!_enemy.untouchable)
 	{
@@ -415,6 +417,8 @@ function state_pound()
 
 function state_roll()
 {
+	trailMake();
+	
 	var_canDMG = true;
 	var _ice = place_meeting(x, y+1, obj_ice)
 
@@ -504,6 +508,8 @@ function state_roll()
 
 function state_dash()
 {
+	trailMake();
+	
 	var_canDMG = true;
 	
 	sprite_index = sprite("spr_playerRoll");
@@ -524,11 +530,7 @@ function state_dash()
 			var_vspd = -var_jspd/2;
 			var_state = STATE_MACHINE.bump
 			
-			repeat(4) //DIRT FX
-			{
-				var _dirt = instance_create_depth(x, y, depth, obj_dirtFX)
-				_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
-			}
+			vfx_dirt();
 		};
 	}
 	if(keyboard_check_pressed(global.k_jump))
@@ -552,6 +554,8 @@ function state_dash()
 
 function state_punch()
 {
+	trailMake();
+	
 	var_canDMG = true;
 	
 	if(var_effect = 2)
@@ -592,11 +596,7 @@ function state_punch()
 		var_vspd = -var_jspd/2;
 		var_state = STATE_MACHINE.bump
 		
-		repeat(4) //DIRT FX
-		{
-			var _dirt = instance_create_depth(x, y, depth, obj_dirtFX)
-			_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
-		}
+		vfx_dirt();
 		
 		image_speed = IMAGE_SPEED;
 	};
@@ -604,6 +604,13 @@ function state_punch()
 
 function state_tube()
 {
+	for(i = 0; i < array_length(arr_pickles); i++)
+	{
+		if(instance_exists(arr_pickles[i]))
+		{
+			instance_destroy(arr_pickles[i]);
+		};
+	};
 	var_effect = 0; //Carrying a crab/exploding baby, etc
 	var_spriteMod = "";
 	
@@ -662,6 +669,8 @@ function state_windup()
 
 function state_bounce()
 {
+	trailMake();
+	
 	sprite_index = sprite("spr_playerBounce")
 	var_canDMG = true;
 	
@@ -698,6 +707,7 @@ function state_bounce()
 	{
 		var_vspd += var_grav;
 	}
+	
 	else
 	{
 		var_vspd = 0;
