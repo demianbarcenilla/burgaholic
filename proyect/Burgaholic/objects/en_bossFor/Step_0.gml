@@ -101,8 +101,13 @@ image_xscale = var_spd = 0 ? 1 : sign(var_spd);
 if(var_hp <= 0)
 {
 	var _keeper = instance_create_depth(x, y-32, depth, obj_keeperBeaten)
+	
 	repeat(16){instance_create_depth(x, y-32, depth, obj_wasteFX)};
 	screenshake(5, 1, .2)
+	
+	global.specialMusic = true;
+	global.music = mus_silence;
+
 	ini_open("data.ini");
 		if(ini_read_real("Stages", "Total", 0) < 1)
 		{

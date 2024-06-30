@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_noBounce",
+  "name": "obj_noBounceWall",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "PARENTS-RESOURCES",
-    "path": "folders/Objects/ENVIRONMENT/PARENTS-RESOURCES.yy",
+    "name": "ASHTRAY",
+    "path": "folders/Objects/ENVIRONMENT/ASHTRAY.yy",
   },
   "parentObjectId": {
     "name": "obj_wall",

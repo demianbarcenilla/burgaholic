@@ -47,7 +47,7 @@ function pickle_follow()
 	var _pickleAmmount = array_length(obj_player.arr_pickles)
 	if(_pickleAmmount <= 2)
 	{
-		x = lerp(x, obj_player.x -(17 * obj_player.image_xscale)*pickleNumber, .1);
+		x = lerp(x, obj_player.x -(17 * obj_player.image_xscale)*(pickleNumber+1), .1);
 		y = lerp(y, obj_player.y -(obj_player.sprite_height/2), .1);
 	}
 	else 

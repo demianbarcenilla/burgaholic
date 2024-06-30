@@ -379,8 +379,17 @@ function state_pound()
 		}
 		else
 		{
-			if(place_meeting(x, y+1, obj_noBounce))
+			if(place_meeting(x, y+1, obj_noBounceWall))
 			{
+				repeat(4) //Creates 4 dirt particles
+				{
+					var _dirt = instance_create_depth(x, y, depth, obj_cloudSFX)
+					_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
+					_dirt.sprite_index = spr_noBounceFX;
+				}
+	
+				audio_play_sound(sfx_noBounce, 1, false)
+	
 				var_state = STATE_MACHINE.normal;
 			}
 			else

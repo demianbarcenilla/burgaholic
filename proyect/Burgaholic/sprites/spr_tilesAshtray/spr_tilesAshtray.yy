@@ -2,8 +2,8 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilesAshtray",
-  "bbox_bottom": 79,
-  "bbox_left": 22,
+  "bbox_bottom": 111,
+  "bbox_left": 0,
   "bbox_right": 159,
   "bbox_top": 0,
   "bboxMode": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"90f826dd-f185-4e54-8a0e-9953d7dd1586",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ecaade99-ef11-40ce-9924-bc7e6224544a",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 80,
+  "height": 112,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3de3df89-9398-46dd-9cba-9a95e347be40","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3ac46d54-4504-4af3-88d3-b0db6a2e5676","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"90f826dd-f185-4e54-8a0e-9953d7dd1586","path":"sprites/spr_tilesAshtray/spr_tilesAshtray.yy",},},},"Disabled":false,"id":"c0e5d839-d67b-4303-8c5a-50dae90de0c3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ecaade99-ef11-40ce-9924-bc7e6224544a","path":"sprites/spr_tilesAshtray/spr_tilesAshtray.yy",},},},"Disabled":false,"id":"1a9711c5-27a6-44f6-97c7-86931baab7df","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
