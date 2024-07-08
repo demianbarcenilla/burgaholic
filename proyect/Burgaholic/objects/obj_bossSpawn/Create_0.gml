@@ -13,6 +13,9 @@ switch(global.stage)
 	
 	case stage.beach: 
 		var_boss = en_bossBea;
+		
+		xx = room_width/4;
+		yy = 111;
 	break;
 	
 	default: 

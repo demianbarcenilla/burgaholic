@@ -46,7 +46,7 @@
     ],
     "top": 0,
   },
-  "origin": 4,
+  "origin": 7,
   "parent": {
     "name": "BOSS",
     "path": "folders/Sprites/WORLDS/WORLD 3/BOSS.yy",
@@ -83,7 +83,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 14,
-    "yorigin": 23,
+    "yorigin": 46,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

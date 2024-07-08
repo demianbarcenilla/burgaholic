@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "rm_beach",
-  "creationCodeFile": "${project_dir}/rooms/rm_beach/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/rm_beach/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
