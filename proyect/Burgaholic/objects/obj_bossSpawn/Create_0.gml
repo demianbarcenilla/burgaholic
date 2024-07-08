@@ -11,6 +11,10 @@ switch(global.stage)
 		var_boss = en_bossVol;
 	break;
 	
+	case stage.beach: 
+		var_boss = en_bossBea;
+	break;
+	
 	default: 
 		var_boss = en_bossFor;
 	break;
