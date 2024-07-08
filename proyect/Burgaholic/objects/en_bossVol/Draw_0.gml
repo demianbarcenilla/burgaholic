@@ -1,1 +1,1 @@
-draw_objectShake();
+boss_draw();

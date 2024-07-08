@@ -21,3 +21,15 @@ function enemy_proyCreate(object, assignHspd, assignVspd)
 		_proy.var_spd = assignHspd;
 		_proy.var_vspd = assignVspd;
 }
+
+function boss_draw()
+{
+	if(var_shake)
+	{
+		draw_sprite(sprite_index, image_index, x+shk_step(1), y +shk_step(1));
+	}
+	else
+	{
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, var_angle, image_blend, 1);
+	};
+}

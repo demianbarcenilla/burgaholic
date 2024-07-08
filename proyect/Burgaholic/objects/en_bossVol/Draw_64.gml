@@ -11,7 +11,7 @@ if(var_state != SLIME_STATE.spawning)
 };
 
 
-/*Debug
+/*/Debug
 draw_set_font(fnt_holicSmall)
-draw_text(x, y-48, "state" + string(var_state))
+draw_text(x, y-48, "state" + string(var_angle))
 draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true)

@@ -1,5 +1,7 @@
 // Inherit the parent event
 event_inherited();
+
+
 var_event = function(){
 	var _trans = instance_create_depth(0, 0, depth, obj_transition2)
 	_trans.var_room = rm_lobby;
@@ -15,7 +17,7 @@ var_action = function(){
 	}	
 }
 image_speed = .2;
+
 var_pool = 0;
 var_chatFinished = "ChatDakota";
 
-show_debug_message(var_event)

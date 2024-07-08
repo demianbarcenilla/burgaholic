@@ -9,10 +9,9 @@ switch(global.stage)
 	
 	case stage.volcano: 
 		var_boss = en_bossVol;
-		xx = room_width-32;
-		yy = sprite_height+78;
 	break;
 	
-	default: var_boss = en_bossFor;
+	default: 
+		var_boss = en_bossFor;
 	break;
 }

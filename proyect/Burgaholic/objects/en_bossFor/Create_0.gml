@@ -25,7 +25,7 @@ var_spdCarry = 0;
 var_vspdCarry = 0;
 var_grav = .3;
 var_canDespawn = false;
-var_maxHp = 6;
+var_maxHp = 10;
 var_hp = var_maxHp;
 
 var_hitSprite = spr_bossForHit;
@@ -46,6 +46,7 @@ action = function()
 	};
 };
 
+var_angle = 0;
 mask_index = spr_bossFor;
 
 t = 0;

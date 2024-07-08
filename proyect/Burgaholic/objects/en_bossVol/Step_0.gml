@@ -12,15 +12,66 @@ switch(var_state)
 	break;
 	
 	case PEPPER_STATE.idle:
-		sprite_index = spr_bossVolIdle;
-		
-		if(!instance_exists(en_bossVol_hand))
+	
+		var _spdMult = 8
+		if(abs(var_spd) = var_mspd*_spdMult)
 		{
-			stepAlarm(4, 120)
+			var_spd /= _spdMult;
 		};
 		
-		var_stateCurrent = var_state;
+		//Bounce off walls
+		enemy_wallBounce(false);
 		
+		var _random = irandom_range(0, 100)
+			if(!var_hasExploded) and (_random < 1)
+			{
+				instance_create_depth(x,    y-21, depth-1, obj_explosionHURT);
+				instance_create_depth(x-46, y-21, depth-1, obj_explosionHURT);
+				instance_create_depth(x+46, y-21, depth-1, obj_explosionHURT);
+				instance_create_depth(x, y-21+46, depth-1, obj_explosionHURT);
+				instance_create_depth(x, y-21-46, depth-1, obj_explosionHURT);
+				var_vspd = -10;
+				var_spd *= _spdMult;
+				var_hasExploded = true;
+				y -= 2;
+			};
+			
+		//Grounded
+		if(place_meeting(x, y+1, obj_wall))
+		{
+			var_hasExploded = false;
+			
+			sprite_index = spr_bossVolWalk;
+			var_vspd = 0;
+			
+			//Jump when player jumps
+			if(keyboard_check_pressed(global.k_jump))
+			{
+				var_vspd = -8;
+			};
+		};
+		
+		else //When in the air
+		{
+			sprite_index = spr_bossVolJump;
+			
+			//Add gravity
+			var_vspd += var_grav;
+		}
+		
+		if(var_hasExploded)
+		{
+			sprite_index = spr_bossVolExplode;
+			var_angle += 10;
+		}
+		else
+		{
+			var_angle = 0;
+		}
+		
+		collisionBasic();
+		
+		var_stateCurrent = var_state;
 	break;
 	
 	case PEPPER_STATE.hit:
@@ -29,7 +80,7 @@ switch(var_state)
 	break;
 };
 
-if(var_state != SLIME_STATE.hit)
+if(var_state != PEPPER_STATE.hit)
 {
 	var_stateCurrent = var_state;
 };
@@ -38,14 +89,5 @@ image_xscale = var_spd = 0 ? 1 : sign(var_spd);
 
 if(var_hp <= 0)
 {
-	var _keeper = instance_create_depth(x, y-32, depth, obj_keeperBeaten)
-	repeat(16){instance_create_depth(x, y-32, depth, obj_wasteFX)};
-	screenshake(5, 1, .2)
-	ini_open("data.ini");
-		if(ini_read_real("Stages", "Total", 0) < 1)
-		{
-			ini_write_real("Stages", "Total", 1)
-		};
-	ini_close();
-	instance_destroy();
+	save_bossBeaten(2);
 }

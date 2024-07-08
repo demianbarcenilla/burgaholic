@@ -5,4 +5,4 @@ global.stage = stage.forest;
 global.specialMusic = true;
 global.music = mus_silence;
 
-global.subStage = substage.boss
+global.subStage = substage.boss;

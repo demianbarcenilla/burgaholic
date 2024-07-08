@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4f1c3c29-d759-4b90-914f-54c1621a1521",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bfe13942-0b39-452d-aa20-b61c169734ee",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 64,
+  "height": 40,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3605b10a-a938-4fc0-a771-21b3efbc7315","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6a4c1910-8f6b-4aef-bb37-0b8e40251b67","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": {
     "resourceType": "GMNineSliceData",
@@ -46,7 +46,7 @@
     ],
     "top": 0,
   },
-  "origin": 9,
+  "origin": 7,
   "parent": {
     "name": "BOSS",
     "path": "folders/Sprites/WORLDS/WORLD 2/BOSS.yy",
@@ -77,13 +77,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4f1c3c29-d759-4b90-914f-54c1621a1521","path":"sprites/spr_bossVolHit/spr_bossVolHit.yy",},},},"Disabled":false,"id":"4e8470a0-2bf9-4822-bac1-e67ddd50c115","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"bfe13942-0b39-452d-aa20-b61c169734ee","path":"sprites/spr_bossVolHit/spr_bossVolHit.yy",},},},"Disabled":false,"id":"96ecf88d-7e18-44ba-93e5-de4cf9a74404","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 29,
-    "yorigin": 54,
+    "xorigin": 15,
+    "yorigin": 40,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 58,
+  "width": 31,
 }

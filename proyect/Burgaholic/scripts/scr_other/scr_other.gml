@@ -138,6 +138,25 @@ function decide_startroom()
 		var _stagesFinished = ini_read_real("Stages", "Total", 0)
 	ini_close()
 	var _startRoom = _stagesFinished == 0 ? rm_tutorial : rm_lobby;
-	 _startRoom = rm_test;
+	 //_startRoom = rm_test;
 	 return _startRoom
+}
+
+function save_bossBeaten(stageNumber)
+{
+	var _keeper = instance_create_depth(x, y-32, depth, obj_keeperBeaten);
+	
+		repeat(16){instance_create_depth(x, y-32, depth, obj_wasteFX)};
+		screenshake(5, 1, .2)
+	
+		ini_open("data.ini");
+			if(ini_read_real("Stages", "Total", 0) < stageNumber)
+			{
+				ini_write_real("Stages", "Total", stageNumber)
+			};
+		ini_close();
+		instance_destroy();
+		
+		global.specialMusic = true;
+		global.music = mus_silence;
 }

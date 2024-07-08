@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "VOLCANO",
-    "path": "folders/Objects/ENVIRONMENT/VOLCANO.yy",
+    "name": "UNUSED",
+    "path": "folders/Objects/MISC/UNUSED.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",

@@ -11,9 +11,9 @@ switch(var_state)
 	break;
 	
 	case SLIME_STATE.ascent:
-		image_index = 3;
+		sprite_index = spr_bossForAscent;
 		
-		var _height = room_height/4;
+		var _height = room_height/4 -24;
 		
 		y = lerp(y, _height, .05);
 		if(round(y < _height+5))
@@ -24,7 +24,7 @@ switch(var_state)
 	break;
 	
 	case SLIME_STATE.floating:
-		image_index = 0;
+		sprite_index = spr_bossFor;
 		
 		var_vspd = osc_step(5, .5);
 		
@@ -37,7 +37,7 @@ switch(var_state)
 	break;
 	
 	case SLIME_STATE.charging:
-		image_index = 2;
+		sprite_index = spr_bossForCharge;
 		
 		if(alarm[3] = -1)
 		{
@@ -49,8 +49,7 @@ switch(var_state)
 	
 	case SLIME_STATE.bouncing:
 		var_shake = false;
-		image_index = 2;
-		
+		sprite_index = spr_bossForBounce
 		if(alarm[3] = -1)
 		{
 			alarm[3] = 180;
@@ -64,11 +63,11 @@ switch(var_state)
 		
 		if(!place_meeting(x, y+1, obj_wall))
 		{
-			image_index = 2;
+			sprite_index = spr_bossForBounce;
 		}
 		else
 		{
-			image_index = 4;
+			sprite_index = spr_bossForStuck;
 			var_shake = true;
 			var_vspd = 0;
 			var_spd = 0;
@@ -83,7 +82,8 @@ switch(var_state)
 	break;
 	
 	case SLIME_STATE.hit:
-		image_index = 5;
+		sprite_index = var_hitSprite;
+		
 		if(alarm[2] = -1)
 		{
 			alarm[2] = 30;
@@ -100,30 +100,23 @@ image_xscale = var_spd = 0 ? 1 : sign(var_spd);
 
 if(var_hp <= 0)
 {
-	var _keeper = instance_create_depth(x, y-32, depth, obj_keeperBeaten)
-	
-	repeat(16){instance_create_depth(x, y-32, depth, obj_wasteFX)};
-	screenshake(5, 1, .2)
-	
-	global.specialMusic = true;
-	global.music = mus_silence;
-
-	ini_open("data.ini");
-		if(ini_read_real("Stages", "Total", 0) < 1)
-		{
-			ini_write_real("Stages", "Total", 1)
-		};
-	ini_close();
-	instance_destroy();
+	save_bossBeaten(1);
 }
 
 if(var_state = SLIME_STATE.spawning)
 {
 	image_speed = .4;
-	sprite_index = spr_bossForSpawn
 }
 else
 {
-	image_speed = 0;
-	sprite_index = spr_bossFor;
+	image_speed = .2;
 };
+
+if(var_state == SLIME_STATE.bouncing)
+{
+	var_angle += 10;
+}
+else
+{
+	var_angle = 0;
+}

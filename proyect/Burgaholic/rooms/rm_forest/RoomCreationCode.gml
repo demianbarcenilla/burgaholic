@@ -3,7 +3,7 @@ ini_open("data.ini")
 ini_close();
 
 global.prevRoom = _isPipeUnlocked ? rm_forestTube : -1;
-global.nextRoom = rm_forest2;
+global.nextRoom = rm_forestBoss;
 
 global.stage = stage.forest;
 

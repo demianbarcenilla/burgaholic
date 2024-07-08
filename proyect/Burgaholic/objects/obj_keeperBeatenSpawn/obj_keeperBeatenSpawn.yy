@@ -35,6 +35,9 @@
     "name": "spr_dakotaStanding",
     "path": "sprites/spr_dakotaStanding/spr_dakotaStanding.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_dakotaStanding",
+    "path": "sprites/spr_dakotaStanding/spr_dakotaStanding.yy",
+  },
   "visible": true,
 }

@@ -15,8 +15,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "FOREST",
-    "path": "folders/Objects/ENVIRONMENT/FOREST.yy",
+    "name": "BOSSES",
+    "path": "folders/Objects/ENVIRONMENT/BOSSES.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy",

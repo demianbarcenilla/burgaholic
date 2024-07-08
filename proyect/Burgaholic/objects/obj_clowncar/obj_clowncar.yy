@@ -13,7 +13,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "booze driver",
-    "path": "folders/Objects/ARCADE/booze driver.yy",
+    "path": "folders/Objects/MISC/UNUSED/booze driver.yy",
   },
   "parentObjectId": null,
   "persistent": false,
