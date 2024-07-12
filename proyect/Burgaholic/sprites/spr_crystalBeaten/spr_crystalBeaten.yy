@@ -24,7 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a240cd7b-2ee6-4734-bfe7-54b004c5552a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 7,
+  "origin": 9,
   "parent": {
     "name": "FX",
     "path": "folders/Sprites/MISC/FX.yy",
@@ -62,7 +62,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 12,
-    "yorigin": 27,
+    "yorigin": 25,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

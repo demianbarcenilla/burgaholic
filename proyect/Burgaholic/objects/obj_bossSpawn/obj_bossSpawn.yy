@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "PARENTS-RESOURCES",
-    "path": "folders/Objects/ENVIRONMENT/PARENTS-RESOURCES.yy",
+    "name": "BOSSES",
+    "path": "folders/Objects/ENVIRONMENT/BOSSES.yy",
   },
   "parentObjectId": null,
   "persistent": false,

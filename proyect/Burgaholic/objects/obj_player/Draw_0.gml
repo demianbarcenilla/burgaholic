@@ -54,3 +54,5 @@ for(i = 0 ; i < array_length(arr_pickles) ; i++)
 {
 	draw_text_outlined(x, y-(8*i), string(arr_pickles[i]))
 }
+
+*/

@@ -6,5 +6,6 @@ var_action = function(){
 	room_goto(var_room)
 	global.specialMusic = false;
 };
+
 global.specialMusic = true;
 global.music = mus_silence;

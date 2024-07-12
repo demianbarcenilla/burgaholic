@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw on black borders
 ini_open("settings.ini")
 	var _window = ini_read_real("options", "window", 0) +1;
 ini_close();

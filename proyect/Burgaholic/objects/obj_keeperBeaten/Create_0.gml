@@ -59,4 +59,6 @@ var_shake = false;
 global.specialMusic = true;
 global.music = mus_silence;
 
-audio_play_sound(sfx_bossBeat, 1, false)
+audio_stop_all();
+
+audio_play_sound(sfx_bossBeat, 1, false);

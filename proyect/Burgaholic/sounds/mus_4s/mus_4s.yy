@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 147.048,
   "parent": {
-    "name": "music",
-    "path": "folders/Sounds/music.yy",
+    "name": "reef",
+    "path": "folders/Sounds/music/reef.yy",
   },
   "preload": false,
   "sampleRate": 44100,

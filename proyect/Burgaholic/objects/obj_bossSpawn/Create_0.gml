@@ -18,6 +18,14 @@ switch(global.stage)
 		yy = 111;
 	break;
 	
+	case stage.rust: 
+		var_boss = en_bossFri;
+	break;
+	
+	case stage.ashtray: 
+		var_boss = en_bossAsh;
+	break;
+	
 	default: 
 		var_boss = en_bossFor;
 	break;

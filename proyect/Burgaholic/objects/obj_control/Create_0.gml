@@ -13,7 +13,9 @@ enum stage
 	reef,
 	ashtray,
 	core,
-	pond
+	pond,
+	blank,
+	special
 };
 
 enum lang

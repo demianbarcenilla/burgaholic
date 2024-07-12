@@ -5,6 +5,7 @@ enum CAMEL_STATE
 	spawning,
 	charge,
 	rush,
+	wall,
 	hit
 };
 
@@ -14,7 +15,7 @@ var_hitState = CAMEL_STATE.hit;
 var_state = CAMEL_STATE.spawning;
 var_stateCurrent = var_state;
 var_spd = 0;
-var_mspd = 2;
+var_mspd = -5;
 var_vspd = 0;
 
 var_spdCarry = 0;

@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 166.992,
   "parent": {
-    "name": "music",
-    "path": "folders/Sounds/music.yy",
+    "name": "ashtray",
+    "path": "folders/Sounds/music/ashtray.yy",
   },
   "preload": false,
   "sampleRate": 44100,
