@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 76.848,
   "parent": {
-    "name": "music",
-    "path": "folders/Sounds/music.yy",
+    "name": "pond",
+    "path": "folders/Sounds/music/pond.yy",
   },
   "preload": false,
   "sampleRate": 44100,

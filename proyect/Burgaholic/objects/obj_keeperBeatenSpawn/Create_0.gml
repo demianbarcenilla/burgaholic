@@ -18,6 +18,9 @@ var_action = function(){
 }
 image_speed = .2;
 
+var_spd = 0;
+var_vspd = 0;
+var_grav = .2;
 var_pool = 0;
 var_chatFinished = "ChatDakota";
 

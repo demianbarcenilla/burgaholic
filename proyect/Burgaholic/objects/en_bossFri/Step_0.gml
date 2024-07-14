@@ -12,12 +12,11 @@ switch(var_state)
 	break;
 	
 	case FRIDGE_STATE.idle:
-		stepAlarm(0, irandom_range(60, 120))
+		stepAlarm(0, irandom_range(30, 90))
 		sprite_index = spr_bossFri;
 		
 		var_spd = 0;
 		var_vspd += var_grav;
-		
 		collisionBasic();
 		
 		var_stateCurrent = var_state;
@@ -26,40 +25,54 @@ switch(var_state)
 	case FRIDGE_STATE.jump:
 		sprite_index = spr_bossFriJump;
 		
-		var_spd = var_mspd;
-		
+		var_vspd += var_grav;
 		
 		collisionBasic()
+		enemy_wallBounce(true);
 		
-		if(place_meeting(x +sign(var_spd), y, obj_wall))
+		//DROP
+		if(instance_exists(obj_player))
 		{
-			var_vspd = -4;
-			var_state = FRIDGE_STATE.jump;			
-			y -=5;
+			if(obj_player.x >= x-(sprite_width/2)) and (obj_player.x <= x+(sprite_width/2))
+			{
+				var_state = FRIDGE_STATE.fall
+			};
 		};
-		//Grounded
-		if(!place_meeting(x, y+1, obj_wall))
-		{
-			var_vspd += var_grav;
-		}
 		
+		//Grounded
+		if(place_meeting(x, y+1, obj_wall))
+		{
+			var_state = FRIDGE_STATE.stuck;
+			
+			bossFridge_spawnSpikes();
+		};
+		
+		var_stateCurrent = var_state;
 	break;
 	
 	case FRIDGE_STATE.fall:
 		sprite_index = spr_bossFriTackle;
-		var_vspd += var_grav;
+		var_spd = 0;
+		var_vspd += var_grav*1.5;
+		
 		if(place_meeting(x, y+1, obj_wall))
 		{
 			var_state = FRIDGE_STATE.stuck;
+			
+			bossFridge_spawnSpikes();
 		};
 		
 		collisionBasic()
+		
+		var_stateCurrent = var_state;
 	break;
 	
 	case FRIDGE_STATE.stuck:
 		sprite_index = spr_bossFriStuck;
 		
-		stepAlarm(0, 180)
+		stepAlarm(1, 180);
+		
+		var_stateCurrent = var_state;
 	break;
 	
 	case FRIDGE_STATE.hit:
@@ -68,7 +81,7 @@ switch(var_state)
 	break;
 };
 
-if(var_state != CAMEL_STATE.hit)
+if(var_state != FRIDGE_STATE.hit)
 {
 	var_stateCurrent = var_state;
 };
@@ -77,5 +90,5 @@ image_xscale = var_spd = 0 ? image_xscale : sign(var_spd);
 
 if(var_hp <= 0)
 {
-	save_bossBeaten(3);
+	save_bossBeaten(4);
 }

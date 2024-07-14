@@ -69,8 +69,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Pond",
+    "path": "texturegroups/Pond",
   },
   "type": 0,
   "VTile": false,

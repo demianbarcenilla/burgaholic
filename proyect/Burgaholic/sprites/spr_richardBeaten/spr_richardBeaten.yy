@@ -67,8 +67,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Ashtray",
+    "path": "texturegroups/Ashtray",
   },
   "type": 0,
   "VTile": false,

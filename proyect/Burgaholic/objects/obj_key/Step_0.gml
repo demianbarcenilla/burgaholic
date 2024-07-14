@@ -1,3 +1,5 @@
+event_inherited()
+
 switch(var_state)
 {
 	case KEY_STATE.still: //Starting POS

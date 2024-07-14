@@ -21,8 +21,8 @@
   },
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Arcade",
+    "path": "texturegroups/Arcade",
   },
   "tile_count": 16,
   "tileAnimation": {

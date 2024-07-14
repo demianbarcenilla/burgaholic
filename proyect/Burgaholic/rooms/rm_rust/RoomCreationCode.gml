@@ -1,3 +1,3 @@
 global.prevRoom = -1;
-global.nextRoom = rm_rust2;
+global.nextRoom = rm_rustBoss;
 global.stage = stage.rust;

@@ -88,8 +88,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "Volcano",
+    "path": "texturegroups/Volcano",
   },
   "type": 0,
   "VTile": false,

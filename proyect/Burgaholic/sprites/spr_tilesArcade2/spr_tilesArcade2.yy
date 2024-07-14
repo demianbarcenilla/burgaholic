@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Misc",
-    "path": "texturegroups/Misc",
+    "name": "Arcade",
+    "path": "texturegroups/Arcade",
   },
   "type": 0,
   "VTile": false,

@@ -32,4 +32,18 @@ function boss_draw()
 	{
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, var_angle, image_blend, 1);
 	};
-}
+};
+
+function bossFridge_spawnSpikes()
+{
+	var _closestSpike = 32,
+		_furthestSpike = 64;
+	instance_create_depth(x -_closestSpike, y, depth, obj_bossFriSpike)
+	instance_create_depth(x -_furthestSpike, y, depth, obj_bossFriSpikeLarge)
+			
+	var _rightSpike = instance_create_depth(x +_closestSpike, y, depth, obj_bossFriSpike),
+		_rightSpikeLarge =instance_create_depth(x +_furthestSpike, y, depth, obj_bossFriSpikeLarge);
+			
+	_rightSpike.image_xscale = -1;
+	_rightSpikeLarge.image_xscale = -1;
+};

@@ -1,3 +1,4 @@
+event_inherited()
 switch(var_state)
 {
 	case PICKLE_STATE.still: //Starting POS
