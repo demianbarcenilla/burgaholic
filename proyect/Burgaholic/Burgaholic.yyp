@@ -702,6 +702,7 @@
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},},
     {"id":{"name":"spr_playerTurnaround_crab","path":"sprites/spr_playerTurnaround_crab/spr_playerTurnaround_crab.yy",},},
     {"id":{"name":"en_fish","path":"objects/en_fish/en_fish.yy",},},
+    {"id":{"name":"obj_bossBeaHitbox","path":"objects/obj_bossBeaHitbox/obj_bossBeaHitbox.yy",},},
     {"id":{"name":"obj_arcade","path":"objects/obj_arcade/obj_arcade.yy",},},
     {"id":{"name":"spr_playerPound","path":"sprites/spr_playerPound/spr_playerPound.yy",},},
     {"id":{"name":"rm_pond24","path":"rooms/rm_pond24/rm_pond24.yy",},},

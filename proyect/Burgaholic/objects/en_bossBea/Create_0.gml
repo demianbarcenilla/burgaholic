@@ -22,7 +22,7 @@ var_spdCarry = 0;
 var_vspdCarry = 0;
 var_grav = .3;
 var_canDespawn = false;
-var_maxHp = 5;
+var_maxHp = 8;
 var_hp = var_maxHp;
 
 var_hitSprite = spr_bossBeaHit;

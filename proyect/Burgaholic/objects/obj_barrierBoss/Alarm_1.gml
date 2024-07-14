@@ -1,5 +1,5 @@
 //Generate Up Barriers
-if(instance_number(obj_barrier) < 30) //Don't generate more than 30 barriers
+if(instance_number(obj_barrier) < 200) //Don't generate more than 30 barriers
 {
 	//Generate Barriers Upwards
 	if(y -var_generateUp > 0)

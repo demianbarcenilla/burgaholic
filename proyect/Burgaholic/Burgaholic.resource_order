@@ -598,6 +598,7 @@
     {"name":"rm_pond7","order":6,"path":"rooms/rm_pond7/rm_pond7.yy",},
     {"name":"spr_water","order":4,"path":"sprites/spr_water/spr_water.yy",},
     {"name":"spr_playerTurnaround_crab","order":2,"path":"sprites/spr_playerTurnaround_crab/spr_playerTurnaround_crab.yy",},
+    {"name":"obj_bossBeaHitbox","order":8,"path":"objects/obj_bossBeaHitbox/obj_bossBeaHitbox.yy",},
     {"name":"obj_arcade","order":3,"path":"objects/obj_arcade/obj_arcade.yy",},
     {"name":"spr_playerPound","order":11,"path":"sprites/spr_playerPound/spr_playerPound.yy",},
     {"name":"rm_pond24","order":23,"path":"rooms/rm_pond24/rm_pond24.yy",},
