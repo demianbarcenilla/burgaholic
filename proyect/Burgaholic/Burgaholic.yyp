@@ -870,6 +870,7 @@
     {"id":{"name":"mus_5b","path":"sounds/mus_5b/mus_5b.yy",},},
     {"id":{"name":"spr_tilesArcade1","path":"sprites/spr_tilesArcade1/spr_tilesArcade1.yy",},},
     {"id":{"name":"scr_vfx","path":"scripts/scr_vfx/scr_vfx.yy",},},
+    {"id":{"name":"obj_chatSpawnGreg","path":"objects/obj_chatSpawnGreg/obj_chatSpawnGreg.yy",},},
     {"id":{"name":"spr_groundExplosionFX","path":"sprites/spr_groundExplosionFX/spr_groundExplosionFX.yy",},},
     {"id":{"name":"spr_tennisSlimeStill","path":"sprites/spr_tennisSlimeStill/spr_tennisSlimeStill.yy",},},
     {"id":{"name":"spr_bossForCharge","path":"sprites/spr_bossForCharge/spr_bossForCharge.yy",},},
