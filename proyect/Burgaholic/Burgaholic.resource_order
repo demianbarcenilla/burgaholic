@@ -346,6 +346,7 @@
     {"name":"rm_reef9","order":8,"path":"rooms/rm_reef9/rm_reef9.yy",},
     {"name":"rm_forest5DISCARDED","order":3,"path":"rooms/rm_forest5DISCARDED/rm_forest5DISCARDED.yy",},
     {"name":"rm_reef12","order":11,"path":"rooms/rm_reef12/rm_reef12.yy",},
+    {"name":"spr_playerStunned","order":22,"path":"sprites/spr_playerStunned/spr_playerStunned.yy",},
     {"name":"obj_barrier","order":9,"path":"objects/obj_barrier/obj_barrier.yy",},
     {"name":"spr_enVolcanoSpit","order":3,"path":"sprites/spr_enVolcanoSpit/spr_enVolcanoSpit.yy",},
     {"name":"obj_follower","order":8,"path":"objects/obj_follower/obj_follower.yy",},

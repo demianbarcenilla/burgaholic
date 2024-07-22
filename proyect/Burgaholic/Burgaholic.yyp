@@ -427,6 +427,7 @@
     {"id":{"name":"rm_reef9","path":"rooms/rm_reef9/rm_reef9.yy",},},
     {"id":{"name":"rm_forest5DISCARDED","path":"rooms/rm_forest5DISCARDED/rm_forest5DISCARDED.yy",},},
     {"id":{"name":"rm_reef12","path":"rooms/rm_reef12/rm_reef12.yy",},},
+    {"id":{"name":"spr_playerStunned","path":"sprites/spr_playerStunned/spr_playerStunned.yy",},},
     {"id":{"name":"obj_barrier","path":"objects/obj_barrier/obj_barrier.yy",},},
     {"id":{"name":"spr_enVolcanoSpit","path":"sprites/spr_enVolcanoSpit/spr_enVolcanoSpit.yy",},},
     {"id":{"name":"spr_cloudFX","path":"sprites/spr_cloudFX/spr_cloudFX.yy",},},

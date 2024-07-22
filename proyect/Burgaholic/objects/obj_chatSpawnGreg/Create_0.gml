@@ -2,7 +2,7 @@
 event_inherited();
 
 var_chatbox = 7;
-
+var_chat = "ChatGreg";
 var_event = function(){
 	//JUMP TO MECH SUIT
 };
@@ -22,4 +22,3 @@ var_spd = 0;
 var_vspd = 0;
 var_grav = .2;
 var_pool = 0;
-var_chatFinished = "ChatDakota";
