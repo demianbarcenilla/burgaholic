@@ -1,10 +1,13 @@
 // Inherit the parent event
 event_inherited();
+var_jumping = false;
 
 var_chatbox = 7;
 var_chat = "ChatGreg";
 var_event = function(){
-	//JUMP TO MECH SUIT
+	bossBarriers();
+	var_jumping = true;
+	audio_play_sound(sfx_gregLaugh, 10, false)
 };
 
 var_action = function(){
@@ -19,6 +22,6 @@ var_action = function(){
 image_speed = .2;
 
 var_spd = 0;
-var_vspd = 0;
+var_vspd = -5;
 var_grav = .2;
 var_pool = 0;

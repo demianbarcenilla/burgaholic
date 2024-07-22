@@ -1,9 +1,30 @@
-if(place_meeting(x, y, obj_player)) and (keyboard_check_pressed(global.k_up))
+if(!var_jumping)
 {
-	with(obj_player)
+	if(place_meeting(x, y, obj_player)) and (keyboard_check_pressed(global.k_up))
 	{
-		var_spd = 0;
-		var_vspd = 0;
+		with(obj_player)
+		{
+			var_spd = 0;
+			var_vspd = 0;
+		};
+		var_action();
 	};
-	var_action();
+}
+else
+{
+	sprite_index = spr_gregJump;
+	
+	var_vspd += var_grav
+	y += var_vspd
+	
+	if(var_vspd > 0)
+	{
+		depth = 250;
+	};
+	
+	if(y > room_height+128)
+	{
+		screenshake(10, 2, .1)
+		instance_destroy();
+	};
 };
