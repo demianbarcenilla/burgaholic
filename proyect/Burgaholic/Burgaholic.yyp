@@ -144,6 +144,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Arcade","folderPath":"folders/Tile Sets/Arcade.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Main","folderPath":"folders/Tile Sets/Main.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BOSS","folderPath":"folders/Sprites/WORLDS/WORLD 8/BOSS.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CHAT","folderPath":"folders/Sprites/WORLDS/WORLD 8/BOSS/CHAT.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"lang_english.ini","CopyToMask":3035426170322551022,"filePath":"datafiles",},
@@ -492,6 +494,7 @@
     {"id":{"name":"obj_burgEnemy","path":"objects/obj_burgEnemy/obj_burgEnemy.yy",},},
     {"id":{"name":"en_elephant","path":"objects/en_elephant/en_elephant.yy",},},
     {"id":{"name":"obj_bumbEnemy","path":"objects/obj_bumbEnemy/obj_bumbEnemy.yy",},},
+    {"id":{"name":"spr_greg","path":"sprites/spr_greg/spr_greg.yy",},},
     {"id":{"name":"bg_bonusMIDDLE","path":"sprites/bg_bonusMIDDLE/bg_bonusMIDDLE.yy",},},
     {"id":{"name":"rm_forest17","path":"rooms/rm_forest17/rm_forest17.yy",},},
     {"id":{"name":"rm_ashtray14","path":"rooms/rm_ashtray14/rm_ashtray14.yy",},},

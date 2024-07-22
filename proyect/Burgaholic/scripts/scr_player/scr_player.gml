@@ -620,6 +620,11 @@ function state_tube()
 			instance_destroy(arr_pickles[i]);
 		};
 	};
+	
+	if(instance_exists(obj_key))
+	{
+		instance_destroy(obj_key)
+	};
 	var_effect = 0; //Carrying a crab/exploding baby, etc
 	var_spriteMod = "";
 	

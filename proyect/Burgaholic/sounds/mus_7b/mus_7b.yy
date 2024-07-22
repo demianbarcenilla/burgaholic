@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 76.848,
+  "duration": 232.032,
   "parent": {
     "name": "pond",
     "path": "folders/Sounds/music/pond.yy",
