@@ -1,0 +1,1 @@
+bossReef_createBullets(0, 0);
