@@ -92,6 +92,10 @@ if(hp > 0)
 		case STATE_MACHINE.respawn:
 			state_respawn();
 		break;
+		
+		case STATE_MACHINE.stunned:
+			sprite_index = sprite("spr_playerStunned");
+		break;
 	};
 }
 else //DEAD
@@ -290,6 +294,10 @@ switch (var_effect)
 	
 	case 4:
 		var_spriteMod = "_core";
+	break;
+	
+	case 5:
+		var_spriteMod = "_soul";
 	break;
 	
 	default:

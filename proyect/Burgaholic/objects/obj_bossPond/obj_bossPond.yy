@@ -1,16 +1,11 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "en_bossPon",
+  "name": "obj_bossPond",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":2,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":3,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -18,10 +13,7 @@
     "name": "BOSSES",
     "path": "folders/Objects/ENVIRONMENT/BOSSES.yy",
   },
-  "parentObjectId": {
-    "name": "obj_enemy",
-    "path": "objects/obj_enemy/obj_enemy.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -38,12 +30,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bossCorSpawn",
-    "path": "sprites/spr_bossCorSpawn/spr_bossCorSpawn.yy",
+    "name": "spr_gregBody",
+    "path": "sprites/spr_gregBody/spr_gregBody.yy",
   },
-  "spriteMaskId": {
-    "name": "spr_bossVolIdle",
-    "path": "sprites/spr_bossVolIdle/spr_bossVolIdle.yy",
-  },
+  "spriteMaskId": null,
   "visible": true,
 }

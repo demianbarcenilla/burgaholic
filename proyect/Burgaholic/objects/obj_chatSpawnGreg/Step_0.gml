@@ -26,5 +26,6 @@ else
 	{
 		screenshake(10, 2, .1)
 		instance_destroy();
+		instance_create_depth(x, y, depth, obj_bossPond)
 	};
 };
