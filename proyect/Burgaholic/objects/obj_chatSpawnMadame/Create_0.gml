@@ -10,3 +10,7 @@ var_pool = 82; //Pool starts here
 setKeeperChat(); //Sets standard shop/interact event
 
 image_speed = IMAGE_SPEED;
+
+depth = -200;
+
+keeperUnlocked(5);

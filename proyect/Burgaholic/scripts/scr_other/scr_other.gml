@@ -94,6 +94,18 @@ function setKeeperChat_emptyShop(emptyShopChat)
 	}
 }
 
+function keeperUnlocked(keeperID)
+{
+	ini_open("data.ini")
+		var _isUnlocked = ini_read_real("Stages", "Total", 0) >= keeperID;
+	
+		if(!_isUnlocked)
+		{
+			instance_destroy()
+		};
+	ini_close();
+};
+
 function checkAllBought(_pool)
 {
 	var _allBought = true;

@@ -47,3 +47,18 @@ function bossFridge_spawnSpikes()
 	_rightSpike.image_xscale = -1;
 	_rightSpikeLarge.image_xscale = -1;
 };
+
+function bossReef_createBullets(vspd, grav)
+{
+	var _leftBullet = instance_create_depth(x, y-32, depth+1, obj_bossReeBullet),
+		_righBullet = instance_create_depth(x, y-32, depth+1, obj_bossReeBullet);
+
+	_leftBullet.var_spd = -5;
+	_righBullet.var_spd = 5;
+	
+	_leftBullet.var_grav = grav;
+	_righBullet.var_grav = grav;
+	
+	_leftBullet.var_vspd = vspd;
+	_righBullet.var_vspd = vspd;
+}

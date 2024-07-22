@@ -1,4 +1,4 @@
-xx = room_width/4;
+xx = room_width/4-32;
 yy = room_height-16;
 
 switch(global.stage)
@@ -13,8 +13,6 @@ switch(global.stage)
 	
 	case stage.beach: 
 		var_boss = en_bossBea;
-		
-		xx = room_width/4;
 		yy = 111;
 	break;
 	
@@ -22,8 +20,20 @@ switch(global.stage)
 		var_boss = en_bossFri;
 	break;
 	
+	case stage.reef: 
+		var_boss = en_bossRee;
+	break;
+	
 	case stage.ashtray: 
 		var_boss = en_bossAsh;
+	break;
+	
+	case stage.core: 
+		var_boss = en_bossCor;
+	break;
+	
+	case stage.pond: 
+		var_boss = en_bossFri;
 	break;
 	
 	default: 

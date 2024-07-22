@@ -774,14 +774,15 @@ function state_moss()
 {
 	var_vspd += var_grav/4
 	y += var_vspd
-	if(!place_meeting(x+sign(var_spd), y, obj_jumpingWall))
+	if(place_meeting(x, y+1, obj_wall))
 	{
-		if(place_meeting(x, y+1, obj_wall))
-		{
-			x -= 3*sign(var_spd)
-			var_spd = -sign(var_spd)*var_mspd
-			var_vspd = 0;
-		};
+		x -= 3*sign(var_spd)
+		var_spd = -sign(var_spd)*var_mspd
+		var_vspd = 0;
+		var_state = STATE_MACHINE.normal;
+	}
+	if(!place_meeting(x+sign(var_spd), y, obj_jumpingWall))
+	{		
 		var_state = STATE_MACHINE.normal;
 	};
 	
