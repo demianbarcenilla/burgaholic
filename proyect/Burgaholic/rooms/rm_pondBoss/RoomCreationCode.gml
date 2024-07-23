@@ -1,5 +1,5 @@
-global.prevRoom = room_previous(room);
-global.nextRoom = room_next(room);
+global.prevRoom = -1;
+global.nextRoom = -1;
 global.stage = stage.pond;
 
 global.specialMusic = true;

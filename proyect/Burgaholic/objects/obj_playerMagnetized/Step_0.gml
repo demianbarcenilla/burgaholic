@@ -5,3 +5,5 @@ if(instance_exists(obj_bossPond))
 		sprite_index = spr_playerCorpse;
 	};
 }
+
+collisionBasic();

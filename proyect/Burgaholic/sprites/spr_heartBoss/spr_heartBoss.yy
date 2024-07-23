@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b3484225-2885-41a7-a621-557678ff5600",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0f09a8b9-c0c5-4d2e-9200-8cf6e2af4462",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a0c3b78b-a371-42bc-8aaf-57f6bcd67de3",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b3484225-2885-41a7-a621-557678ff5600","path":"sprites/spr_heartBoss/spr_heartBoss.yy",},},},"Disabled":false,"id":"408ce1e9-1357-44bb-8868-853cbb4e6b45","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0f09a8b9-c0c5-4d2e-9200-8cf6e2af4462","path":"sprites/spr_heartBoss/spr_heartBoss.yy",},},},"Disabled":false,"id":"ae4b1a46-af04-4545-af7b-3b020e00a2c5","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a0c3b78b-a371-42bc-8aaf-57f6bcd67de3","path":"sprites/spr_heartBoss/spr_heartBoss.yy",},},},"Disabled":false,"id":"4c0756fc-ae3f-4f2b-9b00-e5f0adb1b7a2","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
