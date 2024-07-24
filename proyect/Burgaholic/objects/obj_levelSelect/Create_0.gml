@@ -11,7 +11,10 @@ ini_close();
 
 //MAX AMMOUNT OF WORLDS
 var_worldMAX = 7;
-
+if(var_worldNumber > var_worldMAX)
+{
+	var_worldNumber = var_worldMAX;
+};
 
 var_mus = audio_play_sound(asset_get_index("mus_lvl"+string(var_selected)), 100, true);
 var_musTime = 0;

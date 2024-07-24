@@ -23,7 +23,7 @@ var_armMagnetNext = 1;
 
 t = 0;
 
-var_maxHp = 1;
+var_maxHp = 3;
 var_hp = var_maxHp;
 
 var_heartPos = 32;

@@ -14,6 +14,8 @@ else
 		instance_create_depth(x, y, depth, obj_marcusBeaten);
 		instance_destroy();
 	};
+	
+	global.music = mus_marcus; //WHO THE FUCK IS MARCUS
 }
 
 
