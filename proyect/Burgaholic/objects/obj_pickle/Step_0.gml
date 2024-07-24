@@ -37,6 +37,10 @@ switch(var_state)
 		if(instance_exists(obj_player))
 		{
 			pickle_follow();
+			
+			//Make invisible when arcade
+			if(obj_player.var_state = STATE_MACHINE.arcade){sprite_index = spr_blank}
+			else{sprite_index = var_sprite};
 		};
 		
 		pickle_set_number();

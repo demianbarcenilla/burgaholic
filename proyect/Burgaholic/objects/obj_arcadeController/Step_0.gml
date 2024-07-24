@@ -1,7 +1,5 @@
 if(keyboard_check_pressed(global.k_special))
 {
-	with(obj_control){alarm[10] = 2};
-	
 	instance_destroy();
 };
 

@@ -102,6 +102,10 @@ if(hp > 0)
 			
 			collisionBasic();
 		break;
+		
+		case STATE_MACHINE.arcade:
+			sprite_index = spr_blank;
+		break;
 	};
 }
 else //DEAD

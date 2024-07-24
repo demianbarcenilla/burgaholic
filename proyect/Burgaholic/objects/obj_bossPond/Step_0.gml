@@ -24,7 +24,7 @@ switch(var_state)
 		
 		var _separateSpeed = .5;
 		obj_player.var_spd = -_separateSpeed;
-		obj_playerMagnetized.x += _separateSpeed;
+		obj_playerMagnetized.var_spd = _separateSpeed;
 	break;
 	
 	case GREG_STATE.idle:

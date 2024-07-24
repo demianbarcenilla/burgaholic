@@ -38,3 +38,5 @@ if(var_pickleUnlocked)
 {
 	sprite_index = spr_pickleGhost
 };
+
+var_sprite = sprite_index;

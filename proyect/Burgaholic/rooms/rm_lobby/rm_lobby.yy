@@ -23,6 +23,7 @@
     {"name":"inst_3150E859","path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"inst_10A387FE","path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"inst_3CD94D4C","path":"rooms/rm_lobby/rm_lobby.yy",},
+    {"name":"inst_21963F6D","path":"rooms/rm_lobby/rm_lobby.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -36,6 +37,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_26A754B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnMadame","path":"objects/obj_chatSpawnMadame/obj_chatSpawnMadame.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":304.0,"y":144.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4CB080AA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnRichard","path":"objects/obj_chatSpawnRichard/obj_chatSpawnRichard.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":256.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3150E859","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnWeirdo","path":"objects/obj_chatSpawnWeirdo/obj_chatSpawnWeirdo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":64.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_21963F6D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chatSpawnMarcus","path":"objects/obj_chatSpawnMarcus/obj_chatSpawnMarcus.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":192.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tube","depth":-100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":14,"SerialiseWidth":20,"TileCompressedData":[
 -8,0,2,1,2,-18,0,2,1,2,-18,0,2,4,5,-230,0,],"TileDataFormat":1,},"tilesetId":{"name":"tl_tube","path":"tilesets/tl_tube/tl_tube.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},

@@ -1,3 +1,5 @@
+xx = 0
+yy = 0 //The coordinates to put the player at when you return to main world
 
 arr_arcade[0, 0] = 17 //ARCADE NUMBER
 arr_arcade[0, 1] = mus_arcadeBurgMenu //MENU MUSIC

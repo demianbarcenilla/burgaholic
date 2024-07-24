@@ -5,7 +5,7 @@ var_vspd = -4;
 var_grav = .1;
 
 var_chatbox = global.stage;
-
+var _playRiff = true;
 switch(global.stage)
 {
 	case stage.forest:
@@ -43,6 +43,15 @@ switch(global.stage)
 		var_chat = "ChatCore"
 	break;
 	
+	case stage.pond:
+		var_chatbox = global.stage +1;
+		var_sprite = spr_marcusBeaten;
+		var_chat = "PrevChatBaddie"
+		var_spd = 0;
+		
+		_playRiff = false;
+	break;
+	
 	default:
 		var_sprite = spr_dakotaStanding;
 		var_chat = "ChatDakota"
@@ -61,4 +70,7 @@ global.music = mus_silence;
 
 audio_stop_all();
 
-audio_play_sound(sfx_bossBeat, 1, false);
+if(_playRiff)
+{
+	audio_play_sound(sfx_bossBeat, 1, false);
+};

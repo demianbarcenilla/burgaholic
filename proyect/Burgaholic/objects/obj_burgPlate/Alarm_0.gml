@@ -16,9 +16,7 @@ if(var_unlocksBurger)
 
 if(var_finalCheck)
 {
-	room_goto(global.currentRoom);
-	with(obj_control){alarm[10] = 2};
-	
+	room_goto(global.currentRoom);	
 	instance_destroy(obj_arcadeController);
 }
 else

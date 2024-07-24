@@ -31,7 +31,9 @@ enum STATE_MACHINE
 	shroomed,
 	
 	respawn,
-	stunned
+	stunned,
+	
+	arcade
 };
 
 var_state = STATE_MACHINE.normal
