@@ -15,7 +15,7 @@ var_action = function(){
 			_chat.var_chatbox = var_chatbox
 			_chat.var_chat = var_chat
 			_chat.var_event = var_event
-	}	
+	}
 }
 image_speed = .2;
 

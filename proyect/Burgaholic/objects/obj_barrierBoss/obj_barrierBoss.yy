@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_barrierKeyhole",
-    "path": "sprites/spr_barrierKeyhole/spr_barrierKeyhole.yy",
+    "name": "spr_barrier",
+    "path": "sprites/spr_barrier/spr_barrier.yy",
   },
   "spriteMaskId": null,
   "visible": true,

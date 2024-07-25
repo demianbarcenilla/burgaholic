@@ -120,9 +120,9 @@ global.lang = 0;
 global.langString = arr_lang[global.lang];
 global.specialMusic = false;
 
-/*Unlock/Lock ALL Burgers
+//Unlock/Lock ALL Burgers
 ini_open("data.ini");
-	for(i = 0; i < 300; i++)
+	for(i = 0; i < 158; i++)
 	{
 		ini_write_real("burgersUnlocked", i, 1);
 	};

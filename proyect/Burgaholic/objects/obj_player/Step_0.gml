@@ -176,7 +176,15 @@ if(global.stage = stage.core)
 	var_effect = 4;
 };
 
-
+//CHANGE COLLISIONS WHEN YOU'RE TINY
+if(var_effect == 6)
+{
+	mask_index = spr_playerIdle_mini;
+}
+else
+{
+	mask_index = spr_playerIdle;
+}
 //Change your room
 if(x > room_width -_halfSprite+1)
 {
@@ -284,6 +292,7 @@ else //Normal Stats
 	}*/
 };
 
+//TAGS for sprites
 switch (var_effect)
 {
 	case 0:
@@ -308,6 +317,10 @@ switch (var_effect)
 	
 	case 5:
 		var_spriteMod = "_soul";
+	break;
+	
+	case 6:
+		var_spriteMod = "_mini";
 	break;
 	
 	default:

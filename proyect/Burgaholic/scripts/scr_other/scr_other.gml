@@ -94,6 +94,23 @@ function setKeeperChat_emptyShop(emptyShopChat)
 	}
 }
 
+function setKeeperChat_event(emptyShopChat, event)
+{	
+	//This is triggered once the chatbox is destroyed
+	var_event = event;
+	var_chat = emptyShopChat;
+	var_action = function() //This is triggered once you interact with the character
+	{
+		if(!instance_exists(obj_chat) and (!instance_exists(obj_shop)))
+		{
+			var _chat = instance_create_depth(0, 0, 0, obj_chat)
+				_chat.var_chatbox = var_chatbox
+				_chat.var_chat = var_chat
+				_chat.var_event = var_event
+		}	
+	}
+}
+
 function keeperUnlocked(keeperID)
 {
 	ini_open("data.ini")
@@ -172,3 +189,22 @@ function save_bossBeaten(stageNumber)
 		global.specialMusic = true;
 		global.music = mus_silence;
 }
+
+function checkAllUnlocked(_lastToCheck){
+	var _allBought = true;
+	
+	ini_open("data.ini")
+	var i,
+		iEND = _lastToCheck;
+	
+	for(i = 0; i < iEND; i++)
+	{
+		if(ini_read_real("burgersUnlocked", string(i), false) == false)
+		{
+			_allBought = false;
+			break;
+		};	
+	}
+	ini_close();
+	return _allBought;
+};

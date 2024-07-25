@@ -85,7 +85,7 @@ var_checkpointX = 136;
 var_checkpointY = 208 -64;
 
 //FX LIST:
-//0 = Normal !! 1 = Jellyfish !! 2 = Pepperboy !! 3 = Fishy !! 4 = Core !! 5 = SOUL
+//0 = Normal !! 1 = Jellyfish !! 2 = Pepperboy !! 3 = Fishy !! 4 = Core !! 5 = SOUL !! 6 = MINI
 var_effect = 0;
 
 var_spriteMod = "";
