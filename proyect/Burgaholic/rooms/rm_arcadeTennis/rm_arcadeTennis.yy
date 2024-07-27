@@ -19,7 +19,7 @@
 2,16,21,-8,22,2,23,25,-8,11,3,20,28,29,-3,30,2,28,29,-3,
 30,1,26,-7,11,14,36,37,32,33,34,35,31,32,33,34,35,31,38,39,
 -6,11,1,40,-12,41,1,42,-6,11,1,40,-3,27,-9,41,1,42,-6,11,
-1,8,-12,4,1,43,-3,11,],"TileDataFormat":1,},"tilesetId":{"name":"tl_arcade","path":"tilesets/tl_arcade/tl_arcade.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+1,8,-12,4,1,43,-3,11,],"TileDataFormat":1,},"tilesetId":{"name":"tl_arcade2","path":"tilesets/tl_arcade2/tl_arcade2.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_398DFB07_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pressStart","path":"objects/obj_pressStart/obj_pressStart.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":112.0,"y":80.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},

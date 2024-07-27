@@ -1,5 +1,6 @@
 xx = 0
 yy = 0 //The coordinates to put the player at when you return to main world
+var_game = 0;
 
 arr_arcade[0, 0] = 17 //ARCADE NUMBER
 arr_arcade[0, 1] = mus_arcadeBurgMenu //MENU MUSIC
@@ -36,9 +37,8 @@ arr_arcade[7, 1] = mus_arcadeBurgMenu //MENU MUSIC
 arr_arcade[7, 2] = mus_arcadeBurg //MAIN MUSIC
 
 global.specialMusic = true;
-global.music = arr_arcade[global.stage, 1];
-
-var_arcadeBurgerStart = arr_arcade[global.stage, 0] //The first of the unlockable arcade burgers
+alarm[0] = 1;
+var_arcadeBurgerStart = 0;
 
 var_burgIconX = 4*16;
 var_burgIconY = 12*16;

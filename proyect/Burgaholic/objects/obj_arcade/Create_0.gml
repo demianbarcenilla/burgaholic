@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 image_speed = 0;
-image_index = global.stage;
 
 // Inherit the parent event
 event_inherited();
@@ -14,7 +13,25 @@ arr_arcadeGame[4] = rm_arcadeBurg;
 arr_arcadeGame[5] = rm_arcadeBurg;
 arr_arcadeGame[6] = rm_arcadeBurg;
 arr_arcadeGame[7] = rm_arcadeBurg;
+arr_arcadeGame[8] = rm_arcadeBurg;
 
-var_arcadeGame = arr_arcadeGame[global.stage];
+var_arcadeGame = 0;
+
+if(game = -1)
+{
+	var_arcadeGame = arr_arcadeGame[global.stage]
+}
+else
+{
+	var_arcadeGame = game;
+};
+
+image_speed = 0;
+image_index = var_arcadeGame;
 
 alarm[10] = 2;
+
+if(arcadeMini)
+{
+	sprite_index = spr_arcadeMini;
+}
