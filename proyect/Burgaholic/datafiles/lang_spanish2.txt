@@ -1,0 +1,605 @@
+[burgNames]
+0=Hatburger
+1=Capburger
+2=Cheeseburger
+3=Soyburger
+4=Vacaburger
+5=Huevoburger
+6=Polloburger
+7=Milloburger
+8=Coolburger
+9=HatHatburger
+10=Burgburger
+11=Erburger
+12=Burgerhat
+13=Nekoburger
+14=Anchoburger
+15=Largoburger
+16=Ruedaburger
+17=Cosplayburger
+18=Ketchupburger
+19=Bababurger
+20=Calienteburger
+21=Bomburger
+22=Volcanburger
+23=Mucamaburger
+24=Pimientoburger
+25=Burger de Incognito
+26=Balanceburger
+27=Ninjaburger
+28=Femburger
+29=Memeburger
+30=Gusanoburger
+31=Dr. Burger
+32=Noburger
+33=Burger Psiquica
+34=Sangreburger
+35=Manzanaburger
+36=Cactusburger
+37=Manoburger
+38=Shockburger
+39=Putriburger
+40=Resorteburger
+41=Arenaurger
+42=Almejaburger
+43=Boteburger
+44=Payasoburger
+45=Conoburger
+46=Alohaburger
+47=Hamburguesa Mordida
+48=Bebeburger
+49=Algodonburger
+50=Voodooburger
+51=Medusaburger
+52=Super Burger
+53=Abejaburger
+54=Florburger
+55=Mielburger
+56=Chefburger
+57=Pezburger
+58=Burgolote
+59=Calaburger
+60=Nieveburger
+61=Congelaburger
+62=Yetiburger
+63=Burgosapiens
+64=Grinchburger
+65=Mohoburger
+66=Burger Arcoiris
+67=Cuboburger
+68=Fotoburger
+69=Santaburger
+70=Saturnoburger
+71=Velaburger
+72=Almaburger
+73=Coraburger
+74=Estalacburger
+75=Cristalburger
+76=Iceberger
+77=Pianoburger
+78=Malteada Burger
+79=Cycloburger
+80=Minaburger
+81=Lepreburger
+82=Raraburger
+83=Dinoburger
+84=Mascaraburger
+85=Roboburger
+86=Burgmarino
+87=El Canal Burger
+88=Alienburger
+89=Toxinaburger
+90=BBBBBBurger
+91=Sir Burger
+92=Vaqueroburger
+93=Papaburger
+94=Escuchaburger
+95=Burger Empalada
+96=Ber
+97=Pepinoburger
+98=Cebollaburger
+99=Polvoburger
+100=Hongoburger
+101=Mimoburger
+102=Pilburger
+103=Griegoburger
+104=Hatburglar
+105=Cafeburger
+106=Urg
+107=Angelburger
+108=Burger de Kreatina
+109=Guapoburger
+110=Enchufeburger
+111=Seleccion de Burger
+112=Aprietoburger
+113=Cofreburger
+114=Besoburger
+115=Moaiburger
+116=Burger Pegajosa
+117=Amargoburger
+118=Globoburger
+119=Microburger
+120=Nucleoburger
+121=Lunaburger
+122=Brujaburger
+123=Murcielaburger
+124=Demoniburger
+125=Esqueleburger
+126=Zomburger
+127=Piedraburger
+128=Frankenburger
+129=Boorger
+130=Mandiburger
+131=Vampiroburger
+132=Mimicburger
+133=burg.exe
+134=Trollburger
+135=Basuraburger
+136=Vacioburger
+137=Almohadaburger
+138=Bondiolaburger
+139=Titoburger
+140=Nenufarburger
+141=Burburger
+142=Hatburger Retro
+143=Hatburger Demo
+144=DIY Burger
+145=@@burgE$$
+146=Sketchburger
+147=Armaburger
+148=Burger Realista
+149=Burger 3D
+150=SubBurger (1/2)
+151=SubBurger (2/2)
+152=Burger XXL
+153=Derretiburger
+154=Burger Embrujada
+155=Pixiburger
+156=Miniburger
+157=Tronoburger
+158=Bufonburger
+159=Reyburger
+160=Vacio
+161=Vacio
+162=Vacio
+163=Vacio
+164=Vacio
+165=Vacio
+166=Vacio
+167=Vacio
+168=Vacio
+
+[burgDescriptions]
+0=El balance perfecto entre estilo y calorias
+1=¿¡Usa una gorra!? ¡SE VE RIDICULO! JAJAJAJA
+2=¡Grasoso! ¡Plastico! Todo un clasico
+3=Apto vegano (mas o menos)
+4=¡La opcion anti-vegano!
+5=Polloburger cruda
+6=Huevoburger sobrecocinada
+7=(El dinero se vende por separado)
+8=¡WOW! ¡LENTES DE SOL! ¡SE VE TAN COOL!
+9=Mucho estilo, aun mas calorias
+10=Estilo burg mucho, ¡Incluso calorias mas sombrero que pan!
+11=¡SOMBRERO EL MEDALLON GRASA PAN BURGER ESTILO LECHUGA!
+12=¡Roles Invertidos!
+13=:3
+14=Aaaaaaaaaaaancho
+15=L A R G O 
+16=El medio de transporte mas lento
+17=Fan de un videojuego oculto de 2018 (Patetico)
+18=Sobredosis de ketchup
+19=¡Gomoso!
+20=¡El mas crocante! Tal vez un poco pasado de coccion.
+21=Explota, ¡Al igual que la mayoria de las burgers!
+22=Sufre todo el dia, todos los dias. Probablemente porque la lava le derrite lentamente el interior
+23=¡A alguien le van estas cosas!
+24=¡¡DULCE CAPSAICINA PARA CALMAR EL DOLOR!!
+25=Algo esconde...
+26=El ying Y el yang, ¡Todo en una sola burger!
+27=¿Adonde se metio? Se suponia que habia una hamburguesa aqui
+28=Usa moño, asi es como sabes que es una chica
+29=¡Tan desactualizado!
+30=Porciones infinitas
+31=Estudio 12 años para poder usar ese pequeño atuendo
+32=Eso NO ES una hamburguesa
+33=Sabe EXACTAMENTE lo que estas pensando
+34=¡Una donacion generosa!
+35=La hamburguesa prohibida que nos metio en este lio
+36=Dale un abrazo, ¡Es lo unico que quiere!
+37=Adooooora tocar
+38=Shockeante, ¿No?
+39=Un total desperdicio de hamburguesa
+40=BOOOOOOIIING!
+41=Suele actuar papeles secundarios en peliculas donde lo patea algun tipo
+42=¡Haz un collar con sus intestinos!
+43=Esta hamburguesa NUNCA se hundira
+44=Vendio tantas hamburguesas que se transformo en una
+45=¡Se ve familiar!
+46=El origen de las peleas sobre la piña en ciertas comidas
+47=¿POR QUE LE HARIAS ESTO A UNA HAMBURGUESA?
+48=¡Recien salido del horno!
+49=¡La hamburguesa mas suave que nunca te vas a comer!
+50=¡Clavale una aguja y lastima a una hamburguesa en la vida real!
+51=Esta viva, pero no lo sabe
+52=El heroe que nos merecemos
+53=BZZZZZZZZZZZZZZ
+54=Huele bien... O bueno, ¿Mas o menos?
+55=Dulce y pegajoso
+56=¡SI, CHEF!
+57=Ahora con microplasticos extra
+58=Cuidalo. A menos que quieras que se extinga, claro 
+59=¡Esto pone huevos, aparentemente!
+60=Vive en un refrigerador. Si no, se muere
+61=Blanca navidad
+62=¡Nadie creera que encontraste esto!
+63=Hamburguesa prehistorica salida de tu cadena de comida rapida mas cercana
+64=Odia todo tipo de festividades
+65=Esta hamburguesa no se echo a perder. De hecho, el moho le da una textura unica
+66=Hamburguesa frutal
+67=Vio tanta television que termino cuadrado
+68=Una foto de una hamburguesa que aparentemente cuenta como una hamburguesa
+69=¡Hecho de felicidad, regalos y materia muerta!
+70=La hamburguesa mas gaseosa de todas
+71=Le muestra el camino a los espiritus perdidos
+72=Una hamburguesa sin cuerpo
+73=<3
+74=¡Listo para partirte el craneo!
+75=Tambien es un espejo que solo puede ser usado de manera precisa por gente violeta
+76=Esto DEFINITIVAMENTE puede hundir una Boteburger
+77=No suena para nada como un piano
+78=ES UNA TRAMPA, NO LA BEBAS
+79=50% Hamburguesa, 50% Monstruo, 0% Percepcion de la profundidad
+80=Explota al contacto al igual que la mayoria de hamburguesas seguramente hacen
+81=De un lugar magico lleno de arcoiris y cereal
+82=Un enfermo
+83=El asteroide no pudo con este
+84=Ni idea que es pero esta lindo
+85=Burger 2.0 con tecnologia de punta
+86=Dije SUBA.
+87=24 horas de noticias sobre hamburguesas, cultura de hamburguesa y todo lo que tenga que ver con hamburguesas
+88=Se estaba quedando sin Vacaburgers asi que vino a buscar mas
+89=No te acerques mucho a menos que quieras partes del cuerpo extras
+90=¡Voltealo!
+91=No es un caballero de verdad, simplemente le gustan mucho las armaduras
+92=Incluye pasatiempos como fumar, montar a caballo y disparar al cielo
+93=Algunas personas vienen a El Arrecife en busqueda de esta hamburguesa y nada mas
+94=Soy todo oidos
+95=...
+96=Le vendria bien un poco de Urg
+97=Recolecta el pepino para desbloquear el pepino
+98=Las cebollas y las hamburguesas no son tan distintas. Ambas tienen capas, despues de todo
+99=El cebo perfecto
+100=No es una hamburguesa, pero tampoco es un hongo
+101=Que molesto...
+102=Toma tus pastillas
+103=Se cuestiona su existencia y esas cosas
+104=Robo, robo
+105=Dormir es para debiles
+106=Le vendria bien un poco de Ber
+107=San Burger te vino a recoger
+108=¡MASA MUSCULAR!
+109=¡A quien no le gusta una hamburguesa guapa?
+110=Advertencia: Enchufarlo podria incendiar su casa
+111=¡Selecciona tu hamburguesa!
+112=No se esta ahogando, simplemente... Se guarda un poco de aire para mas tarde
+113=¡Repleto de joyeria! Lamentablemente no vale nada porque nuestra economia esta basada en el pepino
+114=Dame un besito
+115=Cero emociones
+116=Similar a un chicle pero no lo es
+117=Si la vida te da limones, haz una hamburguesa
+118=¡Que explote!
+119=¡Tan pequeño que casi no se puede ver!
+120=Una hamburguesa grumosa de las profundidades de El Nucleo
+121=Ave nocturna
+122=Constantemente interrumpe con risas raras
+123=Hay una chance de que sea un vampiro
+124=Se canso de esperar asi que tuvo que subir
+125=Hamburguesa tenebrosa
+126=Si te muerde, ¡Seguramente te conviertas en una hamburguesa!
+127=Eso te pasa por mirar
+128=Un monton de partes de hamburguesas muertas. Nada especial
+129=AHH!
+130=¡La primera hamburguesa que podria comerte!
+131=Salir de casa es mas dificil de lo que parece
+132=Hamburguesa. ¿O no?
+133=Hamburguesa perdida y encontrada en un CD ROM con un pasado oscuro
+134=Vive abajo de un puente o alguna cosa triste como esa
+135=Reciclar es para nerds
+136=No te acerques mucho, ¡No hay manera de salir!
+137=Siempre habla de que''Esta de humor como para legalizar los colchones''
+138=Si, me entere
+139=¿Te enteraste?
+140=Un reemplazo peor para el jugo de nenufar
+141=Demasiado pesada a comparacion de otras burbujas
+142=La segunda, ¡Ahora con mas saltos!
+143=La primera
+144=Armala tu.
+145=@$%$%@!@)#$%
+146=Se quedo a mitad de camino
+147=Aura amenazante
+148=...Con ciertas limitaciones
+149=Bueno, mas o menos. Vivimos en un espacio 2D, despues de todo.
+150=¡Esta hamburguesa es tan larga...
+151=...Que necesita dos espacios para entrar!
+152=Este espacio queda un poco justo para mi
+153=Todo duele
+154=Se metio en una mansion embrujada y pago el precio
+155=La mejor maestra
+156=Chiquito <3
+157=El asiento perfecto para los pequeños reyes
+158=VAMOS, HAZME REIR
+159=El rey de todas las hamburguesas
+160=Nada que ver aqui
+161=Absolutamente nada
+162=Nada
+163=Como te digo, nada.
+164=NADA, NADA, NADA
+165=ESTA VACIO
+166=TE ESTOY DICIENDO QUE ESTA VACIO
+167=¿No me crees? ¡MIRALO TU MISMO!
+168=Como iba diciendo, esta vacio
+
+[ChatNothing]
+0="¡Este mensaje no deberia aparecer!"
+1="Si estas leyendo, contacta al desarrollador para que lo arregle"
+2="Por favor, provee toda la informacion posible. ¡Gracias! -The Error Message"
+
+[ChatDakota]
+0="Bueno... que mala educacion"
+1="¡Yo no intentaba lastimarte!"
+2="Esto va a sonar tonto, pero alguien me metio en una maquina y me transformo en un rarito"
+3="Acabe teniendo algo llamado ''PROFUNDIDAD'', Algo asi como una condicion. Fue horrible"
+4="Como sea, me dedico a vender hamburguesas, y conozco un grupo de gente muy particular que las colecciona¨
+5="Supongo que quien me hizo mutar fue uno de esos tipos porque no puedo encontrar la mitad de mis recetas"
+6="...Espera. ¿Nunca escuchaste hablar de las hamburguesas con sombrero?"
+7="Salgamos de aqui, te cuento en el camino"
+
+[PrevShopDakota]
+0="...Y por eso coleccionan hamburguesas que usan sombrero!"
+1="Son completamente inutiles, ya lo se"
+2="Pero hey, a la gente le gustan"
+3="Cambiando de tema, ¿Te puedo pedir un favor?"
+4="me ENCANTARIA saber la ubicacion de mis recetas"
+5="No las necesito, este rubro es demasiado riesgoso. Pero son MIAS y me las merezco"
+6="El problema es que no quiero que me metan en la maquina otra vez"
+7="Preferiria que lo hagas tu. ¡Yo no podria ganarle a ningun monstruo!"
+8="Ademas, claramente tienes tiempo libre. Te vendria bien un hobby"
+9="Solamente necesito que encuentres a esos maniaticos y los traigas aqui. Alguno tiene que tener mis recetas en algun lado"
+10="Y si no, al menos vas a poder coleccionar algunas hamburguesas. ¿¡No te parece EMOCIONANTE!?"
+11="Cuando estes listo, ponte metete por ese tubo que esta ahi"
+12="...Y una cosa mas"
+
+[ShopDakota]
+0="...¿Quieres comprarme algunas recetas? Yo ya no las necesito"
+1="¡Tu coleccion tiene que empezar por algun lado!"
+
+[ShopDakota_finished]
+0="¡Listo! No te queda nada mas por comprar"
+1="¿Por que sigues aqui?"
+
+[ShopDakota_W1finished]
+0="¡Compraste todas mis recetas! ¡Buen Chico!"
+1="Dejame darte algunos consejos para tu viaje"
+2="Primero, tienes que ir hacia El Volcan Picante. Ten cuidado, ¡Hace mucho calor!"
+3="Eso es todo. Ese es el consejo"
+
+[ShopDakota_W2finished]
+0="El chico callado no las tiene"
+1="Lo que parece tener es problemas de ansiedad"
+2="Le conviene relajarse. ¡Ah! Eso me recuerda..."
+3="...¡Tu siguiente parada es La Playa! Ese SI que es un lugar calmo"
+4="Con sus barcos de papel y ese agua cristalina... ¿Sabias que puedes flotar en el agua?"
+5="A menos que te agarre una medusa, en ese caso te vas a hundir"
+6="Yo tampoco entiendo la logica."
+
+[ShopDakota_W3finished]
+0="La chica camello esta tampoco tiene mis recetas"
+1="Y estoy cansado de escucharla hablar sobre la alta sociedad"
+2="Alta como las montañas de El Refrigerador, ¡Justo donde te toca ir!"
+3="A mi no me gusta mucho. El frio, las sierras, las paredes cubiertas con moho"
+4="¡Por lo menos puedes saltar de esas paredes! Esa es una actividad supongo"
+
+[ShopDakota_W4finished]
+0="Mira, ¡Tiene cabeza de cono! Justo como tu. Aunque ella tampoco tenia mis recetas, asi que a trabajar"
+1="Espero que hayas disfrutado las alturas pero ahora es momento de pasar a las profundidades. ¡Toca ir a El Arrecife!"
+2="Ahi se encuentran minas submarinas enormes y piedras vivas raras o algo. Es un lugar horrible de visitar"
+3="¡Menos mal que yo no voy!"
+4="La verdad, la unica forma de atravesar El Arrecife es nadando."
+5="Es un alivio que la presion sea taaaan alta alli, ¡No vas a poder flotar como hacias en La Playa!"
+6="¿No sabes nadar? Eh... Supongo que vas a encontrar la forma"
+
+[ShopDakota_W5finished]
+0="Ese pescado me ATERRA, y tampoco tenia mis recetas"
+1="Solo quedan tres lugares mas por revisar. Por favor hazlo rapido antes de que me mate"
+2="Lo que me recuerda a... ¡El Cenicero! Supuestamente era una especie de cementerio"
+3="Pero ya hace bastante que esta poblado por hongos"
+4="Es un lugar bastante psicodelico, de hecho"
+
+[ShopDakota_W6finished]
+0="Dile al nuevo que se calle de una vez. TODO es un drama para el"
+1="CADA. COSA. Y tampoco tenia mis recetas, deben estar en alguno de los dos destinos pendientes"
+4="¡Como El Nucleo! Tambien conocido como el centro de la tierra"
+5="Ese lugar tiene unas vibras algo raras. Las pocas veces que fui me senti observado"
+6="Te puedo decir esto: ¡No te asustes si pierdes los dientes!"
+7="...Es en serio"
+
+[ShopDakota_W7finished]
+0="Me estoy cansando de esto. Este es SUPER sospechoso pero no pude encontrarle nada"
+1="¿Debe ser alguna especie de mascota?"
+2="A estas alturas me da lo mismo, ¡Hablemos de El Estanque!"
+3="El Estanque..."
+4="Es el unico lugar al que nunca fui, realmente"
+5="Escuche que es un lugar lleno de desperdicios toxicos, bastante inseguro en general"
+6="Pero ahi tiene que estar el ladron, no queda mas."
+
+[ShopDakota_W8finished]
+0="No te imaginas lo feliz que me hace saber que quien tenia mis recetas esta nadando en un lago de desperdicios en este mismo momento"
+1="Pero me rindo, el ultimo ´´coleccionista´´ que trajiste quiere venderme mis propias recetas"
+2="Pero esta bien, yo nada mas queria joder al que me robo las recetas"
+3="Si le quieres pagar a esta escoria por la otra mitad de mis recetas, puedes quedartelas"
+4="¡Te las mereces!"
+
+[ShopDakota_W9finished]
+0="Conseguiste una paletita fea? Me alegro mucho"
+1="¡Es completamente inutil! por lo menos por ahora"
+2="Pero tambien es un muy buen trofeo, algo que solo un completista tendria"
+3="¿Recuerdas cuando nos conocimos? Te pedi que me ayudes porque te sobraba el tiempo y yo queria romperle la cara a alguien"
+4="Bueno, ¡Esta paletita es todo obra tuya! Nadie te la pidio, nadie la necesita"
+5="Y por eso es un tesoro. Es la prueba de que tu, definitivamente, no tenias nada mejor que hacer"
+6="¡Felicidades!"
+
+[ChatCedric]
+0="HMMMMMMMPFFFFF"
+
+[ShopCedric]
+0="HMPPFFFF? HMMMPPF!!"
+
+[ShopCedric_Finished]
+0="HMMPF!!! HMPF HMPF!"
+
+[ChatCamella]
+0="Gracias por regresarme a la normalidad, joven lacayo"
+1="¡Yo soy Camella, la princesa de la arena!"
+2="...¿Que dices? ¿Que yo robe algo?"
+3="¿Que podria querer que tuvieras tu?"
+4="...Yo no necesito ninguna receta, ya domine por completo la alta cocina"
+5="Estoy cansada. ¡Cargame a algun lugar seguro!"
+
+[ShopCamella]
+0="¿Quieres comprar alguna de mis recetas, lacayo? Mucho cuidado, porque yo, Camella, soy una cocinera EXQUISITA"
+
+[ShopCamella_Finished]
+0="¡Sabia que ibas a comprarme todo! No porque me interese lo que hagas, sino porque soy la mejor chef de todos los tiempos"
+
+[ChatCrystal]
+0="Hey! Gracias por golpearme hasta el cansancio"
+1="...¿Recetas? Nah, yo no robo"
+2="Supongo que hay algun lugar seguro al que ir. ¡Vamos!"
+
+[ShopCrystal]
+0="¿Quieres ver mis recetas? Obvio que puedo vendertelas si quieres"
+
+[ShopCrystal_Finished]
+0="Mira eso, ¡Compraste todo lo que recolecte!"
+1="Voy a comprarme un nuevo abrigo. Solo tengo que encontrar una tienda que acepte pepinos"
+
+[ChatMadame]
+0="Mutar me cansa. Sacame de aqui"
+
+[ShopMadame]
+0="Todo coleccionista que se respete lleva sus recetas donde quiera que vaya"
+1="Aparentemente es la mejor forma de saber que tu coleccion sigue intacta y creciendo"
+2="Bueno, me di cuenta de que eso es una estupidez"
+3="Te vendo todo, ya no respeto este hobby"
+
+[ShopMadame_Finished]
+0="Gracias, esas hamburguesas son pesadas cuando no estas bajo el agua"
+
+[ChatRichard]
+0="¡AH! ¡QUE TRAGEDIA! ¡Me han convertido en una mera bestia!"
+1="No se quien lo hizo, pero me hace sentir desesperado"
+2="¡¡SALVAME!!"
+
+[ShopRichard]
+0="Por favor llevate estas hamburguesas, ¡¡LLEVALAS!!, Son una carga, y ya no quiero pagar el precio"
+1="Tu. Hazlo. ¡¡Paga el precio!!"
+
+[ShopRichard_Finished]
+0="¡¡El dinero hace el mundo girar!! No lo olvides, ¡¡Vivimos una mentira!!"
+
+[ChatCore]
+0="oh.. hola.."
+1="..bienvenido a el nucleo.."
+2="amo las hamburguesas.. me alegra mucho ser una.."
+3="..¿crees que robe algo?"
+4="..esta bien.. ire contigo"
+
+[ShopCore]
+0="..¿quieres comprar mis recetas?"
+1="soy toda la hamburguesa que necesito.."
+
+[ShopCore_Finished]
+0="ahora extraño mis hamburguesas..."
+1="..pero no hay reembolsos"
+
+[PrevChatBaddie]
+0="¡Mio!"
+
+[ChatBaddie]
+0="Gracias por deshacerte de ese idiota"
+1="¿Ahora que vas a hacer? Te acompaño"
+
+[ShopBaddie]
+0="¿Escuche bien? ¿Quieres mis recetas?"
+1="¡Pero yo amo mis recetas! No puedo esperar a hacer estas... Ehh... ¿´´Hambrugesas´´?"
+2="Buah, que mala caligrafia"
+3="¡Vas a tener que convencerme! ¡Ja ja!"
+4="...Con dinero, obviamente"
+
+[ShopBaddie_Finished]
+0="¡Calmate hermano! No tengo nada mas para ofrecerte"
+1="No sabia que eras un BURGADICTO"
+2="Espera, no. Eso no suena bien"
+
+[ChatGreg]
+0="Este chat transcurre antes del boss final"
+0="Pero bueno, mejor dejo que la violencia hable por mi"
+
+[DefeatGreg]
+0="mis recetas.."
+
+[ChatBurgPixie_Intro]
+0="Oh! Hola"
+1="Yo soy la gran Pixieburger"
+2="¡Inclinate ante mi!"
+3="...¿Como? ¿No sabes inclinarte?"
+4="¿Ni siquiera sabes moverte? Eso es muy triste..."
+5="Esta bien, amiguito. Yo te voy a explicar todo lo que necesitas saber sobre movimiento"
+6="¡Abrochate el cinturon!"
+
+[ChatBurgPixie_Jump]
+0="WOW, ¡IMPECABLE! ¡NO PUEDO CREER LO QUE VEN MIS OJOS! Todo un maestro de la caminata"
+1="¿Pero puedes dominar el poderoso SALTO?"
+
+[ChatBurgPixie_Bounce]
+0="¡Aprendes rapido! Esos fuero saltos, definitivamente"
+1="De todas formas, no creo que con esto solo te alcance"
+2="Imaginate esto: Presionas el boton de salto una vez, ¿No?"
+3="Despues, cuando estas en el aire, lo presionas OTRA VEZ. ¿Que pasaria entonces?"
+4="...¡Exactamente! Caes al suelo de inmediato, obvio"
+5="Asi que ahora lo sabes, presiona SALTO, luego SALTA otra vez en el aire"
+
+[ChatBurgPixie_Roll]
+0="¡INCREIBLE! ¡Eres casi un resorte!"
+1="Sigue rebotando asi y alcanzaras la mas alta de las plataformas"
+2="¡Pero ESPERA! Que pasaria si en vez de eso, quisieras llegar a la mas LEJANA de las plataformas"
+3="Tenemos una opcion distinta para eso"
+4="Piensa en esta situacion: Estas en el SUELO, mirando hacia ABAJO, e intentas SALTAR"
+5="Pero en vez de eso, empiezas a RODAR a altas velocidades!"
+6="Sip eso es lo que vas a hacer ahora."
+7="Recuerda: Presiona ABAJO + SALTO, luego VUELVE A SALTAR"
+
+[ChatBurgPixie_Dash]
+0="¡Rodaste como los mejores! Soy un excelente maestro"
+1="Dato curioso: Si estas rodando y caes de una plataforma, todavia puedes saltar"
+2="Esto te hara ganar un poco mas de distancia. Puede ser util, lo prometo"
+3="¡Hablemos del DASH!"
+4="¿Ves esas dos columnas? Ni rodar ni rebotar te va a servir para pasarlas"
+5="Asi que hazlo, ¡Presiona el boton de DASH en el aire para hacer un DASH!"
+6="Ya se, ya se. No podrias haberlo averiguado solo"
+
+[ChatBurgPixie_Enemies]
+0="Yyyy eso es todo. Eso fue el dash"
+1="Solo puedes usarlo en el aire, pero te da un poco mas de distancia"
+2="Ademas puedes mezclarlo con rebotes y ruedos!"
+3="De hecho puedes mezclar cualquier movimiento con cualquier otro. ¡Pruebalo cuando puedas!"
+4="Oh, y una cosa mas"
+5="¿Ves ese ser flotante que esta por alla? Eso es un enemigo. Si lo tocas normalmente te dañara PERO"
+6="Si lo golpeas con cualquiera de estos movimientos, tu seras quien hara todo el daño"
+7="Puedes usarlos para ir mas lejos o mas alto, asi que hazlo, ¡Rompele el craneo!"
+
+[ChatBurgPixie_Finish]
+0="¡Eso es todo! Ponte creativo con tus movimientos y haras buen progreso"
+1="¿Hacia que? Yo que se, solamente soy un sueño"
+2="oOoOoOoOOo"

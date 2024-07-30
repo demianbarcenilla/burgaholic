@@ -157,7 +157,9 @@
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"lang_english.ini","CopyToMask":3035426170322551022,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"lang_english2.txt","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"lang_spanish.ini","CopyToMask":3035426170322551022,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"lang_spanish2.txt","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "isEcma": false,
   "LibraryEmitters": [],
