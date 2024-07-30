@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 96.048,
   "parent": {
-    "name": "special",
-    "path": "folders/Sounds/music/special.yy",
+    "name": "other",
+    "path": "folders/Sounds/music/other.yy",
   },
   "preload": false,
   "sampleRate": 44100,

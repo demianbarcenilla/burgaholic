@@ -41,7 +41,7 @@ switch(var_state)
 			
 			//Make invisible when arcade
 			if(obj_player.var_state = STATE_MACHINE.arcade){sprite_index = spr_blank}
-			else{sprite_index = spr_key};
+			else{sprite_index = var_sprite};
 		};
 		
 		pickle_set_number();

@@ -4,7 +4,7 @@ if(place_meeting(x, y, obj_player))
 	obj_player.var_checkpointX = x;
 	obj_player.var_checkpointY = y;
 	
-	if(sprite_index != spr_checkpointUp)
+	if(sprite_index != var_spriteUp)
 	{
 		with(obj_pickle)
 		{
@@ -20,10 +20,10 @@ if(instance_exists(obj_player))
 {
 	if(obj_player.var_checkpoint = room)
 	{
-		sprite_index = spr_checkpointUp
+		sprite_index = var_spriteUp
 	}
 	else
 	{
-		sprite_index = spr_checkpoint;
+		sprite_index = var_sprite;
 	};
 };

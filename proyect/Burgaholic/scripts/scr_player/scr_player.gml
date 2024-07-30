@@ -871,7 +871,8 @@ function state_shroomed()
 
 function state_respawn()
 {
-	sprite_index = spr_playerGhost;
+	
+	sprite_index = var_effect = 6 ? spr_playerGhost_mini : spr_playerGhost;
 	if(image_index = image_number -1)
 	{
 		var_state = STATE_MACHINE.normal;

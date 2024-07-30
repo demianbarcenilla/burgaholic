@@ -176,6 +176,12 @@ if(global.stage = stage.core)
 	var_effect = 4;
 };
 
+//IN SPECIAL YOU'RE ALWAYS TINY
+if(global.stage = stage.special)
+{
+	var_effect = 6;
+};
+
 //CHANGE COLLISIONS WHEN YOU'RE TINY
 if(var_effect == 6)
 {

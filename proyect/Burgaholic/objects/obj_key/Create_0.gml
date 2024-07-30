@@ -26,3 +26,10 @@ if(instance_exists(obj_player))
 angle = 90;
 angle_rate = 2;
 distance = 32;
+
+if(global.stage == stage.special)
+{
+	sprite_index = spr_keyMini
+};
+
+var_sprite = sprite_index

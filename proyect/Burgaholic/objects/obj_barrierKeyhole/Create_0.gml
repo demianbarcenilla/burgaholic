@@ -38,3 +38,8 @@ for(ii = 0; ii < var_downAmmount; ii++) //Generate the barriers
 var_canPickKey = true;
 var_id = id;
 var_breaking = false;
+
+if(global.stage == stage.special)
+{
+	sprite_index = spr_barrierKeyholeMini
+};
