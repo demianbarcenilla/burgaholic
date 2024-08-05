@@ -29,8 +29,8 @@ arr_arcade[5, 1] = mus_arcadeBurgMenu //MENU MUSIC
 arr_arcade[5, 2] = mus_arcadeBurg //MAIN MUSIC
 
 arr_arcade[6, 0] = arr_arcade[5, 0] +20 //ARCADE NUMBER
-arr_arcade[6, 1] = mus_arcadeBurgMenu //MENU MUSIC
-arr_arcade[6, 2] = mus_arcadeBurg //MAIN MUSIC
+arr_arcade[6, 1] = mus_arcadeViruxMenu //MENU MUSIC
+arr_arcade[6, 2] = mus_arcadeVirux //MAIN MUSIC
 
 arr_arcade[7, 0] = arr_arcade[6, 0] +20 //ARCADE NUMBER
 arr_arcade[7, 1] = mus_arcadeBurgMenu //MENU MUSIC

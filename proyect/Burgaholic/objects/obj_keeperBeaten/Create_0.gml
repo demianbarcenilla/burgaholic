@@ -73,4 +73,38 @@ audio_stop_all();
 if(_playRiff)
 {
 	audio_play_sound(sfx_bossBeat, 1, false);
+	obj_player.var_state = STATE_MACHINE.drink
+	obj_player.image_index = 0;
+	obj_player.var_spd = 0;
+	
+	obj_control.var_runTimeCurStage = false;
+	
+	ini_open("data.ini")
+		var _savedPB = ini_read_real("timer", string(global.stage), 0)
+		if(_savedPB != 0)
+		{
+			if(obj_control.var_runTimeCurStage < _savedPB)
+			{
+				ini_write_real("timer", string(global.stage), obj_control.var_timeCurStage);
+				obj_control.var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
+			}
+		}
+		else
+		{
+			ini_write_real("timer", string(global.stage), obj_control.var_timeCurStage);
+			obj_control.var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
+		}
+	
+	var _stages = ini_read_real("Stages", "Total", 0)
+	
+	if(_stages < 8)
+	{
+		ini_write_real("timer", "global", obj_control.var_timeGlobal);
+	}
+	if(_stages < 9)
+	{
+		ini_write_real("timer", "100", obj_control.var_time100);
+	}
+	
+	ini_close();
 };

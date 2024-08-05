@@ -208,3 +208,49 @@ function checkAllUnlocked(_lastToCheck){
 	ini_close();
 	return _allBought;
 };
+
+function scr_repeatedKey()
+{
+	if(ini_read_real("keys", "dash", 88) == keyboard_key)
+	{
+		return true;
+	}
+	else if(ini_read_real("keys", "jump", 90) == keyboard_key)
+	{
+		return true;
+	}
+	else if(ini_read_real("keys", "down", 40) == keyboard_key)
+	{
+		return true;
+	}
+	else if(ini_read_real("keys", "up", 38) == keyboard_key)
+	{
+		return true;
+	}
+	else if(ini_read_real("keys", "left", 37) == keyboard_key)
+	{
+		return true;
+	}
+	else if(ini_read_real("keys", "right", 39) == keyboard_key)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function getAcrossTime()
+{
+	ini_open("data.ini")
+	{
+		var _acrossTime = 0;
+		for(i = 0; i < (ini_read_real("Stages", "Total", 0)+1); i++)
+		{
+			_acrossTime += ini_read_real("timer", string(i), 0);
+		};
+	};
+	
+	return _acrossTime
+};

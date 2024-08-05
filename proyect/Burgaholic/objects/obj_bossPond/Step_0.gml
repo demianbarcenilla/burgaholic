@@ -60,7 +60,6 @@ switch(var_state)
 	break;
 	
 	case GREG_STATE.defeated:
-			
 	sprite_index = spr_gregBodyBroken
 	y += 4;
 	

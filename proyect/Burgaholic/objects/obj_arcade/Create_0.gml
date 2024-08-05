@@ -11,15 +11,14 @@ arr_arcadeGame[2] = rm_arcadeBurg;
 arr_arcadeGame[3] = rm_arcadeBurg;
 arr_arcadeGame[4] = rm_arcadeBurg;
 arr_arcadeGame[5] = rm_arcadeBurg;
-arr_arcadeGame[6] = rm_arcadeBurg;
+arr_arcadeGame[6] = rm_arcadeVirux;
 arr_arcadeGame[7] = rm_arcadeBurg;
-arr_arcadeGame[8] = rm_arcadeBurg;
 
 var_arcadeGame = 0;
 
 if(game = -1)
 {
-	var_arcadeGame = arr_arcadeGame[global.stage]
+	var_arcadeGame = 0
 }
 else
 {

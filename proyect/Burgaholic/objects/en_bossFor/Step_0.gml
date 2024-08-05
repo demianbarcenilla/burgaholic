@@ -30,7 +30,7 @@ switch(var_state)
 		
 		stepAlarm(1, irandom_range(120, 180));
 		
-		collisions();
+		collisionBasic();
 		
 		//Bounce off walls
 		enemy_wallBounce(false);

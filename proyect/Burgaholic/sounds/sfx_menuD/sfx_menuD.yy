@@ -3,14 +3,14 @@
   "resourceVersion": "1.0",
   "name": "sfx_menuD",
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "ag_sfx",
+    "path": "audiogroups/ag_sfx",
   },
   "bitDepth": 1,
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 8.06875,
+  "duration": 0.116062,
   "parent": {
     "name": "ui",
     "path": "folders/Sounds/sfx/ui.yy",

@@ -6,11 +6,11 @@ switch(var_state)
 	break;
 	
 	case 1:
-		scr_menuOptions()
+		scr_menuOptions();
 	break;
 	
 	case 2:
-		scr_menuOptions()
+		scr_menuOptions();
 	break;
 	
 	case 3:

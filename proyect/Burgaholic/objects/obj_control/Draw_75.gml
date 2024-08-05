@@ -68,3 +68,91 @@ ini_open("data.ini");
 ini_close();
 		
 draw_text(SCREEN_WIDTH-24, SCREEN_HEIGHT-8-5 +deathCountDisplace_current, "x" + string(_deaths))
+
+//DRAW TIMER
+
+//global
+var _globalTimerString = timerToString(var_timeGlobal);
+var _globalTimerString100 = timerToString(var_time100);
+var _globalTimerStringPB = timerToString(var_timeCurStagePB);
+var _globalTimerStringCur = timerToString(var_timeCurStage)
+
+if(room != rm_mainMenu) and (!instance_exists(obj_pause)) and (room != rm_levelSelect)
+{
+	draw_set_font(fnt_timer);
+	switch(global.timer)
+	{
+		case 0:
+			//DON'T DRAW
+		break;
+	
+		case 1: //Per Stage
+			if(room = rm_lobby)
+			{
+				ini_open("data.ini")
+					var _worldsFinished = string(ini_read_real("Stages", "Total", 0));
+				ini_close();
+			
+				var _acrossTime = timerToString(getAcrossTime());
+				draw_text_outlined_colored(8, room_height -8, "TOTAL " + "(" + _worldsFinished + "/8): "+ _acrossTime, #332C50, #E2F3E4);		
+			}
+			else
+			{
+				if(var_timeCurStagePB != 0)
+				{
+					draw_text_outlined_colored(8, room_height -20, "PB: " + _globalTimerStringPB, #332C50, #8DD243)
+				}
+				else
+				{
+					draw_text_outlined_colored(8, room_height -20, "PB: -", #332C50, #8DD243)
+				}
+				
+				draw_text_outlined_colored(8, room_height -8, "STAGE: " + _globalTimerStringCur, #332C50, #E2F3E4)
+			}
+		break; 
+	
+		case 2: //ANY% 
+		
+		ini_open("data.ini")
+		var _worldsFinished = ini_read_real("Stages", "Total", 0);
+		
+		if(_worldsFinished >= 8)
+		{
+			_globalTimerString = timerToString(ini_read_real("timer", "global", 0));
+		}
+		ini_close();
+		
+			//Display current stage time on stage. NOT PB!!
+			if(room != rm_lobby)
+			{
+				draw_text_outlined_colored(8, room_height -20, "STAGE: " + _globalTimerStringCur, #332C50, #E2F3E4)
+			}
+			
+			draw_text_outlined_colored(8, room_height -8, "TOTAL: " + _globalTimerString, #332C50, #E2F3E4);
+			
+		break;
+	
+		case 3: //100%
+			
+			ini_open("data.ini")
+			var _worldsFinished = ini_read_real("Stages", "Total", 0);
+			if(_worldsFinished = 9)
+			{
+				_globalTimerString100 = timerToString(ini_read_real("timer", "100", 0));
+			}
+			ini_close();
+			
+			//Display current stage time on stage. NOT PB!!
+			if(room != rm_lobby)
+			{
+				draw_text_outlined_colored(8, room_height -20, "STAGE: " + _globalTimerStringCur, #332C50, #E2F3E4)
+			}
+			
+			draw_text_outlined_colored(8, room_height -8, "TOTAL: " + _globalTimerString100, #332C50, #E2F3E4);
+		break;
+	
+		default:
+			//DON'T DRAW
+		break;
+	}
+}

@@ -7,9 +7,9 @@ function state_normal()
 	var _waterEffect = place_meeting(x, y, obj_water) and (var_effect != 1)
 	
 	//Locks the direction in one place, for certain interactions with walljumps and such
-	if(k_dirLock){_dir = 0; if(alarm[0] = -1){alarm[0] = 10}} //Locks movement completely
+	if(k_dirLock){_dir = 0; stepAlarm(0, 10)} //Locks movement completely
 	else if(k_dirCap = 0){_dir = keyboard_check(global.k_right) - keyboard_check(global.k_left)}
-	else{_dir = k_dirCap; if(alarm[0] = -1){alarm[0] = 10}};
+	else{_dir = k_dirCap; stepAlarm(0, 10)};
 	
 	//Locks the jump button, for interactions with the Pound and Roll states
 	if(k_jumpCap){if(alarm[0] = -1){alarm[0] = 10}};
@@ -672,6 +672,16 @@ function state_tubeOut()
 		};
 		
 		screenshake(2, 1, .2)
+		
+		if(global.stage != stage.special) and (global.stage != stage.blank)
+		
+		obj_control.var_runTimeCurStage = true;
+		obj_control.var_timeCurStage = 0;
+		
+		ini_open("data.ini")
+			obj_control.var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
+		ini_close();
+		
 	};
 };
 
@@ -877,6 +887,34 @@ function state_respawn()
 	{
 		var_state = STATE_MACHINE.normal;
 	};
+};
+
+function state_drink()
+{
+	image_speed = 1.5;
+	
+	
+	if(place_meeting(x, y+1, obj_wall))
+	{
+		
+		sprite_index = sprite("spr_playerDrink");
+		
+		if(image_index >= image_number -1)
+		{
+			image_speed = IMAGE_SPEED;
+			var_spd = 0;
+			
+			var_state = STATE_MACHINE.normal;
+			k_dirLock = 1;
+		};
+	};
+	
+	else
+	{
+		sprite_index = sprite("spr_playerFall");
+		var_vspd += var_grav;
+		collisionBasic();
+	};	
 };
 
 function state_dissapear()

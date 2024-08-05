@@ -106,6 +106,10 @@ if(hp > 0)
 		case STATE_MACHINE.arcade:
 			sprite_index = spr_blank;
 		break;
+		
+		case STATE_MACHINE.drink:
+			state_drink();
+		break;
 	};
 }
 else //DEAD
@@ -191,60 +195,64 @@ else
 {
 	mask_index = spr_playerIdle;
 }
-//Change your room
-if(x > room_width -_halfSprite+1)
-{
-	if(global.nextRoom != -1) and (!roomCooldown)//IF THERE'S OTHER ROOM
-	{
-		room_goto(global.nextRoom)
-		x = _halfSprite+1;
-		y -=2;
-		roomCooldown = true;
-		
-		if(instance_exists(obj_pickle))
-		{
-			with(obj_pickle)
-			{
-				if(var_touched)
-				{
-					x = (_halfSprite -15) *pickleNumber;
-				};
-			};
-		}
-		
-		if(instance_exists(obj_key))
-		{
-			with(obj_key)
-			{
-				if(var_touched)
-				{
-					x = (_halfSprite -15) *pickleNumber;
-				};
-			};
-		}
-	}
-	else //IF THERE'S NO ROOM
-	{
-		x = room_width -_halfSprite+1;
-	};
-}
-else if((x < _halfSprite))
-{
-	if(global.prevRoom != -1) and (!roomCooldown)
-	{
-		room_goto(global.prevRoom)
-		alarm[11] = 1;
-		roomCooldown = true;
-	}
-	else
-	{
-		x = _halfSprite;
-	};
-}
 
-if(roomCooldown and (alarm[10] = -1))
+//Change your room
+if(var_state != STATE_MACHINE.arcade)
 {
-	alarm[10] = 15;
+	if(x > room_width -_halfSprite+1)
+	{
+		if(global.nextRoom != -1) and (!roomCooldown)//IF THERE'S OTHER ROOM
+		{
+			room_goto(global.nextRoom)
+			x = _halfSprite+1;
+			y -=2;
+			roomCooldown = true;
+		
+			if(instance_exists(obj_pickle))
+			{
+				with(obj_pickle)
+				{
+					if(var_touched)
+					{
+						x = (_halfSprite -15) *pickleNumber;
+					};
+				};
+			}
+		
+			if(instance_exists(obj_key))
+			{
+				with(obj_key)
+				{
+					if(var_touched)
+					{
+						x = (_halfSprite -15) *pickleNumber;
+					};
+				};
+			}
+		}
+		else //IF THERE'S NO ROOM
+		{
+			x = room_width -_halfSprite+1;
+		};
+	}
+	else if((x < _halfSprite))
+	{
+		if(global.prevRoom != -1) and (!roomCooldown)
+		{
+			room_goto(global.prevRoom)
+			alarm[11] = 1;
+			roomCooldown = true;
+		}
+		else
+		{
+			x = _halfSprite;
+		};
+	}
+
+	if(roomCooldown and (alarm[10] = -1))
+	{
+		alarm[10] = 15;
+	}
 }
 
 //Start countdown to stop invincibility

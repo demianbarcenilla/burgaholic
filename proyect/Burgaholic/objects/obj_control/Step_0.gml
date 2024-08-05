@@ -72,4 +72,23 @@ if(!instance_exists(obj_levelSelect))
 	};
 };
 
+//TIMER
+ini_open("data.ini");
+	var _globalFinished = (ini_read_real("stages", "total", 0) >= 8),
+		_100Finished = (ini_read_real("stages", "total", 0) = 9);
+ini_close();
+	
+if(var_runTimeGlobal) and (!_globalFinished)
+{
+	var_timeGlobal += delta_time / 1000000;	
+};
 
+if(var_runTimeGlobal) and (!_100Finished)
+{
+	var_time100 += delta_time / 1000000;	
+}; 
+
+if(var_runTimeCurStage)
+{
+	var_timeCurStage += delta_time / 1000000;	
+};

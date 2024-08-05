@@ -65,6 +65,7 @@ ini_open("data.ini");
 ini_close();
 
 global.onionRoom = 0;
+
 //Load Data
 audio_group_load(ag_music);
 audio_group_load(ag_sfx);
@@ -106,6 +107,22 @@ ini_open("settings.ini")
 
 	global.k_jump = ini_read_real("keys", "jump", ord("Z"));
 	global.k_special = ini_read_real("keys", "dash", ord("X"));
+	
+	global.lang = ini_read_real("options", "language", 0);
+	
+	//0 = NO TIMER, 1 = STAGE, 2 = ANY%, 2= 100%
+	global.timer = ini_read_real("options", "timer", 0);
+ini_close();
+
+ini_open("data.ini")
+	var_runTimeGlobal = false;
+	var_timeGlobal = ini_read_real("timer", "global", 0);
+	var_time100 = ini_read_real("timer", "100", 0);
+	
+	var_runTimeCurStage = false;
+	var_timeCurStage = 0;
+	var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0)
+	var_timePerStage = ini_read_real("timer", "perStage", 0);
 ini_close();
 
 if(room = rm_init)
@@ -116,14 +133,16 @@ if(room = rm_init)
 arr_lang[lang.english] = "english"
 arr_lang[lang.spanish] = "spanish"
 
-global.lang = 0;
 global.langString = arr_lang[global.lang];
 global.specialMusic = false;
 
+/*
 //Unlock/Lock ALL Burgers
 ini_open("data.ini");
 	for(i = 0; i < 158; i++)
 	{
 		ini_write_real("burgersUnlocked", i, 1);
 	};
+	
+	ini_write_real("Stages", "Total", 8)
 ini_close();

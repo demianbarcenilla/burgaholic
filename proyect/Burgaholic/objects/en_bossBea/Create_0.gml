@@ -34,17 +34,7 @@ var_heartPos = 32;
 
 var_hasExploded = false;
 
-action = function()
-{
-	repeat(5){instance_create_depth(x, y-32, depth, obj_wasteFX)};
-	with(obj_player)
-	{
-		var_spd = -sign(var_spd)*var_mspd*2; 
-		var_vspd = -var_jspd; k_dirCap = sign(var_spd); 
-		image_xscale = sign(var_spd);
-		var_effect = 0;
-	};
-};
+action = onHit_backwardsBounceBOSS
 
 mask_index = var_idleSprite;
 

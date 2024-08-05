@@ -210,21 +210,28 @@ function collisions()
 	
 	if(place_meeting(x, y, obj_wall))
 	{
-		if(!place_meeting(x, y-16, obj_wall))
+		if place_meeting(x, y, obj_switchWall)
 		{
-			while(place_meeting(x, y+1, obj_wall))
-			{
-				y--
-			};
+			var_hp = 0;
 		}
-		else if(!place_meeting(x, y+16, obj_wall))
+		else
 		{
-			while(place_meeting(x, y-1, obj_wall))
+			if(!place_meeting(x, y-16, obj_wall))
 			{
-				y++
+				while(place_meeting(x, y+1, obj_wall))
+				{
+					y--
+				};
+			}
+			else// if(!place_meeting(x, y+16, obj_wall))
+			{
+				while(place_meeting(x, y-1, obj_wall))
+				{
+					y++;
+				};
 			};
 		};
-	};
+	}
 	y += _vspd;
 };
 
@@ -250,7 +257,11 @@ function sprite(name) //Shorthand for asset_get_index
 	if(sprite_exists(asset_get_index(string(name) + string(var_spriteMod))))
 	{
 		return asset_get_index(string(name) + string(var_spriteMod));
-	};
+	}
+	else if(asset_get_index(string(name)))
+	{
+		return asset_get_index(string(name));
+	}
 };
 
 function playHit() //Plays the corresponding hit sound

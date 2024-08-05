@@ -1,35 +1,11 @@
-ASHTRAY
--find main mechanic (portals?)
--make 24 levels (0/24) (remake current levels)
--bonus rooms 
-
-CORE
--bonus rooms 
-
-POND
--bonus rooms 
-
-BIG
 -finish every arcade game
--finish/make every boss
--finish main/pause menu
+-make achievements? (NEXT UPDATE W/POSTMORTEM MAYBE)
 
--make achievements?
-
--finish dialogueX
--spanish translationX
-
-SFX:
+SFX ??:
 boat moving
 jellyfish grab/delete
 BOINNNG
 
 FIX
--enemies sometimes kill you when you hit them (mostly slimes)
--can get stuck on the wall, NOTICEABLE ON THE FRIDGE/REEF
--the way exiting arcades work (despawns your pickles/keys, resets your hp)
-
-MUSIC
--EVERY BOSS TRACK besides forest/volcano
--Normalize the volume of every track (MP3GAIN should do it)
+-if possible, fix turned off swapWall collision mask
 

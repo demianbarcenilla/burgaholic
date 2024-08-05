@@ -62,3 +62,25 @@ function bossReef_createBullets(vspd, grav)
 	_leftBullet.var_vspd = vspd;
 	_righBullet.var_vspd = vspd;
 }
+
+function onHit_backwardsBounce()
+{	
+	with(obj_player)
+	{
+		var_spd = -image_xscale*var_mspd*4; 
+		var_vspd = -var_jspd*1.3; 
+		k_dirCap = sign(var_spd); 
+		image_xscale = sign(var_spd)}
+};
+
+function onHit_backwardsBounceBOSS()
+{
+	repeat(5){instance_create_depth(x, y-32, depth, obj_wasteFX)};
+	
+	with(obj_player)
+	{
+		var_spd = -image_xscale*var_mspd*4; 
+		var_vspd = -var_jspd*1.3; 
+		k_dirCap = sign(var_spd); 
+		image_xscale = sign(var_spd)}
+};

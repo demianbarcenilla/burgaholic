@@ -1,5 +1,3 @@
-
-
 switch(var_state)
 {
 	case 0:

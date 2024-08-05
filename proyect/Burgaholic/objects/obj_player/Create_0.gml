@@ -32,6 +32,7 @@ enum STATE_MACHINE
 	
 	respawn,
 	stunned,
+	drink,
 	
 	arcade
 };

@@ -35,6 +35,8 @@ function scr_menuPause(){
 			break;
 	
 			case 1: //Options
+				var_wipeProgress = 0;
+				
 				var_state = menu.options
 				var_selected = 0;
 				screenshake(8, 10, .1)
@@ -85,7 +87,7 @@ function scr_menuOptions(){
 	//Draw Background
 	draw_sprite(bg_pause, 0, 0, 0)
 
-	var _options = 6, _sprHeight = 28, _langAmmount = 1;
+	var _options = 7, _sprHeight = 24, _langAmmount = 1;
 
 	//Displace Sprites
 	var_selectedDisplace = lerp(var_selectedDisplace, 8, .1);
@@ -105,11 +107,18 @@ function scr_menuOptions(){
 	};
 
 	//Draw Language Flag
-	draw_sprite(spr_language, global.lang, 96, 16+(28*4))
+	draw_sprite(spr_language, global.lang, 96, 16+(_sprHeight*4))
 	
-	//Draw Current Window Size (SPRITE)
+	//Draw Wipe Progress
+	draw_sprite(spr_wipeProgress, var_wipeProgress, 96, 16+(_sprHeight*5))
+	
+
 	ini_open("settings.ini");
-		draw_sprite(spr_window, ini_read_real("options", "window", 0), 96, 16+(28*2));
+		//Draw Current Window Size (SPRITE)
+		draw_sprite(spr_window, ini_read_real("options", "window", 0), 96, 16+(_sprHeight*2));
+		
+		//Draw Timer Mode (SPRITE) 
+		draw_sprite(spr_timer, ini_read_real("options", "timer", 0), 96, 16+(_sprHeight*6));
 	ini_close();
 	
 	//DRAW SLIDERS
@@ -117,7 +126,7 @@ function scr_menuOptions(){
 		var _musGain = ini_read_real("options", "musicVol", 1),
 			_sfxGain = ini_read_real("options", "sfxVol", 1);
 		slider(96, 16, _musGain) //Music
-		slider(96, 16+28, _sfxGain) //SFX
+		slider(96, 16+_sprHeight, _sfxGain) //SFX
 	ini_close()
 	
 	//TRIGGER THE OPTIONS
@@ -224,15 +233,17 @@ function scr_menuOptions(){
 					audio_play_sound(sfx_menuS, 2, 0);
 					
 					global.lang ++;
-					with(obj_control)
-					{
-						global.langString = arr_lang[global.lang]
-					}
 					
 					if(global.lang > _langAmmount)
 					{
 						global.lang = 0
-						ini_write_real("options", "language", global.lang);
+					};
+					
+					ini_write_real("options", "language", global.lang);
+					
+					with(obj_control)
+					{
+						global.langString = arr_lang[global.lang]
 					};
 				};
 			ini_close();
@@ -241,11 +252,37 @@ function scr_menuOptions(){
 		case 5: //Wipe Save
 			if(keyboard_check_pressed(global.k_jump))
 			{
-				file_delete("data.ini")
+				if(var_wipeProgress < 3)
+				{
+					var_wipeProgress++;
+					audio_play_sound(sfx_hitSelf, 1, false)
+				}
+				else
+				{
+					file_delete("data.ini")
+					game_restart();
+				};
 			};
 		break;
 			
-		case 6: //Back
+		case 6: //Timer
+			ini_open("settings.ini")
+				if(keyboard_check_pressed(global.k_jump))
+				{
+					audio_play_sound(sfx_menuS, 2, 0);
+					global.timer ++;
+					
+					if(global.timer > 3)
+					{
+						global.timer = 0
+					};
+					
+					ini_write_real("options", "timer", global.timer);
+				};
+			ini_close();
+		break;
+		
+		case 7: //Back
 			if(keyboard_check_pressed(global.k_jump))
 			{
 				audio_play_sound(sfx_menuS, 2, 0);
@@ -264,42 +301,79 @@ function scr_menuOptions(){
 		break;
 			
 		default: //Default to Continue if you choose an option outside of the range
-			instance_activate_all();
-			instance_destroy();
+			var_selected = 7;
 		break;
 	}
 	
 	if(var_isChangingControls)
 	{
 		var _string;
-		switch(var_keybind)
+		switch(global.lang)
 		{
 			case 0:
-				_string = "UP"
+				switch(var_keybind)
+				{
+					case 0:
+						_string = "UP"
+					break;
+			
+					case 1:
+						_string = "UP"
+					break;
+			
+					case 2:
+						_string = "LEFT"
+					break;
+			
+					case 3:
+						_string = "DOWN"
+					break;
+			
+					case 4:
+						_string = "RIGHT"
+					break;
+			
+					case 5:
+						_string = "JUMP/SELECT"
+					break;
+			
+					case 6:
+						_string = "DASH/RETURN"
+					break;
+				};
 			break;
 			
 			case 1:
-				_string = "UP"
-			break;
+			switch(var_keybind)
+				{
+					case 0:
+						_string = "ARRIBA"
+					break;
 			
-			case 2:
-				_string = "LEFT"
-			break;
+					case 1:
+						_string = "ARRIBA"
+					break;
 			
-			case 3:
-				_string = "DOWN"
-			break;
+					case 2:
+						_string = "IZQUIERDA"
+					break;
 			
-			case 4:
-				_string = "RIGHT"
-			break;
+					case 3:
+						_string = "ABAJO"
+					break;
 			
-			case 5:
-				_string = "JUMP/SELECT"
-			break;
+					case 4:
+						_string = "DERECHA"
+					break;
 			
-			case 6:
-				_string = "DASH/RETURN"
+					case 5:
+						_string = "SALTO/SELEC."
+					break;
+			
+					case 6:
+						_string = "DASH/VOLVER"
+					break;
+				};
 			break;
 		};
 		
@@ -307,7 +381,18 @@ function scr_menuOptions(){
 		draw_set_font(fnt_holicSmall);
 		draw_set_valign(fa_center);
 		draw_set_halign(fa_left);
-		draw_text(96, 16+(28*3)+8, "Press Your New " + _string + " Key!")
+		
+		switch(global.lang)
+		{
+			case 0: 
+				draw_text(96, 16+(_sprHeight*3)+8, "Press Your New " + _string + " Key!")
+			break;
+			
+			case 1: 
+				draw_text(96, 16+(_sprHeight*3)+8, "Presiona Tu Nueva Tecla " + _string + "!")
+			break;
+		}
+		
 		draw_set_valign(fa_none);
 		draw_set_halign(fa_none);
 		
@@ -323,33 +408,94 @@ function scr_menuOptions(){
 						//(keyboard_check_pressed() automatically takes the last input you did {select button} and replaces UP with it. so just go to the next case instead)
 					break;
 					case 1:
-						global.k_up = keyboard_key;
-						ini_write_real("keys", "up", global.k_up)
+						var _repeated = scr_repeatedKey();
+						
+						if(_repeated)
+						{
+							var_keybind --;
+							audio_play_sound(sfx_pop, 1, 0)
+						}
+						else
+						{
+							global.k_up = keyboard_key;
+							ini_write_real("keys", "up", global.k_up)
+						}
+						
 					break;
 			
 					case 2:
-						global.k_left = keyboard_key;
-						ini_write_real("keys", "left", global.k_left)
+						var _repeated = scr_repeatedKey();
+						
+						if(_repeated)
+						{
+							var_keybind --;
+							audio_play_sound(sfx_pop, 1, 0)
+						}
+						else
+						{
+							global.k_left = keyboard_key;
+							ini_write_real("keys", "left", global.k_left)
+						}
 					break;
 			
 					case 3:
-						global.k_down = keyboard_key;
-						ini_write_real("keys", "down", global.k_down)
+						var _repeated = scr_repeatedKey();
+						
+						if(_repeated)
+						{
+							var_keybind --;
+							audio_play_sound(sfx_pop, 1, 0)
+						}
+						else
+						{
+							global.k_down = keyboard_key;
+							ini_write_real("keys", "down", global.k_down)
+						};
 					break;
 			
 					case 4:
-						global.k_right = keyboard_key;
-						ini_write_real("keys", "right", global.k_right)
+						var _repeated = scr_repeatedKey();
+						
+						if(_repeated)
+						{
+							var_keybind --;
+							audio_play_sound(sfx_pop, 1, 0)
+						}
+						else
+						{
+							global.k_right = keyboard_key;
+							ini_write_real("keys", "right", global.k_right)
+						};
 					break;
 			
 					case 5:
-						global.k_jump = keyboard_key;
-						ini_write_real("keys", "jump", global.k_jump)
+						var _repeated = scr_repeatedKey();
+						
+						if(_repeated)
+						{
+							var_keybind --;
+							audio_play_sound(sfx_pop, 1, 0)
+						}
+						else
+						{
+							global.k_jump = keyboard_key;
+							ini_write_real("keys", "jump", global.k_jump)
+						};
 					break;
 			
 					case 6:
-						global.k_special = keyboard_key;
-						ini_write_real("keys", "dash", global.k_special)
+						var _repeated = scr_repeatedKey();
+						
+						if(_repeated)
+						{
+							var_keybind --;
+							audio_play_sound(sfx_pop, 1, 0)
+						}
+						else
+						{
+							global.k_special = keyboard_key;
+							ini_write_real("keys", "dash", global.k_special)
+						};
 					break;
 				};
 			ini_close();
@@ -427,9 +573,14 @@ function scr_menuMain(){
 						room_goto(decide_startroom());
 					};
 				}
+				
+				obj_control.var_runTimeGlobal = true;
+				obj_control.var_runTime100 = true;
 			break;
 	
 			case 1: //Options
+				var_wipeProgress = 0;
+				
 				var_state = menu.options
 				var_selected = 0;
 				screenshake(8, 10, .1)
