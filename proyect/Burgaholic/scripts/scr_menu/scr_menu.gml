@@ -404,8 +404,10 @@ function scr_menuOptions(){
 				switch(var_keybind)
 				{
 					case 0:
-						//Do nothing. This would change the first input to the current jump button
-						//(keyboard_check_pressed() automatically takes the last input you did {select button} and replaces UP with it. so just go to the next case instead)
+						ini_section_delete("keys")
+						//Automatically changes once you select the controls option
+						//So we use that keypress to erase all previous control data
+						//This allows the player to input a key that was saved previously without counting it as a repeat
 					break;
 					case 1:
 						var _repeated = scr_repeatedKey();
@@ -587,6 +589,7 @@ function scr_menuMain(){
 			break;
 	
 			case 2: //Achievements
+				audio_play_sound(sfx_no, 2, 0);
 			break;
 		
 			case 3: //Exit

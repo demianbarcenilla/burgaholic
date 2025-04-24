@@ -4,14 +4,12 @@ function enemy_wallBounce(dirt)
 	{
 		var_spd = -var_spd;
 		if(dirt) vfx_dirt();
-		screenshake(5, 2, .1);
 	};
 
 	if(place_meeting(x, y+sign(var_vspd), obj_wall))
 	{
 		var_vspd = -var_vspd;
 		if(dirt) vfx_dirt();
-		screenshake(5, 2, .1);
 	};
 }
 

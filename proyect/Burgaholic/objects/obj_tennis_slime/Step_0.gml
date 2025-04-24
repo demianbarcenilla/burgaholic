@@ -1,4 +1,4 @@
-if(var_state = 0)
+if(var_state = 0) and (instance_exists(obj_burg_tennis))
 {
 	dash_cd--;
 	
@@ -22,7 +22,7 @@ if(var_state = 0)
 
 	x += image_xscale * spd;
 }
-else
+else if(var_state = 1)
 {
 	x += image_xscale * dash_spd;
 	dash_timer--;
@@ -33,4 +33,28 @@ else
 	}
 	
 	//collisionBasic();
+}
+
+else
+{
+	var _deadInstance = instance_create_depth(x, y, depth, obj_staticFX)
+		_deadInstance.sprite_index = spr_tennisSlimeDead;
+		_deadInstance.var_func = function(){room_goto(rm_arcadeTennis)};
+	
+	instance_destroy();
+	
+	burg_unlockAndDisplay(77);
+	
+	if(instance_exists(obj_burg_tennis))
+	{
+		if(obj_burg_tennis.canUnlock_dashless)
+		{
+			burg_unlockAndDisplay(78);
+		};
+		
+		if(obj_tennis_BG.canUnlock_flawless)
+		{
+			burg_unlockAndDisplay(79);
+		};
+	};
 }

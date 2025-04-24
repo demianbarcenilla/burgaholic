@@ -7,6 +7,6 @@ if(var_end)
 		room_goto(var_room)
 	}
 	
-	
+	var_action();
 	instance_destroy();
 };

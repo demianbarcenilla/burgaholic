@@ -13,7 +13,10 @@
     "name": "VIRUX",
     "path": "folders/Objects/ARCADE/VIRUX.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_arcadeEnemyTemplate",
+    "path": "objects/obj_arcadeEnemyTemplate/obj_arcadeEnemyTemplate.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -27,7 +30,9 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [],
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"moveVertical","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":3,},
+  ],
   "solid": false,
   "spriteId": {
     "name": "spr_viruxEnemy",

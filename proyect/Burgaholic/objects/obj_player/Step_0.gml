@@ -366,15 +366,10 @@ if(instance_exists(obj_statue)) //Don't die if you're in a bonus level transitio
 var _isOnPit = (y > room_height + sprite_height) and (_pitDie),
 	_isOnToxicWall = place_meeting(x, y, obj_walltoxic),
 	_isOnWaste = place_meeting(x, y, obj_wastePool),
-	_isInsideWall = place_meeting(x, y, obj_switchWall),
+	_isInsideWall = place_meeting(x, y, obj_switchWallMask),
 	_hpToZero = _isOnPit or _isOnToxicWall or _isOnWaste or _isInsideWall
 
 if(_hpToZero){hp = 0};
-
-if(keyboard_check_pressed(ord("R")))
-{
-	game_restart();
-};
 
 if(place_meeting(x, y+1, obj_wall))
 {

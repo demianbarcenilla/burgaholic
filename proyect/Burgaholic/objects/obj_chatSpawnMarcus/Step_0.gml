@@ -8,7 +8,7 @@ if(place_meeting(x, y, obj_player)) and (keyboard_check_pressed(global.k_up))
 	
 	if(checkAllBought(var_pool))
 	{
-		if(checkAllUnlocked(158))
+		if(checkAllUnlocked(0, 158) and (checkAllUnlocked(160, 167)))
 		{
 			setKeeperChat_event("ShopBaddie_Extra", var_altEvent);
 		}

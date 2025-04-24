@@ -75,7 +75,7 @@ draw_text(SCREEN_WIDTH-24, SCREEN_HEIGHT-8-5 +deathCountDisplace_current, "x" + 
 var _globalTimerString = timerToString(var_timeGlobal);
 var _globalTimerString100 = timerToString(var_time100);
 var _globalTimerStringPB = timerToString(var_timeCurStagePB);
-var _globalTimerStringCur = timerToString(var_timeCurStage)
+var _globalTimerStringCur = timerToString(var_timeCurStage);
 
 if(room != rm_mainMenu) and (!instance_exists(obj_pause)) and (room != rm_levelSelect)
 {

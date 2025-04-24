@@ -7,3 +7,5 @@ dash_spd = 2;
 dash_timer_max = 20;
 dash_timer = 0;
 image_speed = .4;
+
+canUnlock_dashless = true;

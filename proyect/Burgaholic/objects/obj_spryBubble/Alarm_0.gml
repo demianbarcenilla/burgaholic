@@ -1,0 +1,2 @@
+var_flash = false;
+

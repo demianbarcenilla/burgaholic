@@ -10,7 +10,14 @@ var_chatbox = global.stage;
 var_sprite = spr_gregDie;
 var_chat = "DefeatGreg"
 
-var_event = function(){var_state = 3};
+var_event = function(){
+	var_state = 3; 
+	
+	if(instance_exists(obj_notebook))
+	{
+		obj_notebook.alarm[0] = 360
+	};
+};
 //0 = SHAKING
 //1 = BOUNCING
 //2 = STANDING
@@ -44,8 +51,8 @@ ini_open("data.ini")
 	
 	var _savedPB = ini_read_real("timer", string(global.stage), 0)
 	if(_savedPB != 0)
-	{
-		if(obj_control.var_runTimeCurStage < _savedPB)
+	{		
+		if(obj_control.var_timeCurStage < _savedPB)
 		{
 			ini_write_real("timer", string(global.stage), obj_control.var_timeCurStage);
 			obj_control.var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
@@ -58,3 +65,10 @@ ini_open("data.ini")
 	}
 ini_close();
 
+//BURGERUNLOCK
+var_speedrunTime = 180;
+//UNLOCK SPEEDY BURGS
+if(obj_control.var_timeCurStage < var_speedrunTime)
+{
+	burg_unlockAndDisplay(167);
+}

@@ -13,6 +13,7 @@ if(var_state = 0)
 	
 	if(keyboard_check_pressed(global.k_jump))
 	{
+		canUnlock_dashless = false;
 		var_state = 1;
 		sprite_index = spr_burgTennis;
 		dash_timer = dash_timer_max;
@@ -38,6 +39,9 @@ else if(var_state = 1)
 }
 else
 {
-	sprite_index = spr_burgTennis;
-	image_angle += 15;
+	var _deadInstance = instance_create_depth(x, y, depth, obj_staticFX)
+	_deadInstance.sprite_index = spr_burgTennisDead;
+	_deadInstance.var_func = function(){room_goto(rm_arcadeTennis)};
+	
+	instance_destroy();
 };

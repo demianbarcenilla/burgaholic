@@ -58,6 +58,8 @@ function vfx_dirt()
 		_dirt.var_spd = irandom_range(.5, 2)*sign(image_xscale);
 	}
 	
+	screenshake(5, 1, .1);
+			
 	audio_play_sound(sfx_bump, 1, false)
 }
 

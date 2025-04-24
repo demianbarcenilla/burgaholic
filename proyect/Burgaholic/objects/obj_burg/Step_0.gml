@@ -63,6 +63,8 @@ if(var_state = 0)
 		var_state = 1;
 		alarm[0] = 60;
 		var_vspd = -var_jspd;
+		
+		audio_play_sound(sfx_explosion, 1, false);
 	};
 	
 	collisionBasic();

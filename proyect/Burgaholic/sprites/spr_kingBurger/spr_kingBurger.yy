@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Burgaholic",
-    "path": "Burgaholic.yyp",
+    "name": "MISC",
+    "path": "folders/Sprites/MISC.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

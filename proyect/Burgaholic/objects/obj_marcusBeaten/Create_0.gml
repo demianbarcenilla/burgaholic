@@ -4,7 +4,10 @@ var_chatbox = 8;
 var_chat = "ChatBaddie";
 var_event = function(){
 	var _trans = instance_create_depth(0, 0, depth, obj_transition2)
-	_trans.var_room = rm_lobby;
+	var _100 = checkAllUnlocked(0, 167);
+	var _room = _100 ? rm_lobbyEnd : rm_lobby;
+	
+	_trans.var_room = _room;
 };
 
 var_action = function(){
@@ -22,20 +25,3 @@ var_spd = 0;
 var_vspd = -5;
 var_grav = .2;
 var_pool = 0;
-
-ini_open("data.ini")
-	var _savedPB = ini_read_real("timer", string(global.stage), 0)
-	if(_savedPB != 0)
-	{
-		if(obj_control.var_runTimeCurStage < _savedPB)
-		{
-			ini_write_real("timer", string(global.stage), obj_control.var_timeCurStage);
-			obj_control.var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
-		}
-	}
-	else
-	{
-		ini_write_real("timer", string(global.stage), obj_control.var_timeCurStage);
-		obj_control.var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
-	}
-ini_close();

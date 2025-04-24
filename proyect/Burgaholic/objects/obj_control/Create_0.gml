@@ -1,3 +1,5 @@
+randomize();
+
 /// @description INITIALIZE
 #macro IMAGE_SPEED .4
 #macro SCREEN_WIDTH 320
@@ -121,7 +123,7 @@ ini_open("data.ini")
 	
 	var_runTimeCurStage = false;
 	var_timeCurStage = 0;
-	var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0)
+	var_timeCurStagePB = ini_read_real("timer", string(global.stage), 0);
 	var_timePerStage = ini_read_real("timer", "perStage", 0);
 ini_close();
 

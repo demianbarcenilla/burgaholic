@@ -6,11 +6,11 @@ image_speed = 0;
 event_inherited();
 
 arr_arcadeGame[0] = rm_arcadeBurg; //ARCADE GAME
-arr_arcadeGame[1] = rm_arcadeTennis;
-arr_arcadeGame[2] = rm_arcadeBurg;
-arr_arcadeGame[3] = rm_arcadeBurg;
-arr_arcadeGame[4] = rm_arcadeBurg;
-arr_arcadeGame[5] = rm_arcadeBurg;
+arr_arcadeGame[1] = rm_arcadeBUMB;
+arr_arcadeGame[2] = rm_arcadeSPRY;
+arr_arcadeGame[3] = rm_arcadeTennis;
+arr_arcadeGame[4] = rm_arcadeFishMenu;
+arr_arcadeGame[5] = rm_arcadeDans;
 arr_arcadeGame[6] = rm_arcadeVirux;
 arr_arcadeGame[7] = rm_arcadeBurg;
 

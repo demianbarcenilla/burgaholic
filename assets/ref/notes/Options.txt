@@ -1,5 +1,0 @@
-Screen Size
-Music Volume
-SFX Volume
-Controls
-Language

@@ -2,6 +2,7 @@
 if(place_meeting(x, y, obj_bumbExplosion))
 {
 	instance_destroy();
+	audio_play_sound(sfx_noisePoints, 1, false);
 	
 	if(instance_exists(obj_bumb))
 	{

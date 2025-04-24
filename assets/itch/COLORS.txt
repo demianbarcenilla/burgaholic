@@ -1,0 +1,7 @@
+green: 8DD243
+darker green: 46878F
+white: E2F3E4
+blue: 3A5BFF
+
+font: Kanit
+background: #000bde

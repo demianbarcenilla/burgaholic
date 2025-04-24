@@ -210,7 +210,7 @@ function collisions()
 	
 	if(place_meeting(x, y, obj_wall))
 	{
-		if place_meeting(x, y, obj_switchWall)
+		if(place_meeting(x, y, obj_switchWallMask))
 		{
 			var_hp = 0;
 		}
